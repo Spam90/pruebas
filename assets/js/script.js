@@ -1,5 +1,5 @@
 // =====================================================
-//  M&M DRINK LIQUOR - CATÁLOGO PREMIUM
+//  M&M DRINK LIQUOR - VERSIÓN SIMPLE Y DIRECTA
 // =====================================================
 
 var menuProducts = [];
@@ -11,13 +11,71 @@ var cart = [];
 var imageCache = {};
 var dailyDrink = null;
 var PAGE_LOAD_TIMESTAMP = Date.now();
-var isMobile = window.matchMedia('(max-width: 767px)').matches;
 var DEFAULT_WHATSAPP = '18294481651';
-var IMAGE_RETRY_MAP = {};
 
 // =====================================================
-//  UTILIDADES Y FUNCIONES BASE
+//  FUNCIÓN PARA OBTENER URL ABSOLUTA
 // =====================================================
+
+function getAbsoluteUrl(path) {
+    if (!path) return null;
+    if (path.startsWith('http://') || path.startsWith('https://')) return path;
+    if (path.startsWith('//')) return 'https:' + path;
+    
+    var baseUrl = window.location.origin;
+    if (!path.startsWith('/')) path = '/' + path;
+    path = path.replace(/\/\//g, '/');
+    return baseUrl + path;
+}
+
+// =====================================================
+//  FUNCIÓN PARA OBTENER IMÁGENES
+// =====================================================
+
+function getProductImage(item) {
+    var key = item.id;
+    if (imageCache[key] !== undefined) return imageCache[key];
+    
+    if (item.imagen && item.imagen.trim() !== '' && item.imagen !== 'null' && item.imagen !== 'undefined') {
+        var url = item.imagen.trim();
+        var absoluteUrl = getAbsoluteUrl(url);
+        
+        if (absoluteUrl) {
+            var finalUrl = absoluteUrl + '?_t=' + Date.now() + '&_r=' + Math.random().toString(36).substr(2, 5);
+            imageCache[key] = finalUrl;
+            return finalUrl;
+        }
+    }
+    
+    var placeholder = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"%3E%3Crect width="200" height="200" fill="%231a1a2e"/%3E%3Ctext x="100" y="90" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="50" fill="%23444"%3E🍷%3C/text%3E%3Ctext x="100" y="125" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="14" fill="%23555"%3ESin imagen%3C/text%3E%3C/svg%3E';
+    imageCache[key] = placeholder;
+    return placeholder;
+}
+
+function handleImageError(img) {
+    if (!img) return;
+    var placeholder = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"%3E%3Crect width="200" height="200" fill="%231a1a2e"/%3E%3Ctext x="100" y="90" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="50" fill="%23444"%3E🍷%3C/text%3E%3Ctext x="100" y="125" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="14" fill="%23555"%3ESin imagen%3C/text%3E%3C/svg%3E';
+    img.src = placeholder;
+    img.onerror = null;
+}
+
+function handleCartImageError(img) {
+    if (!img) return;
+    var placeholder = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Crect width="100" height="100" fill="%231a1a2e"/%3E%3Ctext x="50" y="50" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="30" fill="%23444"%3E🍷%3C/text%3E%3C/svg%3E';
+    img.src = placeholder;
+    img.onerror = null;
+}
+
+// =====================================================
+//  FUNCIONES BASE
+// =====================================================
+
+function escapeHtml(s) {
+    if (typeof s !== 'string') return '';
+    var d = document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+}
 
 function hideCinematicOverlay() {
     var overlay = document.getElementById('cinematic-overlay');
@@ -32,238 +90,6 @@ function hideCinematicOverlay() {
         }, 1500);
     }
 }
-
-function escapeHtml(s) {
-    if (typeof s !== 'string') return '';
-    var d = document.createElement('div');
-    d.appendChild(document.createTextNode(s));
-    return d.innerHTML;
-}
-
-// =====================================================
-//  FUNCIÓN MEJORADA PARA OBTENER IMÁGENES
-// =====================================================
-
-function getProductImage(item) {
-    var key = item.id;
-    if (imageCache[key] !== undefined) return imageCache[key];
-    
-    if (item.imagen && item.imagen.trim() !== '' && item.imagen !== 'null' && item.imagen !== 'undefined') {
-        var url = item.imagen.trim();
-        
-        // Normalizar URL
-        if (url.indexOf('http://') !== 0 && url.indexOf('https://') !== 0 && url.indexOf('//') !== 0) {
-            // Para rutas relativas, asegurar que comiencen con /
-            if (!url.startsWith('/') && !url.startsWith('./') && !url.startsWith('../')) {
-                url = '/' + url;
-            }
-            // Eliminar dobles barras
-            url = url.replace(/\/\//g, '/');
-            // Si la ruta comienza con //, añadir https:
-            if (url.indexOf('//') === 0) {
-                url = 'https:' + url;
-            }
-        } else if (url.indexOf('http://') === 0) {
-            url = 'https://' + url.substring(7);
-        }
-        
-        // Limpiar parámetros existentes para evitar duplicados
-        var baseUrl = url.split('?')[0];
-        var timestamp = Date.now() + '_' + Math.random().toString(36).substr(2, 5);
-        
-        // Construir URL con timestamp único para evitar caché
-        var finalUrl = baseUrl + '?_t=' + PAGE_LOAD_TIMESTAMP + '&_retry=' + timestamp;
-        
-        imageCache[key] = finalUrl;
-        return finalUrl;
-    }
-    
-    imageCache[key] = null;
-    return null;
-}
-
-// =====================================================
-//  MANEJO DE ERRORES DE IMÁGENES MEJORADO
-// =====================================================
-
-function handleImageError(img) {
-    if (!img || !img.getAttribute) return;
-    
-    var imgId = img.dataset.imgId || 'img_' + Date.now() + '_' + Math.random();
-    if (!img.dataset.imgId) {
-        img.dataset.imgId = imgId;
-    }
-    
-    // Inicializar contador de reintentos
-    if (!IMAGE_RETRY_MAP[imgId]) {
-        IMAGE_RETRY_MAP[imgId] = 0;
-    }
-    
-    // Si ya se intentó 3 veces, mostrar placeholder
-    if (IMAGE_RETRY_MAP[imgId] >= 3) {
-        img.style.display = 'none';
-        var parent = img.parentElement;
-        if (parent) {
-            var noImage = parent.querySelector('.no-image-text');
-            if (noImage) {
-                noImage.style.display = 'flex';
-            } else {
-                // Crear placeholder si no existe
-                var placeholder = document.createElement('div');
-                placeholder.className = 'no-image-text';
-                placeholder.style.display = 'flex';
-                placeholder.innerHTML = '<span>🖼️</span><p>No hay imagen<br>disponible</p>';
-                parent.appendChild(placeholder);
-            }
-        }
-        return;
-    }
-    
-    // Incrementar contador
-    IMAGE_RETRY_MAP[imgId]++;
-    
-    // Obtener URL base limpia
-    var src = img.getAttribute('src');
-    if (src && src.trim() !== '') {
-        var baseUrl = src.split('?')[0];
-        var timestamp = Date.now() + '_' + IMAGE_RETRY_MAP[imgId];
-        var newSrc = baseUrl + '?_t=' + PAGE_LOAD_TIMESTAMP + '&_retry=' + timestamp;
-        
-        // Reintentar con delay progresivo
-        var delay = 500 * IMAGE_RETRY_MAP[imgId];
-        setTimeout(function() {
-            // Limpiar el evento onerror para evitar bucles infinitos
-            img.onerror = null;
-            img.src = newSrc;
-            // Restaurar el evento onerror después de establecer la nueva URL
-            setTimeout(function() {
-                img.onerror = function() {
-                    handleImageError(this);
-                };
-            }, 100);
-        }, delay);
-    }
-}
-
-function handleCartImageError(img) {
-    if (!img || !img.getAttribute) return;
-    
-    var imgId = img.dataset.imgId || 'cart_' + Date.now() + '_' + Math.random();
-    if (!img.dataset.imgId) {
-        img.dataset.imgId = imgId;
-    }
-    
-    if (!IMAGE_RETRY_MAP[imgId]) {
-        IMAGE_RETRY_MAP[imgId] = 0;
-    }
-    
-    if (IMAGE_RETRY_MAP[imgId] >= 3) {
-        img.style.display = 'none';
-        var parent = img.parentElement;
-        if (parent) {
-            var noImage = parent.querySelector('.cart-no-image');
-            if (noImage) {
-                noImage.style.display = 'flex';
-            }
-        }
-        return;
-    }
-    
-    IMAGE_RETRY_MAP[imgId]++;
-    
-    var src = img.getAttribute('src');
-    if (src && src.trim() !== '') {
-        var baseUrl = src.split('?')[0];
-        var timestamp = Date.now() + '_' + IMAGE_RETRY_MAP[imgId];
-        var newSrc = baseUrl + '?_t=' + PAGE_LOAD_TIMESTAMP + '&_retry=' + timestamp;
-        
-        var delay = 500 * IMAGE_RETRY_MAP[imgId];
-        setTimeout(function() {
-            img.onerror = null;
-            img.src = newSrc;
-            setTimeout(function() {
-                img.onerror = function() {
-                    handleCartImageError(this);
-                };
-            }, 100);
-        }, delay);
-    }
-}
-
-// =====================================================
-//  FUNCIÓN PARA VERIFICAR Y CARGAR IMÁGENES EN MÓVIL
-// =====================================================
-
-function ensureImagesLoaded() {
-    if (!isMobile) return;
-    
-    // Buscar todas las imágenes que podrían no haberse cargado
-    var images = document.querySelectorAll('.product-card img, .cart-item img');
-    images.forEach(function(img) {
-        // Si la imagen no tiene src o tiene error, forzar recarga
-        if (!img.src || img.src === '' || img.src.indexOf('data:') === 0 || img.dataset.error === 'true') {
-            var imgId = img.dataset.imgId || 'force_' + Date.now();
-            if (!IMAGE_RETRY_MAP[imgId] || IMAGE_RETRY_MAP[imgId] < 3) {
-                // Buscar el producto correspondiente
-                var parent = img.closest('.product-card');
-                if (parent) {
-                    var nameEl = parent.querySelector('.product-name');
-                    if (nameEl) {
-                        var productName = nameEl.textContent;
-                        // Buscar el producto en menuProducts
-                        for (var i = 0; i < menuProducts.length; i++) {
-                            if (menuProducts[i].nombre === productName) {
-                                var newUrl = getProductImage(menuProducts[i]);
-                                if (newUrl) {
-                                    // Eliminar el referrer policy problemático
-                                    img.referrerPolicy = 'strict-origin-when-cross-origin';
-                                    img.src = newUrl;
-                                    img.dataset.error = 'false';
-                                }
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    });
-}
-
-// =====================================================
-//  ESTADÍSTICAS Y LOGGING
-// =====================================================
-
-function logImageStats() {
-    var withImage = 0;
-    var withoutImage = 0;
-    var sampleImages = [];
-    for (var i = 0; i < menuProducts.length; i++) {
-        var img = getProductImage(menuProducts[i]);
-        if (img) {
-            withImage++;
-            if (sampleImages.length < 5) sampleImages.push(img);
-        } else {
-            withoutImage++;
-        }
-    }
-    console.log('=== ESTADÍSTICAS DE IMÁGENES ===');
-    console.log('Productos con imagen:', withImage);
-    console.log('Productos sin imagen:', withoutImage);
-    console.log('Ejemplos de URLs de imagen:', sampleImages);
-    console.log('Primeros 3 productos:', menuProducts.slice(0, 3).map(function(p) {
-        return {
-            id: p.id,
-            nombre: p.nombre,
-            imagen: p.imagen,
-            imagenProcesada: getProductImage(p)
-        };
-    }));
-}
-
-// =====================================================
-//  RENDERIZADO DE SKELETONS
-// =====================================================
 
 function renderSkeletons(count) {
     var grid = document.getElementById('products-grid');
@@ -371,11 +197,7 @@ async function loadProducts() {
 
         var res = await fetch('/productos.json', {
             method: 'GET',
-            headers: { 
-                'Cache-Control': 'no-cache, no-store, must-revalidate',
-                'Pragma': 'no-cache',
-                'Expires': '0'
-            }
+            headers: { 'Cache-Control': 'no-cache' }
         });
 
         if (!res.ok) {
@@ -383,39 +205,22 @@ async function loadProducts() {
         }
 
         var data = await res.json();
-        console.log('Productos cargados desde JSON:', data.length);
+        console.log('📦 Productos cargados:', data.length);
 
         if (!Array.isArray(data) || data.length === 0) {
             throw new Error('Sin productos en el archivo JSON');
         }
 
         menuProducts = groupProductsWithGlass(data);
+        window.menuProducts = menuProducts;
 
         renderCategories();
         setTimeout(function() { selectDailyDrink(); }, 100);
         applyFilters();
-        logImageStats();
         hideCinematicOverlay();
 
-        // En móvil, verificar imágenes después de un tiempo
-        if (isMobile) {
-            setTimeout(function() {
-                ensureImagesLoaded();
-            }, 2000);
-            
-            // Verificar nuevamente después de interactuar
-            document.addEventListener('scroll', function() {
-                setTimeout(ensureImagesLoaded, 500);
-            }, { passive: true });
-            
-            // Verificar cuando se completa la carga de la página
-            window.addEventListener('load', function() {
-                setTimeout(ensureImagesLoaded, 1000);
-            });
-        }
-
     } catch (e) {
-        console.error('Error cargando productos:', e);
+        console.error('❌ Error:', e);
         hideCinematicOverlay();
         var grid = document.getElementById('products-grid');
         if (grid) {
@@ -471,36 +276,10 @@ function renderDailyDrink() {
 
     if (img) {
         var imgUrl = getProductImage(dailyDrink);
-        var tieneImagen = imgUrl && imgUrl.trim() !== '';
-
+        img.src = imgUrl;
+        img.alt = dailyDrink.nombre || '';
         img.style.display = 'block';
-        var parent = img.parentElement;
-        var noImage = parent.querySelector('.daily-no-image');
-        if (noImage) noImage.remove();
-
-        if (tieneImagen) {
-            img.src = imgUrl;
-            img.alt = dailyDrink.nombre || '';
-            img.style.display = 'block';
-            // Cambiar política de referrer para evitar bloqueos
-            img.referrerPolicy = 'strict-origin-when-cross-origin';
-            img.loading = 'lazy';
-            img.dataset.imgId = 'daily_' + dailyDrink.id;
-            img.onerror = function() {
-                // Reintentar una vez para la bebida del día
-                if (!this.dataset.retried) {
-                    this.dataset.retried = 'true';
-                    var src = this.src.split('?')[0];
-                    this.src = src + '?_t=' + Date.now() + '&_retry=1';
-                } else {
-                    this.style.display = 'none';
-                    showDailyNoImage(parent);
-                }
-            };
-        } else {
-            img.style.display = 'none';
-            showDailyNoImage(parent);
-        }
+        img.onerror = function() { handleImageError(this); };
     }
 
     if (addBtn) {
@@ -508,17 +287,6 @@ function renderDailyDrink() {
             if (dailyDrink) addToCart(dailyDrink.id);
         };
     }
-}
-
-function showDailyNoImage(parent) {
-    var noImage = parent.querySelector('.daily-no-image');
-    if (!noImage) {
-        noImage = document.createElement('div');
-        noImage.className = 'daily-no-image';
-        noImage.innerHTML = '<span>🖼️</span><p>No hay imagen<br>disponible</p>';
-        parent.appendChild(noImage);
-    }
-    noImage.style.display = 'flex';
 }
 
 // =====================================================
@@ -613,26 +381,16 @@ function renderProducts(allItems) {
             var precioSinVaso = prod.precio_sin_vaso || prod.precio;
             var precioConVaso = prod.precio_con_vaso || prod.precio;
             var tieneAmbasOpciones = tieneVaso && ((prod.id_sin_vaso && prod.id_con_vaso) || (prod.precio_sin_vaso && prod.precio_con_vaso));
-            var tieneImagen = img && img.trim() !== '';
             var delay = Math.min(i * 40, 300);
             var nombreSeguro = escapeHtml(prod.nombre);
             var catSeguro = escapeHtml(prod.categoria);
-            var imgId = 'prod_' + prod.id + '_' + i;
 
             html += '<div class="product-card" data-aos="fade-up" data-aos-duration="500" data-aos-delay="' + delay + '">';
             html += '<div class="img-wrap">';
+            
+            html += '<img src="' + img + '" alt="' + nombreSeguro + '" onerror="handleImageError(this)" style="min-height:120px;width:100%;background:#1a1a2e;display:block;" />';
 
-            if (tieneImagen) {
-                // Política de referrer modificada para evitar bloqueos
-                // En móvil, usar data-src para lazy loading con IntersectionObserver
-                if (isMobile) {
-                    html += '<img data-src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" data-img-id="' + imgId + '" onerror="handleImageError(this)" style="min-height:120px;width:100%;" />';
-                } else {
-                    html += '<img src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" data-img-id="' + imgId + '" onerror="handleImageError(this)" style="min-height:120px;width:100%;" />';
-                }
-            }
-
-            html += '<div class="no-image-text" style="' + (tieneImagen ? 'display:none;' : 'display:flex;') + '"><span>🖼️</span><p>No hay imagen<br>disponible</p></div>';
+            html += '<div class="no-image-text" style="display:none;"><span>🍷</span><p>No hay imagen<br>disponible</p></div>';
 
             if (tieneVaso) html += '<span class="badge-vaso">🥔 +Vaso</span>';
 
@@ -653,14 +411,6 @@ function renderProducts(allItems) {
         }
 
         grid.innerHTML = html;
-        
-        // En móvil, cargar imágenes visibles con IntersectionObserver
-        if (isMobile) {
-            setTimeout(function() {
-                loadVisibleImages();
-            }, 100);
-        }
-        
         renderPagination(total);
         if (typeof AOS !== 'undefined') AOS.refresh();
 
@@ -675,38 +425,6 @@ function renderProducts(allItems) {
                 '<i class="fas fa-sync mr-2"></i> Recargar</button></div>';
         }
     }
-}
-
-// =====================================================
-//  CARGA DE IMÁGENES VISIBLES EN MÓVIL
-// =====================================================
-
-function loadVisibleImages() {
-    var images = document.querySelectorAll('img[data-src]');
-    if (images.length === 0) return;
-    
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                var img = entry.target;
-                var src = img.getAttribute('data-src');
-                if (src) {
-                    // Asegurar política de referrer correcta
-                    img.referrerPolicy = 'strict-origin-when-cross-origin';
-                    img.src = src;
-                    img.removeAttribute('data-src');
-                }
-                observer.unobserve(img);
-            }
-        });
-    }, {
-        rootMargin: '50px 0px',
-        threshold: 0.01
-    });
-    
-    images.forEach(function(img) {
-        observer.observe(img);
-    });
 }
 
 // =====================================================
@@ -879,22 +597,13 @@ function updateCartUI() {
         for (var j = 0; j < cart.length; j++) {
             var item = cart[j];
             var img = getProductImage(item);
-            var tieneImagen = img && img.trim() !== '';
             var esConVaso = item.con_vaso === true;
             var nombreSeguro = escapeHtml(item.nombre);
-            var imgId = 'cart_' + item.id + '_' + j;
 
             html += '<div class="cart-item flex items-center space-x-3 sm:space-x-4 bg-white/[0.02] p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-white/[0.04]" style="animation-delay: ' + (j * 40) + 'ms">';
 
-            if (tieneImagen) {
-                if (isMobile) {
-                    html += '<img data-src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" data-img-id="' + imgId + '" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
-                } else {
-                    html += '<img src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" data-img-id="' + imgId + '" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
-                }
-            }
+            html += '<img src="' + img + '" alt="' + nombreSeguro + '" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
 
-            html += '<div class="cart-no-image" style="' + (tieneImagen ? 'display:none;' : 'display:flex;') + ' width:40px; height:40px; border-radius:8px; background:#0a0a0f; align-items:center; justify-content:center; flex-shrink:0; font-size:10px; color:#555; text-align:center; flex-direction:column; line-height:1.2;"><span>🖼️</span><span style="font-size:6px;">sin img</span></div>';
             html += '<div class="flex-1 min-w-0"><h5 class="text-xs sm:text-sm font-bold text-white truncate">' + nombreSeguro + '</h5><p class="text-[10px] sm:text-xs text-gold-400">RD$ ' + formatPrice(item.precio) + ' x ' + item.quantity + (esConVaso ? ' 🥔' : '') + '</p></div>';
             html += '<div class="flex items-center space-x-1 sm:space-x-2">';
             html += '<button onclick="updateCartQuantity(' + item.id + ', -1)" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/5 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 text-xs sm:text-sm">−</button>';
@@ -903,13 +612,6 @@ function updateCartUI() {
             html += '</div></div>';
         }
         container.innerHTML = html;
-        
-        // En móvil, cargar imágenes del carrito
-        if (isMobile) {
-            setTimeout(function() {
-                loadVisibleImages();
-            }, 100);
-        }
     }
 }
 
@@ -990,10 +692,6 @@ function confirmSendOrder() {
     showToast('Pedido enviado ✅');
 }
 
-// =====================================================
-//  TOAST NOTIFICACIONES
-// =====================================================
-
 function showToast(message) {
     var toast = document.getElementById('toast-notification');
     var msgSpan = document.getElementById('toastMessage');
@@ -1005,10 +703,6 @@ function showToast(message) {
     }
 }
 
-// =====================================================
-//  HEADER SCROLL
-// =====================================================
-
 function handleHeaderScroll() {
     var header = document.getElementById('main-header');
     if (header) {
@@ -1019,10 +713,6 @@ function handleHeaderScroll() {
         }
     }
 }
-
-// =====================================================
-//  COMPARTIR CATÁLOGO
-// =====================================================
 
 function shareCatalog() {
     var url = window.location.href;
@@ -1046,8 +736,7 @@ document.addEventListener('DOMContentLoaded', function() {
             duration: 600, 
             easing: 'ease-out-cubic', 
             once: true, 
-            offset: 30, 
-            disable: isMobile 
+            offset: 30
         });
     }
     
