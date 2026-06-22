@@ -13,6 +13,11 @@ var dailyDrink = null;
 var PAGE_LOAD_TIMESTAMP = Date.now();
 var isMobile = window.matchMedia('(max-width: 767px)').matches;
 var DEFAULT_WHATSAPP = '18294481651';
+var IMAGE_RETRY_MAP = {};
+
+// =====================================================
+//  UTILIDADES Y FUNCIONES BASE
+// =====================================================
 
 function hideCinematicOverlay() {
     var overlay = document.getElementById('cinematic-overlay');
@@ -35,27 +40,197 @@ function escapeHtml(s) {
     return d.innerHTML;
 }
 
+// =====================================================
+//  FUNCIÓN MEJORADA PARA OBTENER IMÁGENES
+// =====================================================
+
 function getProductImage(item) {
     var key = item.id;
     if (imageCache[key] !== undefined) return imageCache[key];
+    
     if (item.imagen && item.imagen.trim() !== '' && item.imagen !== 'null' && item.imagen !== 'undefined') {
         var url = item.imagen.trim();
         
-        // Si es una ruta relativa (ej: assets/img/84.png), usar ruta relativa normal
+        // Normalizar URL
         if (url.indexOf('http://') !== 0 && url.indexOf('https://') !== 0 && url.indexOf('//') !== 0) {
-            url = url;
+            // Para rutas relativas, asegurar que comiencen con /
+            if (!url.startsWith('/') && !url.startsWith('./') && !url.startsWith('../')) {
+                url = '/' + url;
+            }
+            // Eliminar dobles barras
+            url = url.replace(/\/\//g, '/');
+            // Si la ruta comienza con //, añadir https:
+            if (url.indexOf('//') === 0) {
+                url = 'https:' + url;
+            }
         } else if (url.indexOf('http://') === 0) {
             url = 'https://' + url.substring(7);
         }
         
-        var sep = url.indexOf('?') !== -1 ? '&' : '?';
-        url = url + sep + '_t=' + PAGE_LOAD_TIMESTAMP;
-        imageCache[key] = url;
-        return url;
+        // Limpiar parámetros existentes para evitar duplicados
+        var baseUrl = url.split('?')[0];
+        var timestamp = Date.now() + '_' + Math.random().toString(36).substr(2, 5);
+        
+        // Construir URL con timestamp único
+        var finalUrl = baseUrl + '?_t=' + PAGE_LOAD_TIMESTAMP + '&_retry=' + timestamp;
+        
+        imageCache[key] = finalUrl;
+        return finalUrl;
     }
+    
     imageCache[key] = null;
     return null;
 }
+
+// =====================================================
+//  MANEJO DE ERRORES DE IMÁGENES MEJORADO
+// =====================================================
+
+function handleImageError(img) {
+    if (!img || !img.getAttribute) return;
+    
+    var imgId = img.dataset.imgId || 'img_' + Date.now() + '_' + Math.random();
+    if (!img.dataset.imgId) {
+        img.dataset.imgId = imgId;
+    }
+    
+    // Inicializar contador de reintentos
+    if (!IMAGE_RETRY_MAP[imgId]) {
+        IMAGE_RETRY_MAP[imgId] = 0;
+    }
+    
+    // Si ya se intentó 3 veces, mostrar placeholder
+    if (IMAGE_RETRY_MAP[imgId] >= 3) {
+        img.style.display = 'none';
+        var parent = img.parentElement;
+        if (parent) {
+            var noImage = parent.querySelector('.no-image-text');
+            if (noImage) {
+                noImage.style.display = 'flex';
+            } else {
+                // Crear placeholder si no existe
+                var placeholder = document.createElement('div');
+                placeholder.className = 'no-image-text';
+                placeholder.style.display = 'flex';
+                placeholder.innerHTML = '<span>🖼️</span><p>No hay imagen<br>disponible</p>';
+                parent.appendChild(placeholder);
+            }
+        }
+        return;
+    }
+    
+    // Incrementar contador
+    IMAGE_RETRY_MAP[imgId]++;
+    
+    // Obtener URL base limpia
+    var src = img.getAttribute('src');
+    if (src && src.trim() !== '') {
+        var baseUrl = src.split('?')[0];
+        var timestamp = Date.now() + '_' + IMAGE_RETRY_MAP[imgId];
+        var newSrc = baseUrl + '?_t=' + PAGE_LOAD_TIMESTAMP + '&_retry=' + timestamp;
+        
+        // Reintentar con delay progresivo
+        var delay = 500 * IMAGE_RETRY_MAP[imgId];
+        setTimeout(function() {
+            // Limpiar el evento onerror para evitar bucles infinitos
+            img.onerror = null;
+            img.src = newSrc;
+            // Restaurar el evento onerror después de establecer la nueva URL
+            setTimeout(function() {
+                img.onerror = function() {
+                    handleImageError(this);
+                };
+            }, 100);
+        }, delay);
+    }
+}
+
+function handleCartImageError(img) {
+    if (!img || !img.getAttribute) return;
+    
+    var imgId = img.dataset.imgId || 'cart_' + Date.now() + '_' + Math.random();
+    if (!img.dataset.imgId) {
+        img.dataset.imgId = imgId;
+    }
+    
+    if (!IMAGE_RETRY_MAP[imgId]) {
+        IMAGE_RETRY_MAP[imgId] = 0;
+    }
+    
+    if (IMAGE_RETRY_MAP[imgId] >= 3) {
+        img.style.display = 'none';
+        var parent = img.parentElement;
+        if (parent) {
+            var noImage = parent.querySelector('.cart-no-image');
+            if (noImage) {
+                noImage.style.display = 'flex';
+            }
+        }
+        return;
+    }
+    
+    IMAGE_RETRY_MAP[imgId]++;
+    
+    var src = img.getAttribute('src');
+    if (src && src.trim() !== '') {
+        var baseUrl = src.split('?')[0];
+        var timestamp = Date.now() + '_' + IMAGE_RETRY_MAP[imgId];
+        var newSrc = baseUrl + '?_t=' + PAGE_LOAD_TIMESTAMP + '&_retry=' + timestamp;
+        
+        var delay = 500 * IMAGE_RETRY_MAP[imgId];
+        setTimeout(function() {
+            img.onerror = null;
+            img.src = newSrc;
+            setTimeout(function() {
+                img.onerror = function() {
+                    handleCartImageError(this);
+                };
+            }, 100);
+        }, delay);
+    }
+}
+
+// =====================================================
+//  FUNCIÓN PARA VERIFICAR Y CARGAR IMÁGENES EN MÓVIL
+// =====================================================
+
+function ensureImagesLoaded() {
+    if (!isMobile) return;
+    
+    // Buscar todas las imágenes que podrían no haberse cargado
+    var images = document.querySelectorAll('.product-card img, .cart-item img');
+    images.forEach(function(img) {
+        // Si la imagen no tiene src o tiene error, forzar recarga
+        if (!img.src || img.src === '' || img.src.indexOf('data:') === 0 || img.dataset.error === 'true') {
+            var imgId = img.dataset.imgId || 'force_' + Date.now();
+            if (!IMAGE_RETRY_MAP[imgId] || IMAGE_RETRY_MAP[imgId] < 3) {
+                // Buscar el producto correspondiente
+                var parent = img.closest('.product-card');
+                if (parent) {
+                    var nameEl = parent.querySelector('.product-name');
+                    if (nameEl) {
+                        var productName = nameEl.textContent;
+                        // Buscar el producto en menuProducts
+                        for (var i = 0; i < menuProducts.length; i++) {
+                            if (menuProducts[i].nombre === productName) {
+                                var newUrl = getProductImage(menuProducts[i]);
+                                if (newUrl) {
+                                    img.src = newUrl;
+                                    img.dataset.error = 'false';
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// =====================================================
+//  ESTADÍSTICAS Y LOGGING
+// =====================================================
 
 function logImageStats() {
     var withImage = 0;
@@ -74,71 +249,19 @@ function logImageStats() {
     console.log('Productos con imagen:', withImage);
     console.log('Productos sin imagen:', withoutImage);
     console.log('Ejemplos de URLs de imagen:', sampleImages);
-    console.log('Primeros 3 productos:', menuProducts.slice(0, 3).map(p => ({
-        id: p.id,
-        nombre: p.nombre,
-        imagen: p.imagen,
-        imagenProcesada: getProductImage(p)
-    })));
+    console.log('Primeros 3 productos:', menuProducts.slice(0, 3).map(function(p) {
+        return {
+            id: p.id,
+            nombre: p.nombre,
+            imagen: p.imagen,
+            imagenProcesada: getProductImage(p)
+        };
+    }));
 }
 
-function handleImageError(img) {
-    // Verificar si el elemento img existe y tiene atributos
-    if (!img || !img.getAttribute) return;
-    
-    // Si ya se intentó retry, mostrar placeholder
-    if (img.dataset.retried === 'true') {
-        img.style.display = 'none';
-        var parent = img.parentElement;
-        if (parent) {
-            var noImage = parent.querySelector('.no-image-text');
-            if (noImage) noImage.style.display = 'flex';
-        }
-        return;
-    }
-    
-    // Marcar como retry y recargar con parámetro único
-    img.dataset.retried = 'true';
-    var src = img.getAttribute('src');
-    if (src && src.trim() !== '') {
-        // Eliminar parámetros existentes para limpiar la URL
-        var baseUrl = src.split('?')[0];
-        // Agregar retry con timestamp para evitar caché
-        var separator = baseUrl.indexOf('?') !== -1 ? '&' : '?';
-        // Mantener el timestamp original si existe
-        var newSrc = baseUrl + '?' + (src.indexOf('_t=') !== -1 ? src.split('?')[1] + '&' : '') + '_retry=' + Date.now();
-        // Si no tenía timestamp, agregarlo también
-        if (src.indexOf('_t=') === -1) {
-            newSrc = baseUrl + '?_t=' + PAGE_LOAD_TIMESTAMP + '&_retry=' + Date.now();
-        }
-        img.src = newSrc;
-    }
-}
-
-function handleCartImageError(img) {
-    if (!img || !img.getAttribute) return;
-    
-    if (img.dataset.retried === 'true') {
-        img.style.display = 'none';
-        var parent = img.parentElement;
-        if (parent) {
-            var noImage = parent.querySelector('.cart-no-image');
-            if (noImage) noImage.style.display = 'flex';
-        }
-        return;
-    }
-    
-    img.dataset.retried = 'true';
-    var src = img.getAttribute('src');
-    if (src && src.trim() !== '') {
-        var baseUrl = src.split('?')[0];
-        var newSrc = baseUrl + '?' + (src.indexOf('_t=') !== -1 ? src.split('?')[1] + '&' : '') + '_retry=' + Date.now();
-        if (src.indexOf('_t=') === -1) {
-            newSrc = baseUrl + '?_t=' + PAGE_LOAD_TIMESTAMP + '&_retry=' + Date.now();
-        }
-        img.src = newSrc;
-    }
-}
+// =====================================================
+//  RENDERIZADO DE SKELETONS
+// =====================================================
 
 function renderSkeletons(count) {
     var grid = document.getElementById('products-grid');
@@ -155,6 +278,10 @@ function formatPrice(val) {
     if (val === null || val === undefined || isNaN(val)) return '0';
     return Number(val).toLocaleString();
 }
+
+// =====================================================
+//  AGRUPACIÓN DE PRODUCTOS CON VASO
+// =====================================================
 
 function groupProductsWithGlass(products) {
     var grouped = {};
@@ -232,18 +359,25 @@ function groupProductsWithGlass(products) {
     return normalProducts.concat(groupedArray);
 }
 
-// ============ CARGAR PRODUCTOS ============
+// =====================================================
+//  CARGA DE PRODUCTOS
+// =====================================================
+
 async function loadProducts() {
     try {
         renderSkeletons(8);
 
         var res = await fetch('/productos.json', {
             method: 'GET',
-            headers: { 'Cache-Control': 'no-cache' }
+            headers: { 
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
+            }
         });
 
         if (!res.ok) {
-            throw new Error('Error al cargar productos.json');
+            throw new Error('Error al cargar productos.json: ' + res.status);
         }
 
         var data = await res.json();
@@ -261,8 +395,20 @@ async function loadProducts() {
         logImageStats();
         hideCinematicOverlay();
 
+        // En móvil, verificar imágenes después de un tiempo
+        if (isMobile) {
+            setTimeout(function() {
+                ensureImagesLoaded();
+            }, 2000);
+            
+            // Verificar nuevamente después de interactuar
+            document.addEventListener('scroll', function() {
+                setTimeout(ensureImagesLoaded, 500);
+            }, { passive: true });
+        }
+
     } catch (e) {
-        console.error('Error:', e);
+        console.error('Error cargando productos:', e);
         hideCinematicOverlay();
         var grid = document.getElementById('products-grid');
         if (grid) {
@@ -275,6 +421,10 @@ async function loadProducts() {
         }
     }
 }
+
+// =====================================================
+//  BEBIDA DEL DÍA
+// =====================================================
 
 function selectDailyDrink() {
     if (menuProducts.length === 0) return;
@@ -327,9 +477,17 @@ function renderDailyDrink() {
             img.style.display = 'block';
             img.referrerPolicy = 'no-referrer-when-downgrade';
             img.loading = 'lazy';
+            img.dataset.imgId = 'daily_' + dailyDrink.id;
             img.onerror = function() {
-                this.style.display = 'none';
-                showDailyNoImage(parent);
+                // Reintentar una vez para la bebida del día
+                if (!this.dataset.retried) {
+                    this.dataset.retried = 'true';
+                    var src = this.src.split('?')[0];
+                    this.src = src + '?_t=' + Date.now() + '&_retry=1';
+                } else {
+                    this.style.display = 'none';
+                    showDailyNoImage(parent);
+                }
             };
         } else {
             img.style.display = 'none';
@@ -349,11 +507,15 @@ function showDailyNoImage(parent) {
     if (!noImage) {
         noImage = document.createElement('div');
         noImage.className = 'daily-no-image';
-        noImage.innerHTML = '<span>\uD83D\uDDBC\uFE0F</span><p>No hay imagen<br>disponible</p>';
+        noImage.innerHTML = '<span>🖼️</span><p>No hay imagen<br>disponible</p>';
         parent.appendChild(noImage);
     }
     noImage.style.display = 'flex';
 }
+
+// =====================================================
+//  CATEGORÍAS
+// =====================================================
 
 function renderCategories() {
     var container = document.getElementById('categories-scroll');
@@ -372,7 +534,7 @@ function renderCategories() {
     var html = '';
     for (var j = 0; j < cats.length; j++) {
         var cat = cats[j];
-        var label = cat === 'all' ? '\u2B50 Todos' : cat;
+        var label = cat === 'all' ? '⭐ Todos' : cat;
         var isActive = cat === currentCategory;
         html += '<button onclick="filterCategory(\'' + cat.replace(/'/g, "\\'") + '\')" class="cat-btn-custom' + (isActive ? ' active' : '') + '" data-cat="' + escapeHtml(cat) + '">' + escapeHtml(label) + '</button>';
     }
@@ -400,6 +562,10 @@ function filterCategory(cat) {
     }
     applyFilters();
 }
+
+// =====================================================
+//  FILTROS Y RENDERIZADO DE PRODUCTOS
+// =====================================================
 
 function applyFilters() {
     var filtered = [];
@@ -443,17 +609,23 @@ function renderProducts(allItems) {
             var delay = Math.min(i * 40, 300);
             var nombreSeguro = escapeHtml(prod.nombre);
             var catSeguro = escapeHtml(prod.categoria);
+            var imgId = 'prod_' + prod.id + '_' + i;
 
             html += '<div class="product-card" data-aos="fade-up" data-aos-duration="500" data-aos-delay="' + delay + '">';
             html += '<div class="img-wrap">';
 
             if (tieneImagen) {
-                html += '<img src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onerror="handleImageError(this)" />';
+                // En móvil, usar carga diferida más agresiva
+                if (isMobile) {
+                    html += '<img data-src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-img-id="' + imgId + '" onerror="handleImageError(this)" style="min-height:120px;width:100%;" />';
+                } else {
+                    html += '<img src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-img-id="' + imgId + '" onerror="handleImageError(this)" style="min-height:120px;width:100%;" />';
+                }
             }
 
-            html += '<div class="no-image-text" style="' + (tieneImagen ? 'display:none;' : 'display:flex;') + '"><span>\uD83D\uDDBC\uFE0F</span><p>No hay imagen<br>disponible</p></div>';
+            html += '<div class="no-image-text" style="' + (tieneImagen ? 'display:none;' : 'display:flex;') + '"><span>🖼️</span><p>No hay imagen<br>disponible</p></div>';
 
-            if (tieneVaso) html += '<span class="badge-vaso">\uD83E\uDD54 +Vaso</span>';
+            if (tieneVaso) html += '<span class="badge-vaso">🥔 +Vaso</span>';
 
             html += '</div>';
             html += '<span class="category-tag">' + catSeguro + '</span>';
@@ -462,7 +634,7 @@ function renderProducts(allItems) {
             if (tieneAmbasOpciones) {
                 html += '<div class="mt-2 flex flex-col gap-1.5">';
                 html += '<div class="flex items-center justify-between text-xs"><span class="text-gray-400">Sin vaso</span><span class="text-white font-semibold">RD$ ' + formatPrice(precioSinVaso) + '</span><button onclick="addToCartWithGlass(' + (prod.id_sin_vaso || prod.id) + ', false)" class="add-btn-small">+</button></div>';
-                html += '<div class="flex items-center justify-between text-xs border-t border-white/5 pt-1.5"><span class="text-gray-400">Con vaso \uD83E\uDD54</span><span class="text-gold-400 font-semibold">RD$ ' + formatPrice(precioConVaso) + '</span><button onclick="addToCartWithGlass(' + (prod.id_con_vaso || prod.id) + ', true)" class="add-btn-small gold">+</button></div>';
+                html += '<div class="flex items-center justify-between text-xs border-t border-white/5 pt-1.5"><span class="text-gray-400">Con vaso 🥔</span><span class="text-gold-400 font-semibold">RD$ ' + formatPrice(precioConVaso) + '</span><button onclick="addToCartWithGlass(' + (prod.id_con_vaso || prod.id) + ', true)" class="add-btn-small gold">+</button></div>';
                 html += '</div>';
             } else {
                 html += '<div class="flex items-center justify-between mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-white/5"><span class="price">RD$ ' + formatPrice(prod.precio) + '</span><button onclick="addToCart(' + prod.id + ')" class="add-btn"><i class="fa-solid fa-plus text-xs sm:text-sm"></i></button></div>';
@@ -472,6 +644,14 @@ function renderProducts(allItems) {
         }
 
         grid.innerHTML = html;
+        
+        // En móvil, cargar imágenes visibles con IntersectionObserver
+        if (isMobile) {
+            setTimeout(function() {
+                loadVisibleImages();
+            }, 100);
+        }
+        
         renderPagination(total);
         if (typeof AOS !== 'undefined') AOS.refresh();
 
@@ -488,6 +668,40 @@ function renderProducts(allItems) {
     }
 }
 
+// =====================================================
+//  CARGA DE IMÁGENES VISIBLES EN MÓVIL
+// =====================================================
+
+function loadVisibleImages() {
+    var images = document.querySelectorAll('img[data-src]');
+    if (images.length === 0) return;
+    
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var img = entry.target;
+                var src = img.getAttribute('data-src');
+                if (src) {
+                    img.src = src;
+                    img.removeAttribute('data-src');
+                }
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '50px 0px',
+        threshold: 0.01
+    });
+    
+    images.forEach(function(img) {
+        observer.observe(img);
+    });
+}
+
+// =====================================================
+//  PAGINACIÓN
+// =====================================================
+
 function renderPagination(total) {
     var container = document.getElementById('paginationContainer');
     if (!container) return;
@@ -499,9 +713,9 @@ function renderPagination(total) {
     }
 
     container.innerHTML = '<div class="flex items-center justify-center gap-3 sm:gap-4 pt-6 sm:pt-8">' +
-        '<button onclick="changePage(' + (currentPage - 1) + ')"' + (currentPage === 1 ? ' disabled' : '') + ' class="px-4 sm:px-5 py-1.5 sm:py-2 rounded-xl bg-white/5 text-white disabled:opacity-30 hover:bg-white/10 transition-all duration-300 hover:scale-105 text-xs sm:text-sm font-medium">\u2190 Anterior</button>' +
+        '<button onclick="changePage(' + (currentPage - 1) + ')"' + (currentPage === 1 ? ' disabled' : '') + ' class="px-4 sm:px-5 py-1.5 sm:py-2 rounded-xl bg-white/5 text-white disabled:opacity-30 hover:bg-white/10 transition-all duration-300 hover:scale-105 text-xs sm:text-sm font-medium">← Anterior</button>' +
         '<span class="text-xs sm:text-sm text-gray-400">' + currentPage + ' / ' + pages + '</span>' +
-        '<button onclick="changePage(' + (currentPage + 1) + ')"' + (currentPage === pages ? ' disabled' : '') + ' class="px-4 sm:px-5 py-1.5 sm:py-2 rounded-xl bg-white/5 text-white disabled:opacity-30 hover:bg-white/10 transition-all duration-300 hover:scale-105 text-xs sm:text-sm font-medium">Siguiente \u2192</button></div>';
+        '<button onclick="changePage(' + (currentPage + 1) + ')"' + (currentPage === pages ? ' disabled' : '') + ' class="px-4 sm:px-5 py-1.5 sm:py-2 rounded-xl bg-white/5 text-white disabled:opacity-30 hover:bg-white/10 transition-all duration-300 hover:scale-105 text-xs sm:text-sm font-medium">Siguiente →</button></div>';
 }
 
 function changePage(page) {
@@ -510,6 +724,10 @@ function changePage(page) {
     var el = document.getElementById('catalogo');
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+// =====================================================
+//  BÚSQUEDA
+// =====================================================
 
 var searchTimeout;
 
@@ -521,6 +739,10 @@ function handleSearch(e) {
         applyFilters();
     }, 300);
 }
+
+// =====================================================
+//  CARRITO DE COMPRAS
+// =====================================================
 
 function addToCart(id) {
     var item = null;
@@ -547,7 +769,7 @@ function addToCart(id) {
 
     updateCartUI();
     saveCartData();
-    showToast('"' + item.nombre + '" a\u00f1adido');
+    showToast('"' + item.nombre + '" añadido');
 }
 
 function addToCartWithGlass(id, conVaso) {
@@ -570,7 +792,7 @@ function addToCartWithGlass(id, conVaso) {
 
     var nombreMostrar = item.nombre;
     if (item.tiene_vaso) {
-        nombreMostrar = conVaso ? item.nombre + ' + Vaso \uD83E\uDD54' : item.nombre + ' (sin vaso)';
+        nombreMostrar = conVaso ? item.nombre + ' + Vaso 🥔' : item.nombre + ' (sin vaso)';
     }
 
     var precio = item.precio;
@@ -604,7 +826,7 @@ function addToCartWithGlass(id, conVaso) {
 
     updateCartUI();
     saveCartData();
-    showToast('"' + nombreMostrar + '" a\u00f1adido');
+    showToast('"' + nombreMostrar + '" añadido');
 }
 
 function updateCartQuantity(id, change) {
@@ -638,7 +860,7 @@ function updateCartUI() {
 
     if (container) {
         if (cart.length === 0) {
-            container.innerHTML = '<div class="text-center py-8 sm:py-12 text-gray-500 space-y-2 sm:space-y-3"><i class="fa-solid fa-wine-bottle text-3xl sm:text-4xl block opacity-20"></i><p class="text-sm sm:text-base">El carrito est\u00e1 vac\u00edo</p></div>';
+            container.innerHTML = '<div class="text-center py-8 sm:py-12 text-gray-500 space-y-2 sm:space-y-3"><i class="fa-solid fa-wine-bottle text-3xl sm:text-4xl block opacity-20"></i><p class="text-sm sm:text-base">El carrito está vacío</p></div>';
             return;
         }
 
@@ -649,22 +871,34 @@ function updateCartUI() {
             var tieneImagen = img && img.trim() !== '';
             var esConVaso = item.con_vaso === true;
             var nombreSeguro = escapeHtml(item.nombre);
+            var imgId = 'cart_' + item.id + '_' + j;
 
             html += '<div class="cart-item flex items-center space-x-3 sm:space-x-4 bg-white/[0.02] p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-white/[0.04]" style="animation-delay: ' + (j * 40) + 'ms">';
 
             if (tieneImagen) {
-                html += '<img src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
+                if (isMobile) {
+                    html += '<img data-src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-img-id="' + imgId + '" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
+                } else {
+                    html += '<img src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-img-id="' + imgId + '" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
+                }
             }
 
-            html += '<div class="cart-no-image" style="' + (tieneImagen ? 'display:none;' : 'display:flex;') + ' width:40px; height:40px; border-radius:8px; background:#0a0a0f; align-items:center; justify-content:center; flex-shrink:0; font-size:10px; color:#555; text-align:center; flex-direction:column; line-height:1.2;"><span>\uD83D\uDDBC\uFE0F</span><span style="font-size:6px;">sin img</span></div>';
-            html += '<div class="flex-1 min-w-0"><h5 class="text-xs sm:text-sm font-bold text-white truncate">' + nombreSeguro + '</h5><p class="text-[10px] sm:text-xs text-gold-400">RD$ ' + formatPrice(item.precio) + ' x ' + item.quantity + (esConVaso ? ' \uD83E\uDD54' : '') + '</p></div>';
+            html += '<div class="cart-no-image" style="' + (tieneImagen ? 'display:none;' : 'display:flex;') + ' width:40px; height:40px; border-radius:8px; background:#0a0a0f; align-items:center; justify-content:center; flex-shrink:0; font-size:10px; color:#555; text-align:center; flex-direction:column; line-height:1.2;"><span>🖼️</span><span style="font-size:6px;">sin img</span></div>';
+            html += '<div class="flex-1 min-w-0"><h5 class="text-xs sm:text-sm font-bold text-white truncate">' + nombreSeguro + '</h5><p class="text-[10px] sm:text-xs text-gold-400">RD$ ' + formatPrice(item.precio) + ' x ' + item.quantity + (esConVaso ? ' 🥔' : '') + '</p></div>';
             html += '<div class="flex items-center space-x-1 sm:space-x-2">';
-            html += '<button onclick="updateCartQuantity(' + item.id + ', -1)" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/5 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 text-xs sm:text-sm">\u2212</button>';
+            html += '<button onclick="updateCartQuantity(' + item.id + ', -1)" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/5 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 text-xs sm:text-sm">−</button>';
             html += '<span class="text-xs sm:text-sm w-4 sm:w-5 text-center">' + item.quantity + '</span>';
             html += '<button onclick="updateCartQuantity(' + item.id + ', 1)" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/5 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 text-xs sm:text-sm">+</button>';
             html += '</div></div>';
         }
         container.innerHTML = html;
+        
+        // En móvil, cargar imágenes del carrito
+        if (isMobile) {
+            setTimeout(function() {
+                loadVisibleImages();
+            }, 100);
+        }
     }
 }
 
@@ -690,6 +924,10 @@ function toggleCartModal() {
 function saveCartData() {
     try { localStorage.setItem('mymCart_v2', JSON.stringify(cart)); } catch(e) {}
 }
+
+// =====================================================
+//  ENVÍO DE PEDIDO
+// =====================================================
 
 function openNameModal() {
     if (cart.length === 0) { showToast("Agrega productos primero"); return; }
@@ -724,12 +962,12 @@ function confirmSendOrder() {
     var message = '*NUEVO PEDIDO - M&M DRINK LIQUOR*\n*Cliente:* ' + name + '\n-------------------------------------------\n';
     for (var i = 0; i < cart.length; i++) {
         var item = cart[i];
-        var conVaso = item.con_vaso ? ' \uD83E\uDD54 con vaso' : '';
-        message += '\u2022 ' + item.quantity + 'x ' + item.nombre + conVaso + '\n  Subtotal: RD$ ' + formatPrice(item.precio * item.quantity) + '\n';
+        var conVaso = item.con_vaso ? ' 🥔 con vaso' : '';
+        message += '• ' + item.quantity + 'x ' + item.nombre + conVaso + '\n  Subtotal: RD$ ' + formatPrice(item.precio * item.quantity) + '\n';
     }
     var total = 0;
     for (var j = 0; j < cart.length; j++) { total += cart[j].precio * cart[j].quantity; }
-    message += '-------------------------------------------\n*TOTAL:* RD$ ' + formatPrice(total) + '\n\n_Para confirmar disponibilidad y env\u00edo._';
+    message += '-------------------------------------------\n*TOTAL:* RD$ ' + formatPrice(total) + '\n\n_Para confirmar disponibilidad y envío._';
 
     var url = 'https://wa.me/' + DEFAULT_WHATSAPP + '?text=' + encodeURIComponent(message);
     cart = [];
@@ -738,8 +976,12 @@ function confirmSendOrder() {
     closeNameModal();
     toggleCartModal();
     window.open(url, '_blank');
-    showToast('Pedido enviado \u2705');
+    showToast('Pedido enviado ✅');
 }
+
+// =====================================================
+//  TOAST NOTIFICACIONES
+// =====================================================
 
 function showToast(message) {
     var toast = document.getElementById('toast-notification');
@@ -752,6 +994,10 @@ function showToast(message) {
     }
 }
 
+// =====================================================
+//  HEADER SCROLL
+// =====================================================
+
 function handleHeaderScroll() {
     var header = document.getElementById('main-header');
     if (header) {
@@ -763,30 +1009,56 @@ function handleHeaderScroll() {
     }
 }
 
+// =====================================================
+//  COMPARTIR CATÁLOGO
+// =====================================================
+
 function shareCatalog() {
     var url = window.location.href;
-    var message = '\uD83C\uDF77 \u00a1Mira el cat\u00e1logo de M&M Drink Liquor! \uD83C\uDF77\n\nElige tus bebidas favoritas, arma tu pedido y rec\u00edbelo donde est\u00e9s en Santo Domingo.\n\n\uD83D\uDCF1 ' + url + '\n\n\uD83D\uDD25 \u00a1Pide ahora por WhatsApp!';
+    var message = '🍷 ¡Mira el catálogo de M&M Drink Liquor! 🍷\n\nElige tus bebidas favoritas, arma tu pedido y recíbelo donde estés en Santo Domingo.\n\n📱 ' + url + '\n\n🔥 ¡Pide ahora por WhatsApp!';
     if (navigator.share) {
-        navigator.share({ title: 'M&M Drink Liquor \u00b7 Cat\u00e1logo Premium', text: '\uD83C\uDF77 \u00a1Mira el cat\u00e1logo de M&M Drink Liquor!', url: url }).catch(function() {});
+        navigator.share({ title: 'M&M Drink Liquor · Catálogo Premium', text: '🍷 ¡Mira el catálogo de M&M Drink Liquor!', url: url }).catch(function() {});
     } else {
         try {
-            navigator.clipboard.writeText(message).then(function() { showToast('\uD83D\uDCCB \u00a1Enlace copiado!'); }).catch(function() { window.open('https://wa.me/?text=' + encodeURIComponent(message), '_blank'); });
+            navigator.clipboard.writeText(message).then(function() { showToast('📋 ¡Enlace copiado!'); }).catch(function() { window.open('https://wa.me/?text=' + encodeURIComponent(message), '_blank'); });
         } catch(e) { window.open('https://wa.me/?text=' + encodeURIComponent(message), '_blank'); }
     }
 }
 
+// =====================================================
+//  INICIALIZACIÓN
+// =====================================================
+
 document.addEventListener('DOMContentLoaded', function() {
     if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 600, easing: 'ease-out-cubic', once: true, offset: 30, disable: isMobile });
+        AOS.init({ 
+            duration: 600, 
+            easing: 'ease-out-cubic', 
+            once: true, 
+            offset: 30, 
+            disable: isMobile 
+        });
     }
+    
     renderSkeletons(8);
     loadProducts();
+    
     var searchInput = document.getElementById('search-input');
     if (searchInput) searchInput.addEventListener('input', handleSearch);
+    
     window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+    
     try {
         var saved = localStorage.getItem('mymCart_v2');
-        if (saved) { cart = JSON.parse(saved); if (!Array.isArray(cart)) cart = []; }
-    } catch(e) { cart = []; }
-    setTimeout(function() { updateCartUI(); }, 150);
+        if (saved) { 
+            cart = JSON.parse(saved); 
+            if (!Array.isArray(cart)) cart = []; 
+        }
+    } catch(e) { 
+        cart = []; 
+    }
+    
+    setTimeout(function() { 
+        updateCartUI(); 
+    }, 150);
 });
