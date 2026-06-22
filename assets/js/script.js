@@ -42,11 +42,8 @@ function getProductImage(item) {
         var url = item.imagen.trim();
         
         // Si es una ruta relativa (ej: assets/img/84.png), usar ruta relativa normal
-        // Esto sirve las imágenes desde el mismo servidor donde está alojada la página
         if (url.indexOf('http://') !== 0 && url.indexOf('https://') !== 0 && url.indexOf('//') !== 0) {
-            // Mantener ruta relativa para que se sirva desde el mismo dominio
             url = url;
-            console.log('Ruta relativa:', item.imagen, '->', url);
         } else if (url.indexOf('http://') === 0) {
             url = 'https://' + url.substring(7);
         }
@@ -86,6 +83,10 @@ function logImageStats() {
 }
 
 function handleImageError(img) {
+    // Verificar si el elemento img existe y tiene atributos
+    if (!img || !img.getAttribute) return;
+    
+    // Si ya se intentó retry, mostrar placeholder
     if (img.dataset.retried === 'true') {
         img.style.display = 'none';
         var parent = img.parentElement;
@@ -95,14 +96,28 @@ function handleImageError(img) {
         }
         return;
     }
+    
+    // Marcar como retry y recargar con parámetro único
     img.dataset.retried = 'true';
     var src = img.getAttribute('src');
-    if (src) {
-        img.src = src.split('?')[0] + '?_retry=' + Date.now();
+    if (src && src.trim() !== '') {
+        // Eliminar parámetros existentes para limpiar la URL
+        var baseUrl = src.split('?')[0];
+        // Agregar retry con timestamp para evitar caché
+        var separator = baseUrl.indexOf('?') !== -1 ? '&' : '?';
+        // Mantener el timestamp original si existe
+        var newSrc = baseUrl + '?' + (src.indexOf('_t=') !== -1 ? src.split('?')[1] + '&' : '') + '_retry=' + Date.now();
+        // Si no tenía timestamp, agregarlo también
+        if (src.indexOf('_t=') === -1) {
+            newSrc = baseUrl + '?_t=' + PAGE_LOAD_TIMESTAMP + '&_retry=' + Date.now();
+        }
+        img.src = newSrc;
     }
 }
 
 function handleCartImageError(img) {
+    if (!img || !img.getAttribute) return;
+    
     if (img.dataset.retried === 'true') {
         img.style.display = 'none';
         var parent = img.parentElement;
@@ -112,10 +127,16 @@ function handleCartImageError(img) {
         }
         return;
     }
+    
     img.dataset.retried = 'true';
     var src = img.getAttribute('src');
-    if (src) {
-        img.src = src.split('?')[0] + '?_retry=' + Date.now();
+    if (src && src.trim() !== '') {
+        var baseUrl = src.split('?')[0];
+        var newSrc = baseUrl + '?' + (src.indexOf('_t=') !== -1 ? src.split('?')[1] + '&' : '') + '_retry=' + Date.now();
+        if (src.indexOf('_t=') === -1) {
+            newSrc = baseUrl + '?_t=' + PAGE_LOAD_TIMESTAMP + '&_retry=' + Date.now();
+        }
+        img.src = newSrc;
     }
 }
 
@@ -216,7 +237,6 @@ async function loadProducts() {
     try {
         renderSkeletons(8);
 
-        // Cargar desde JSON estático (compatible con Vercel y GitHub Pages)
         var res = await fetch('/productos.json', {
             method: 'GET',
             headers: { 'Cache-Control': 'no-cache' }
@@ -305,7 +325,8 @@ function renderDailyDrink() {
             img.src = imgUrl;
             img.alt = dailyDrink.nombre || '';
             img.style.display = 'block';
-            img.referrerPolicy = 'no-referrer';
+            img.referrerPolicy = 'no-referrer-when-downgrade';
+            img.loading = 'lazy';
             img.onerror = function() {
                 this.style.display = 'none';
                 showDailyNoImage(parent);
@@ -427,9 +448,7 @@ function renderProducts(allItems) {
             html += '<div class="img-wrap">';
 
             if (tieneImagen) {
-                html += '<img src="' + img + '" alt="' + nombreSeguro + '"';
-                if (!isMobile) html += ' loading="lazy"';
-                html += ' referrerpolicy="no-referrer" onerror="handleImageError(this)" />';
+                html += '<img src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onerror="handleImageError(this)" />';
             }
 
             html += '<div class="no-image-text" style="' + (tieneImagen ? 'display:none;' : 'display:flex;') + '"><span>\uD83D\uDDBC\uFE0F</span><p>No hay imagen<br>disponible</p></div>';
@@ -634,7 +653,7 @@ function updateCartUI() {
             html += '<div class="cart-item flex items-center space-x-3 sm:space-x-4 bg-white/[0.02] p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-white/[0.04]" style="animation-delay: ' + (j * 40) + 'ms">';
 
             if (tieneImagen) {
-                html += '<img src="' + img + '" alt="' + nombreSeguro + '" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" referrerpolicy="no-referrer" onerror="handleCartImageError(this)" />';
+                html += '<img src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
             }
 
             html += '<div class="cart-no-image" style="' + (tieneImagen ? 'display:none;' : 'display:flex;') + ' width:40px; height:40px; border-radius:8px; background:#0a0a0f; align-items:center; justify-content:center; flex-shrink:0; font-size:10px; color:#555; text-align:center; flex-direction:column; line-height:1.2;"><span>\uD83D\uDDBC\uFE0F</span><span style="font-size:6px;">sin img</span></div>';
