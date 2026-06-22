@@ -2,8 +2,9 @@
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <!-- CAMBIADO: La política de referrer ahora permite la carga de imágenes en móviles -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="icon" href="data:," />
     <title>M&M Drink Liquor · Catálogo Premium</title>
     <meta name="description" content="Catálogo oficial M&M Drink Liquor. Pide por WhatsApp, te armamos el coro y lo llevamos rápido en Santo Domingo." />
@@ -21,7 +22,7 @@
     <div id="cinematic-overlay">
         <div class="cinematic-content">
             <div class="cinematic-logo">
-                <img src="assets/img/logo.png" alt="M&M Drink Liquor" class="cinematic-logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22%3E%3Crect width=%2280%22 height=%2280%22 rx=%2240%22 fill=%22%23C9A050%22/%3E%3Ctext x=%2240%22 y=%2252%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2236%22 font-weight=%22bold%22 fill=%22%23000%22%3EM%3C/text%3E%3C/svg%3E'" />
+                <img src="assets/img/logo.png" alt="M&M Drink Liquor" class="cinematic-logo-img" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22%3E%3Crect width=%2280%22 height=%2280%22 rx=%2240%22 fill=%22%23C9A050%22/%3E%3Ctext x=%2240%22 y=%2252%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2236%22 font-weight=%22bold%22 fill=%22%23000%22%3EM%3C/text%3E%3C/svg%3E'" />
                 <div class="cinematic-logo-ring"></div>
             </div>
             <h2 class="cinematic-title">M&M</h2>
@@ -39,6 +40,8 @@
                 <div class="relative">
                     <img src="assets/img/logo.png" alt="M&M Drink Liquor" 
                         class="w-10 h-10 sm:w-12 sm:h-12 object-contain transition-transform duration-500 group-hover:scale-105" 
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
                         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22 viewBox=%220 0 48 48%22%3E%3Crect width=%2248%22 height=%2248%22 rx=%2224%22 fill=%22%23C9A050%22/%3E%3Ctext x=%2224%22 y=%2232%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2224%22 font-weight=%22bold%22 fill=%22%23000%22%3EM%3C/text%3E%3C/svg%3E'" />
                     <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-gold-400 rounded-full border-2 border-brandDark-900 transition-all duration-500 group-hover:scale-110"></span>
                 </div>
@@ -118,7 +121,7 @@
                 <div class="relative" data-aos="fade-left" data-aos-delay="200" data-aos-duration="700">
                     <div class="relative z-10">
                         <div class="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-gold-400/10 border border-white/5 transition-all duration-500 hover:shadow-gold-400/20 hover:scale-[1.02]">
-                            <img id="daily-drink-image" src="" alt="Producto del día" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                            <img id="daily-drink-image" src="" alt="Producto del día" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" />
                             <div class="absolute inset-0 bg-gradient-to-t from-brandDark-900 via-transparent to-transparent"></div>
                             <div class="absolute inset-0 bg-gradient-to-r from-brandDark-900/30 via-transparent to-transparent"></div>
                         </div>
