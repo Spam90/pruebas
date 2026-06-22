@@ -216,18 +216,19 @@ async function loadProducts() {
     try {
         renderSkeletons(8);
 
-        // Cargar desde JSON estático (compatible con Vercel y GitHub Pages)
-        var res = await fetch('/productos.json', {
+        var res = await fetch('/api/productos', {
             method: 'GET',
             headers: { 'Cache-Control': 'no-cache' }
         });
 
         if (!res.ok) {
-            throw new Error('Error al cargar productos.json');
+            var errText = await res.text();
+            console.error('HTTP Error:', res.status, errText);
+            throw new Error('HTTP ' + res.status + ': ' + errText);
         }
 
         var data = await res.json();
-        console.log('Productos cargados desde JSON:', data.length);
+        console.log('Productos cargados desde API:', data.length);
 
         if (!Array.isArray(data) || data.length === 0) {
             throw new Error('Sin productos en el archivo JSON');
