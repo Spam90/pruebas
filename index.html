@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <!-- SOLUCIÓN EXTREMA: Eliminar completamente la política de referrer para evitar bloqueos -->
+    <!-- ELIMINAR ESTA LÍNEA O CAMBIARLA -->
     <meta name="referrer" content="unsafe-url" />
     <link rel="icon" href="data:," />
     <title>M&M Drink Liquor · Catálogo Premium</title>
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
     
     <style>
-        /* Estilos para el botón de rescate en móvil */
+        /* Estilos para el botón de rescate */
         #rescue-button {
             position: fixed;
             bottom: 80px;
@@ -42,14 +42,12 @@
             transform: scale(0.95);
         }
         
-        /* Forzar tamaño mínimo para imágenes */
         .img-wrap img {
             min-height: 120px !important;
             width: 100% !important;
             background: #1a1a2e !important;
         }
         
-        /* Placeholder de imagen mejorado */
         .no-image-text {
             display: flex;
             flex-direction: column;
@@ -72,7 +70,6 @@
             line-height: 1.3;
         }
         
-        /* Mostrar botón de rescate solo en móvil */
         @media (max-width: 767px) {
             #rescue-button {
                 display: block;
@@ -181,7 +178,7 @@
                     </div>
                 </div>
 
-                <!-- ============ PRODUCTO DEL DÍA ============ -->
+                <!-- PRODUCTO DEL DÍA -->
                 <div class="relative" data-aos="fade-left" data-aos-delay="200" data-aos-duration="700">
                     <div class="relative z-10">
                         <div class="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-gold-400/10 border border-white/5 transition-all duration-500 hover:shadow-gold-400/20 hover:scale-[1.02]">
@@ -258,10 +255,24 @@
         <div id="paginationContainer"></div>
     </main>
 
-    <!-- ============ BOTÓN DE RESCATE PARA MÓVIL ============ -->
+    <!-- ============ BOTÓN DE RESCATE ============ -->
     <button id="rescue-button" onclick="window.forceLoadAllImages && window.forceLoadAllImages()">
         🔄 Cargar imágenes
     </button>
+
+    <!-- ============ PANEL DE DEPURACIÓN PARA MÓVIL ============ -->
+    <div id="debug-panel" style="position:fixed;bottom:10px;left:10px;z-index:99999;background:rgba(0,0,0,0.95);border:2px solid #D4AF37;border-radius:12px;padding:12px;max-width:90%;display:none;backdrop-filter:blur(10px);box-shadow:0 8px 32px rgba(0,0,0,0.8);">
+        <button onclick="window.forceLoadAllImages()" style="background:#D4AF37;color:black;border:none;border-radius:8px;padding:10px 16px;font-weight:bold;font-size:13px;margin-bottom:6px;width:100%;cursor:pointer;">
+            🔄 Forzar carga
+        </button>
+        <button onclick="window.showDebugInfo()" style="background:#333;color:white;border:1px solid #555;border-radius:8px;padding:10px 16px;font-weight:bold;font-size:13px;width:100%;cursor:pointer;margin-bottom:6px;">
+            📊 Ver estado
+        </button>
+        <button onclick="document.getElementById('debug-panel').style.display='none'" style="background:#555;color:white;border:none;border-radius:8px;padding:6px 12px;font-size:10px;width:100%;cursor:pointer;">
+            ✕ Cerrar
+        </button>
+        <div id="debug-info" style="color:#aaa;font-size:10px;margin-top:8px;max-height:200px;overflow-y:auto;font-family:monospace;background:rgba(0,0,0,0.5);padding:8px;border-radius:6px;border:1px solid #333;"></div>
+    </div>
 
     <!-- ============ CARRITO ============ -->
     <div id="cart-modal" class="fixed inset-0 z-50 pointer-events-none hidden">
@@ -351,55 +362,101 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="assets/js/script.js"></script>
     
+    <!-- ============ SCRIPT DE DEPURACIÓN Y RESCATE ============ -->
     <script>
-        // Script de rescate adicional en caso de que el script principal falle
-        document.addEventListener('DOMContentLoaded', function() {
-            // Si después de 5 segundos no hay imágenes, mostrar el botón de rescate
-            setTimeout(function() {
-                var images = document.querySelectorAll('.product-card img');
-                var loaded = 0;
-                images.forEach(function(img) {
-                    if (img.complete && img.naturalHeight > 0) {
-                        loaded++;
-                    }
-                });
-                
-                if (loaded < images.length && images.length > 0) {
-                    var rescueBtn = document.getElementById('rescue-button');
-                    if (rescueBtn) {
-                        rescueBtn.style.display = 'block';
-                        rescueBtn.textContent = '⚠️ ' + (images.length - loaded) + ' imágenes sin cargar';
-                    }
-                }
-            }, 5000);
-        });
+        // Mostrar panel de depuración en móvil después de 3 segundos
+        setTimeout(function() {
+            var panel = document.getElementById('debug-panel');
+            if (panel && window.innerWidth < 768) {
+                panel.style.display = 'block';
+                console.log('✅ Panel de depuración visible');
+            }
+        }, 3000);
         
-        // Función de rescate global
-        window.forceLoadAllImages = function() {
-            var images = document.querySelectorAll('.product-card img, .cart-item img, #daily-drink-image');
-            images.forEach(function(img) {
-                var src = img.getAttribute('src') || img.getAttribute('data-src');
-                if (src) {
-                    var baseUrl = src.split('?')[0];
-                    var newSrc = baseUrl + '?_t=' + Date.now() + '&_force=' + Math.random();
-                    img.src = newSrc;
-                    img.removeAttribute('data-src');
+        // Función para mostrar información de depuración
+        window.showDebugInfo = function() {
+            var info = document.getElementById('debug-info');
+            if (!info) return;
+            
+            var totalImages = document.querySelectorAll('.product-card img, .cart-item img, #daily-drink-image').length;
+            var loadedImages = 0;
+            var failedImages = 0;
+            var imageUrls = [];
+            
+            document.querySelectorAll('.product-card img, .cart-item img, #daily-drink-image').forEach(function(img) {
+                var src = img.getAttribute('src') || img.getAttribute('data-src') || 'sin src';
+                if (img.complete && img.naturalHeight > 0 && img.naturalWidth > 0) {
+                    loadedImages++;
+                } else if (img.src && !img.src.startsWith('data:image')) {
+                    failedImages++;
+                    if (imageUrls.length < 5) {
+                        imageUrls.push(src.substring(0, 60) + '...');
+                    }
                 }
             });
             
-            var rescueBtn = document.getElementById('rescue-button');
-            if (rescueBtn) {
-                rescueBtn.textContent = '✅ ¡Intentando!';
-                setTimeout(function() {
-                    rescueBtn.textContent = '🔄 Cargar imágenes';
-                }, 3000);
+            var html = '<div style="color:#D4AF37;font-weight:bold;font-size:12px;">📊 ESTADO</div>';
+            html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 8px;margin-top:4px;">';
+            html += '<span style="color:#888;">Total imágenes:</span><span style="color:#fff;">' + totalImages + '</span>';
+            html += '<span style="color:#4CAF50;">✅ Cargadas:</span><span style="color:#4CAF50;">' + loadedImages + '</span>';
+            html += '<span style="color:#f44336;">❌ Fallidas:</span><span style="color:#f44336;">' + failedImages + '</span>';
+            html += '<span style="color:#888;">📦 Productos:</span><span style="color:#fff;">' + (window.menuProducts ? window.menuProducts.length : '0') + '</span>';
+            html += '<span style="color:#888;">📱 Móvil:</span><span style="color:#fff;">' + (window.innerWidth < 768 ? 'Sí' : 'No') + '</span>';
+            html += '</div>';
+            
+            if (imageUrls.length > 0) {
+                html += '<div style="margin-top:6px;color:#f44336;font-size:9px;"><strong>🔗 URLs fallidas:</strong></div>';
+                imageUrls.forEach(function(url) {
+                    html += '<div style="color:#aaa;font-size:8px;word-break:break-all;border-top:1px solid #222;padding:2px 0;">• ' + url + '</div>';
+                });
             }
             
-            // También recargar el script si es necesario
-            if (typeof forceLoadAllImagesExtreme === 'function') {
-                forceLoadAllImagesExtreme();
+            if (window.menuProducts && window.menuProducts.length > 0) {
+                var p = window.menuProducts[0];
+                html += '<div style="margin-top:6px;color:#888;font-size:9px;"><strong>📦 Primer producto:</strong></div>';
+                html += '<div style="color:#aaa;font-size:8px;">ID: ' + p.id + '</div>';
+                html += '<div style="color:#aaa;font-size:8px;">Nombre: ' + p.nombre + '</div>';
+                html += '<div style="color:#aaa;font-size:8px;word-break:break-all;">Imagen: ' + (p.imagen || 'sin imagen') + '</div>';
+            }
+            
+            info.innerHTML = html;
+            
+            // También mostrar en consola si está disponible
+            if (typeof console !== 'undefined') {
+                console.log('📊 DEBUG INFO:', {
+                    totalImages: totalImages,
+                    loadedImages: loadedImages,
+                    failedImages: failedImages,
+                    totalProducts: window.menuProducts ? window.menuProducts.length : 0,
+                    isMobile: window.innerWidth < 768
+                });
             }
         };
+        
+        // Mostrar información automáticamente después de 2 segundos
+        setTimeout(function() {
+            if (window.showDebugInfo) {
+                window.showDebugInfo();
+            }
+        }, 2000);
+        
+        // También mostrar al hacer clic en el botón de rescate
+        document.addEventListener('click', function(e) {
+            if (e.target.id === 'rescue-button' || e.target.closest('#rescue-button')) {
+                setTimeout(function() {
+                    if (window.showDebugInfo) {
+                        window.showDebugInfo();
+                    }
+                }, 1000);
+            }
+        });
+        
+        // Forzar carga adicional después de 5 segundos
+        setTimeout(function() {
+            if (window.forceLoadAllImages) {
+                window.forceLoadAllImages();
+            }
+        }, 5000);
     </script>
 </body>
 </html>
