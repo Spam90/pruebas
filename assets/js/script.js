@@ -41,16 +41,11 @@ function getProductImage(item) {
     if (item.imagen && item.imagen.trim() !== '' && item.imagen !== 'null' && item.imagen !== 'undefined') {
         var url = item.imagen.trim();
         
-        // Si es una ruta relativa (ej: assets/img/84.png), convertir a URL absoluta
+        // Si es una ruta relativa (ej: assets/img/84.png), convertir a URL de GitHub raw
         if (url.indexOf('http://') !== 0 && url.indexOf('https://') !== 0 && url.indexOf('//') !== 0) {
-            // Es una ruta relativa, construir URL completa basada en la ubicación actual
-            var baseUrl = window.location.origin;
-            if (url.charAt(0) !== '/') {
-                url = baseUrl + '/' + url;
-            } else {
-                url = baseUrl + url;
-            }
-            console.log('Ruta relativa convertida:', item.imagen, '->', url);
+            // Usar raw.githubusercontent.com para servir imágenes desde GitHub
+            url = 'https://raw.githubusercontent.com/Spam90/pruebas/main/' + url;
+            console.log('Ruta de GitHub generada:', item.imagen, '->', url);
         } else if (url.indexOf('http://') === 0) {
             url = 'https://' + url.substring(7);
         }
