@@ -1,0 +1,7607 @@
+[
+  {
+    "id": "1",
+    "nombre": "BAMBOO DAIQUIRI FRESA 350ML",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/1.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "10",
+    "nombre": "CERVEZA 5,0 WEISS BEER LATA 500ML",
+    "precio": 115.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/10.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "100",
+    "nombre": "BALLANTINES 10 AÑOS 750ML",
+    "precio": 1485.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/100.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "10001",
+    "nombre": "BUZZBALLZ CHOCOLATE 200ML",
+    "precio": 205.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/10001.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "10002",
+    "nombre": "BUZZBALLZ MANGO 200ML",
+    "precio": 205.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/10002.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "10003",
+    "nombre": "BUZZBALLZ TEQUILA 200ML",
+    "precio": 205.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/10003.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "10004",
+    "nombre": "BUZZBALLZ MARACUYA 200ML",
+    "precio": 205.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/10004.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "10005",
+    "nombre": "BUZZBALLZ PIÑA COLADA 200ML",
+    "precio": 205.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/10005.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "10006",
+    "nombre": "BUZZBALLZ CAFE 200ML",
+    "precio": 205.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/10006.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1001",
+    "nombre": "(OFERTA) VINO APOTHIC RED 750ML",
+    "precio": 1255.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/1001.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "1002",
+    "nombre": "(OFERTA) BUCHANAN'S PINAPPLE 750ML",
+    "precio": 2565.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/1002.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "1003",
+    "nombre": "(OFERTA) CERVEZA COORS LIGHT LATA 16OZ",
+    "precio": 105.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/1003.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "1004",
+    "nombre": "(OFERTA) 4 PACK CERVEZA MILLER LATA 16OZ",
+    "precio": 400.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/1004.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "1005",
+    "nombre": "VAPE JUICE HEAD FLEX FREEZE 50000 PUFF",
+    "precio": 1000.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/1005.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1006",
+    "nombre": "POUCHE JUICE HEAD 12MG",
+    "precio": 400.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/1006.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1007",
+    "nombre": "POUCHE JUICE HEAD 6MG",
+    "precio": 400.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/1007.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1008",
+    "nombre": "JOHNNIE WALKER GOLD RESERVE 750ML",
+    "precio": 4445.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/1008.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1009",
+    "nombre": "JOHNNIE WALKER BLACK LABEL 750ML",
+    "precio": 2710.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/1009.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "101",
+    "nombre": "BALLANTINES 12 AÑOS 750ML",
+    "precio": 1960.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/101.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1010",
+    "nombre": "BLACK & WHITE 750ML",
+    "precio": 985.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/1010.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1011",
+    "nombre": "BUCHANAN'S MASTER 750ML",
+    "precio": 3450.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/1011.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1013",
+    "nombre": "(OFERTA) CHIVAS REGAL 12 AÑOS 750ML",
+    "precio": 2265.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/1013.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "1015",
+    "nombre": "(OFERTA) DEWARS PORTUGUESE SMOOTH 750ML",
+    "precio": 1260.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/1015.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "1016",
+    "nombre": "(OFERTA) GLENFIDDICH 12 AÑOS 750ML",
+    "precio": 3295.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/1016.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "1018",
+    "nombre": "RUFFLES CHEDDAR 120G",
+    "precio": 135.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/1018.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "102",
+    "nombre": "(OFERTA) BALLANTINES 17 AÑOS 750ML",
+    "precio": 4100.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/102.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "103",
+    "nombre": "BALLANTINES FINEST 1000ML",
+    "precio": 1260.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/103.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1033",
+    "nombre": "PRINGLES BBQ 40G",
+    "precio": 65.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/1033.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1034",
+    "nombre": "PRINGLES QUESO 71G",
+    "precio": 105.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/1034.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1035",
+    "nombre": "PRINGLES ORIGINAL 67G",
+    "precio": 105.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/1035.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1036",
+    "nombre": "TRIDENT VUP MENTA 30.6G",
+    "precio": 65.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/1036.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1038",
+    "nombre": "ENERGIZANTE 911 1L",
+    "precio": 80.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/1038.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1039",
+    "nombre": "JUGO PETIT PERA 1L",
+    "precio": 95.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/1039.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "104",
+    "nombre": "BALLANTINES FINEST 200ML",
+    "precio": 360.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/104.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1040",
+    "nombre": "GATORADE ZERO ROJO 500ML",
+    "precio": 45.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/1040.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1041",
+    "nombre": "JUGO V8 SPLASH BERRY BLEND 500ML",
+    "precio": 110.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/1041.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1042",
+    "nombre": "JUGO V8 SPLASH FRUIT MEDLEY 500ML",
+    "precio": 110.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/1042.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1043",
+    "nombre": "AGUA SALUTARIS NARANJA 355ML",
+    "precio": 45.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/1043.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1044",
+    "nombre": "BAMBOO PIÑA COLADA 350ML",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/1044.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1045",
+    "nombre": "COCA COLA SIN AZUCAR 400ML",
+    "precio": 35.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/1045.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1046",
+    "nombre": "SPRITE SIN AZUCAR 400ML",
+    "precio": 25.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/1046.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1048",
+    "nombre": "SUNMIX CLASSIC SURPREME 53G",
+    "precio": 90.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/1048.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1049",
+    "nombre": "ENERGY MONSTER PIPELINE 473ML",
+    "precio": 130.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/1049.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "105",
+    "nombre": "BALLANTINES FINEST 750ML",
+    "precio": 990.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/105.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1050",
+    "nombre": "ENCENDEDOR BIC MINI/MINI J5",
+    "precio": 40.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/1050.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1053",
+    "nombre": "TOSTITO SANTA ELENA 225G",
+    "precio": 155.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/1053.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1056",
+    "nombre": "(OFERTA) GINEBRA HENDRICKS ANOTHER GIN 700ML",
+    "precio": 2680.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/1056.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "1057",
+    "nombre": "SIDRA LA SICHERA ROSE 700ML",
+    "precio": 300.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/1057.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1058",
+    "nombre": "CHIVAS REGAL CRYSTAL GOLD 700ML",
+    "precio": 3290.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/1058.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1059",
+    "nombre": "JACK DANIEL'S TENNESSEE FIRE 750ML + VASO",
+    "precio": 1900.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/1059.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "106",
+    "nombre": "BLACK & WHITE 1000ML",
+    "precio": 1290.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/106.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1060",
+    "nombre": "JACK DANIEL'S TENNESSEE HONEY 750ML + VASO",
+    "precio": 1900.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/1060.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1061",
+    "nombre": "VODKA COCKTAIL PLAYA GREEN APPLE 200ML",
+    "precio": 200.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/1061.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1062",
+    "nombre": "VODKA COCKTAIL PLAYA POMELO 200ML",
+    "precio": 200.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/1062.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1063",
+    "nombre": "VODKA COCKTAIL PLAYA BLUE RASPBERRY 200ML",
+    "precio": 200.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/1063.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1064",
+    "nombre": "VODKA COCKTAIL PLAYA PINK LEMON 200ML",
+    "precio": 200.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/1064.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1065",
+    "nombre": "VODKA COCKTAIL PLAYA CHERRY 200ML",
+    "precio": 200.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/1065.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1066",
+    "nombre": "VODKA COCKTAIL PLAYA WATERMELON 200ML",
+    "precio": 200.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/1066.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1067",
+    "nombre": "VODKA COCKTAIL PLAYA LEMON ICE 200ML",
+    "precio": 200.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/1067.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1068",
+    "nombre": "VAPE WHIFF REMIX 5000PUFF",
+    "precio": 850.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/1068.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1069",
+    "nombre": "(OFERTA) JOHNNIE WALKER BLACK RUBY 750ML",
+    "precio": 2880.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/1069.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "107",
+    "nombre": "BLACK & WHITE 200ML",
+    "precio": 345.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/107.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1073",
+    "nombre": "PRINGLES CEBOLLA 71G",
+    "precio": 105.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/1073.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1074",
+    "nombre": "TARRO ADALYA LOVE 66 250G",
+    "precio": 950.0,
+    "categoria": "Hooka",
+    "imagen": "assets/img/1074.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "1075",
+    "nombre": "TARRO ALFAKER MENTA 250G",
+    "precio": 950.0,
+    "categoria": "Hooka",
+    "imagen": "assets/img/1075.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "108",
+    "nombre": "BLACK & WHITE 375ML",
+    "precio": 550.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/108.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "109",
+    "nombre": "BUCHANAN'S 18 AÑOS 750ML",
+    "precio": 5695.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/109.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "11",
+    "nombre": "CERVEZA 9,0 STRONG BEER LATA 500ML",
+    "precio": 155.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/11.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "110",
+    "nombre": "BUCHANAN'S DELUXE 12 AÑOS 1000ML",
+    "precio": 3690.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/110.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "111",
+    "nombre": "BUCHANAN'S PINAPPLE 750ML",
+    "precio": 2850.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/111.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "112",
+    "nombre": "BUCHANAN'S TWO SOUL 750ML",
+    "precio": 2980.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/112.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "113",
+    "nombre": "CHIVAS EXTRA 13 AÑOS TEQUILA 750ML",
+    "precio": 3215.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/113.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "114",
+    "nombre": "CHIVAS REGAL 12 AÑOS 750ML",
+    "precio": 2265.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/114.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "115",
+    "nombre": "CHIVAS REGAL 12 AÑOS 750ML + VASO",
+    "precio": 2265.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/115.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "116",
+    "nombre": "CHIVAS REGAL 13 AÑOS 750ML",
+    "precio": 3215.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/116.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "117",
+    "nombre": "(OFERTA) CHIVAS REGAL 15 AÑOS 750ML",
+    "precio": 3985.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/117.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "118",
+    "nombre": "(OFERTA) CHIVAS REGAL 25 AÑOS 700ML",
+    "precio": 20000.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/118.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "119",
+    "nombre": "DEWARS 12 AÑOS 750ML",
+    "precio": 2275.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/119.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "12",
+    "nombre": "CERVEZA BLUE MOON 12OZ",
+    "precio": 160.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/12.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "120",
+    "nombre": "DEWARS 15 AÑOS 750ML",
+    "precio": 2620.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/120.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "121",
+    "nombre": "DEWARS CARIBBEAN SMOOTH 10 AÑOS",
+    "precio": 1490.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/121.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "122",
+    "nombre": "DEWARS PORTUGUESE SMOOTH 750ML",
+    "precio": 1265.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/122.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "123",
+    "nombre": "DEWARS WHITE LABEL 1000ML",
+    "precio": 1150.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/123.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "124",
+    "nombre": "DEWARS WHITE LABEL 200ML",
+    "precio": 295.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/124.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "125",
+    "nombre": "DEWARS WHITE LABEL 375ML",
+    "precio": 525.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/125.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "126",
+    "nombre": "DEWARS WHITE LABEL 750ML",
+    "precio": 940.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/126.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "127",
+    "nombre": "DUGGANS 750ML",
+    "precio": 1035.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/127.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "128",
+    "nombre": "(OFERTA) EVAN WILLIAMS FIRE 750ML",
+    "precio": 1200.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/128.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "129",
+    "nombre": "(OFERTA) EVAN WILLIAMS HONEY 750ML",
+    "precio": 1200.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/129.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "13",
+    "nombre": "CERVEZA BOHEMIA MEDIANA 650ML",
+    "precio": 155.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/13.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "130",
+    "nombre": "(OFERTA) EVAN WILLIAMS KENTUCKY´S 750ML",
+    "precio": 1200.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/130.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "131",
+    "nombre": "FIREBALL 200ML CHATICA",
+    "precio": 460.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/131.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "132",
+    "nombre": "FIREBALL 375ML CHATA",
+    "precio": 815.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/132.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "133",
+    "nombre": "FIREBALL 750ML",
+    "precio": 1500.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/133.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "134",
+    "nombre": "FIREBALL 1750ML",
+    "precio": 3000.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/134.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "135",
+    "nombre": "GLENFIDDICH 12 AÑOS 750ML",
+    "precio": 3680.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/135.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "136",
+    "nombre": "GLENFIDDICH 15 AÑOS 750ML",
+    "precio": 4745.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/136.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "137",
+    "nombre": "THE GLENLIVET 12 AÑOS 750ML",
+    "precio": 3920.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/137.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "138",
+    "nombre": "THE GLENLIVET 15 AÑOS 750ML",
+    "precio": 5750.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/138.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "139",
+    "nombre": "GLENLIVET CARIBBEAN RESERVE 750ML",
+    "precio": 0.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/139.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "14",
+    "nombre": "CERVEZA BOHEMIA PEQUEÑA 355ML",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/14.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "140",
+    "nombre": "THE GLENLIVET FOUNDERS RESERVE 750ML",
+    "precio": 2645.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/140.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "141",
+    "nombre": "GRAND OLD PARR 12 AÑOS 1000ML",
+    "precio": 2815.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/141.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "142",
+    "nombre": "GRAND OLD PARR 12 AÑOS 750ML",
+    "precio": 2190.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/142.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "143",
+    "nombre": "GRAND OLD PARR 18 AÑOS 750ML",
+    "precio": 4810.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/143.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "144",
+    "nombre": "GRAND OLD PARR SILVER 750ML",
+    "precio": 1795.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/144.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "145",
+    "nombre": "GRANT'S RUN CASK 750ML",
+    "precio": 955.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/145.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "146",
+    "nombre": "GRANTS TRIPLE WOOD 12 AÑOS 750ML",
+    "precio": 2030.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/146.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "147",
+    "nombre": "GRANTS TRIPLE WOOD 750ML",
+    "precio": 955.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/147.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "148",
+    "nombre": "(OFERTA) HIGH COMMISSIONER 750ML",
+    "precio": 500.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/148.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "149",
+    "nombre": "JACK DANIEL'S TENNESSEE APPLE 750ML",
+    "precio": 1900.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/149.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "15",
+    "nombre": "CERVEZA BRAHMA MEDIANA 650ML",
+    "precio": 160.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/15.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "150",
+    "nombre": "JACK DANIEL'S TENNESSEE FIRE 750ML",
+    "precio": 1900.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/150.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "151",
+    "nombre": "JACK DANIEL'S TENNESSEE HONEY 750ML",
+    "precio": 1900.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/151.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "152",
+    "nombre": "JACK DANIEL'S TENNESSEE WHISKEY NO.7 750ML + VASO",
+    "precio": 1900.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/152.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "153",
+    "nombre": "JOHNNIE WALKER 18 AÑOS 750ML",
+    "precio": 7335.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/153.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "154",
+    "nombre": "JOHNNIE WALKER BLACK LABEL 1000ML",
+    "precio": 3500.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/154.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "155",
+    "nombre": "JOHNNIE WALKER BLACK LABEL 1750ML",
+    "precio": 6000.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/155.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "156",
+    "nombre": "JOHNNIE WALKER BLACK LABEL 200ML",
+    "precio": 900.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/156.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "157",
+    "nombre": "JOHNNIE WALKER BLACK LABEL 375ML",
+    "precio": 1490.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/157.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "158",
+    "nombre": "JOHNNIE WALKER BLACK RUBY 750ML",
+    "precio": 3200.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/158.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "159",
+    "nombre": "JOHNNIE WALKER BLACK SHERRY FINISH 750ML",
+    "precio": 2520.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/159.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "16",
+    "nombre": "CERVEZA BRAHMA PEQUEÑA 355ML",
+    "precio": 100.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/16.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "160",
+    "nombre": "JOHNNIE WALKER BLUE LABEL 750ML",
+    "precio": 20630.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/160.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "161",
+    "nombre": "JOHNNIE WALKER DOUBLE BLACK 750ML",
+    "precio": 3135.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/161.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "162",
+    "nombre": "JOHNNIE WALKER GOLD RESERVE 1000ML",
+    "precio": 5750.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/162.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "163",
+    "nombre": "JOHNNIE WALKER GREEN LABEL 750ML",
+    "precio": 5515.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/163.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "164",
+    "nombre": "JOHNNIE WALKER RED LABEL 1000ML",
+    "precio": 1660.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/164.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "165",
+    "nombre": "JOHNNIE WALKER RED LABEL 200ML",
+    "precio": 425.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/165.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "166",
+    "nombre": "JOHNNIE WALKER RED LABEL 375ML",
+    "precio": 705.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/166.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "167",
+    "nombre": "JOHNNIE WALKER RED LABEL 700ML",
+    "precio": 1200.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/167.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "168",
+    "nombre": "KINGS CROWN 175ML",
+    "precio": 140.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/168.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "169",
+    "nombre": "KINGS CROWN 350ML",
+    "precio": 275.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/169.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "17",
+    "nombre": "CERVEZA CANITA AMBER LATA 12OZ",
+    "precio": 50.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/17.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "170",
+    "nombre": "KINGS LABEL 175ML",
+    "precio": 170.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/170.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "171",
+    "nombre": "KINGS LABEL 350ML",
+    "precio": 305.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/171.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "172",
+    "nombre": "KINGS LABEL 700ML",
+    "precio": 605.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/172.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "173",
+    "nombre": "KINGS LABEL BLACK 350ML",
+    "precio": 360.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/173.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "174",
+    "nombre": "KINGS LABEL BLACK 700ML",
+    "precio": 670.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/174.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "175",
+    "nombre": "KINGS LABEL CUADRADA 350ML",
+    "precio": 285.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/175.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "176",
+    "nombre": "KINGS PRIDE 125ML",
+    "precio": 115.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/176.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "177",
+    "nombre": "KINGS PRIDE 175ML",
+    "precio": 155.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/177.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "178",
+    "nombre": "KINGS PRIDE KANEL 125ML",
+    "precio": 150.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/178.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "179",
+    "nombre": "MACALLAN DOUBLE CASK 12 AÑOS 750ML",
+    "precio": 5730.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/179.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "18",
+    "nombre": "CERVEZA CANITA LAGER LATA 12OZ",
+    "precio": 75.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/18.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "180",
+    "nombre": "MACALLAN DOUBLE CASK 18 AÑOS 750ML",
+    "precio": 23430.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/180.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "181",
+    "nombre": "MACALLAN SHERRY OAK 12 AÑOS 750ML",
+    "precio": 6360.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/181.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "182",
+    "nombre": "MACALLAN TRIPLE CASK 12 AÑOS 750ML",
+    "precio": 5730.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/182.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "183",
+    "nombre": "MINIATURA CHIVAS 12 AÑOS 5CL",
+    "precio": 250.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/183.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "184",
+    "nombre": "MINIATURA DEWARS 12 AÑOS",
+    "precio": 300.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/184.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "185",
+    "nombre": "MINIATURA DEWARS WHITE LABEL 50ML",
+    "precio": 150.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/185.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "186",
+    "nombre": "MINIATURA FIREBALL 5CL",
+    "precio": 125.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/186.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "187",
+    "nombre": "MINIATURA JOHNNIE WALKER BLACK LABEL 5CL",
+    "precio": 345.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/187.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "188",
+    "nombre": "MINIATURA JOHNNIE WALKER RED LABEL 5CL",
+    "precio": 170.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/188.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "19",
+    "nombre": "CERVEZA CANITA LIGHT LATA 8OZ",
+    "precio": 70.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/19.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "193",
+    "nombre": "(OFERTA) WHISKY GOLD RIVER 700ML",
+    "precio": 685.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/193.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "194",
+    "nombre": "WHISKY ISLE OF SKYE 18 AÑOS 700ML",
+    "precio": 3915.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/194.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "195",
+    "nombre": "(OFERTA) WHISKY JAMESON 375ML",
+    "precio": 850.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/195.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "196",
+    "nombre": "(OFERTA) WHISKY JAMESON 750ML",
+    "precio": 1425.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/196.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "197",
+    "nombre": "(OFERTA) WHISKY JB 750ML",
+    "precio": 1000.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/197.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "198",
+    "nombre": "(OFERTA) WHISKY LABEL 5 750ML",
+    "precio": 1300.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/198.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "199",
+    "nombre": "WHISKY MACK ALBERT 175ML",
+    "precio": 165.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/199.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "2",
+    "nombre": "BAMBOO MOJITO 350ML",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/2.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "20",
+    "nombre": "CERVEZA COORS GOLDEN BANQUET 355ML",
+    "precio": 130.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/20.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "200",
+    "nombre": "WHISKY MACK ALBERT 350ML",
+    "precio": 325.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/200.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "201",
+    "nombre": "WHISKY MACK ALBERT 700ML",
+    "precio": 630.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/201.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "202",
+    "nombre": "WHISKY PASSPORT 1000ML",
+    "precio": 925.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/202.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "203",
+    "nombre": "WHISKY PASSPORT 700ML",
+    "precio": 790.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/203.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "204",
+    "nombre": "WILLIAM LAWSONS 700ML",
+    "precio": 865.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/204.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "205",
+    "nombre": "WILLIAM LAWSONS SUPER SPICED 700ML",
+    "precio": 855.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/205.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "206",
+    "nombre": "(OFERTA) BLACK & WHITE 750ML",
+    "precio": 875.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/206.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "207",
+    "nombre": "(OFERTA) BUCHANAN'S 18 AÑOS 750ML",
+    "precio": 5125.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/207.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "208",
+    "nombre": "(OFERTA) BUCHANAN'S DELUXE 12 AÑOS 750ML",
+    "precio": 2565.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/208.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "209",
+    "nombre": "(OFERTA) BUCHANAN´S MASTER 750ML",
+    "precio": 3110.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/209.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "21",
+    "nombre": "CERVEZA COORS LIGHT 12OZ",
+    "precio": 120.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/21.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "210",
+    "nombre": "(OFERTA) DEWARS 15 AÑOS 750ML",
+    "precio": 2950.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/210.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "211",
+    "nombre": "(OFERTA) GRAND OLD PARR 12 AÑOS 750ML",
+    "precio": 1860.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/211.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "212",
+    "nombre": "(OFERTA) GRAND OLD PARR SILVER 750ML",
+    "precio": 1615.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/212.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "213",
+    "nombre": "(OFERTA) JOHNNIE WALKER BLACK LABEL 1000ML",
+    "precio": 3155.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/213.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "214",
+    "nombre": "(OFERTA) JOHNNIE WALKER BLACK LABEL 750ML",
+    "precio": 2300.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/214.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "215",
+    "nombre": "(OFERTA) JOHNNIE WALKER DOUBLE BLACK 750ML",
+    "precio": 2820.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/215.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "216",
+    "nombre": "(OFERTA) JOHNNIE WALKER GOLD RESERVE 1000ML",
+    "precio": 4960.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/216.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "217",
+    "nombre": "(OFERTA) JOHNNIE WALKER GOLD RESERVE 750ML",
+    "precio": 3780.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/217.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "218",
+    "nombre": "(OFERTA) JOHNNIE WALKER RED LABEL 700ML",
+    "precio": 1080.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/218.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "219",
+    "nombre": "BARCELO AÑEJO 1000ML",
+    "precio": 770.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/219.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "22",
+    "nombre": "CERVEZA COORS LIGHT LATA 10OZ",
+    "precio": 70.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/22.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "220",
+    "nombre": "BARCELO AÑEJO 350ML",
+    "precio": 315.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/220.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "221",
+    "nombre": "BARCELO AÑEJO 700ML",
+    "precio": 575.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/221.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "222",
+    "nombre": "BARCELO BLANCO 1000ML",
+    "precio": 650.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/222.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "223",
+    "nombre": "BARCELO BLANCO 1750ML",
+    "precio": 1145.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/223.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "224",
+    "nombre": "BARCELO BLANCO 175ML",
+    "precio": 155.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/224.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "225",
+    "nombre": "BARCELO BLANCO 350ML",
+    "precio": 295.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/225.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "226",
+    "nombre": "BARCELO BLANCO 700ML",
+    "precio": 550.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/226.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "227",
+    "nombre": "BARCELO DORADO 1000ML",
+    "precio": 740.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/227.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "228",
+    "nombre": "BARCELO DORADO 175ML",
+    "precio": 160.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/228.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "229",
+    "nombre": "BARCELO DORADO 350ML",
+    "precio": 285.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/229.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "23",
+    "nombre": "CERVEZA COORS LIGHT LATA 16 OZ",
+    "precio": 115.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/23.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "230",
+    "nombre": "BARCELO DORADO 700ML",
+    "precio": 510.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/230.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "231",
+    "nombre": "BARCELO DORADO GUITARRA 1750ML",
+    "precio": 1140.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/231.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "232",
+    "nombre": "BARCELO GRAN AÑEJO 1000ML",
+    "precio": 800.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/232.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "233",
+    "nombre": "BARCELO GRAN AÑEJO 1750ML",
+    "precio": 1400.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/233.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "234",
+    "nombre": "BARCELO GRAN AÑEJO 350ML",
+    "precio": 315.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/234.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "235",
+    "nombre": "BARCELO GRAN AÑEJO 700ML",
+    "precio": 600.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/235.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "236",
+    "nombre": "BARCELO GRAN AÑEJO DARK 350ML",
+    "precio": 400.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/236.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "237",
+    "nombre": "BARCELO GRAN AÑEJO DARK 700ML",
+    "precio": 600.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/237.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "238",
+    "nombre": "BARCELO IMPERIAL 40 ANIVERSARIO 700ML",
+    "precio": 7120.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/238.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "239",
+    "nombre": "BARCELO IMPERIAL 700ML",
+    "precio": 1250.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/239.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "24",
+    "nombre": "CERVEZA CORONA 355ML",
+    "precio": 125.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/24.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "240",
+    "nombre": "BARCELO IMPERIAL MAPLE 700ML",
+    "precio": 1710.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/240.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "241",
+    "nombre": "BARCELO IMPERIAL MIZUNARA 700ML",
+    "precio": 2180.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/241.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "242",
+    "nombre": "BARCELO IMPERIAL ONYX 700ML",
+    "precio": 1515.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/242.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "243",
+    "nombre": "BARCELO IMPERIAL PORTO CASK 700ML",
+    "precio": 1730.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/243.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "244",
+    "nombre": "BARCELO ORGANICO 750ML",
+    "precio": 825.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/244.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "245",
+    "nombre": "BRUGAL 1888 AÑOS 700ML",
+    "precio": 2315.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/245.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "246",
+    "nombre": "BRUGAL AÑEJO 1000ML",
+    "precio": 820.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/246.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "247",
+    "nombre": "BRUGAL AÑEJO 1750ML",
+    "precio": 1440.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/247.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "248",
+    "nombre": "BRUGAL AÑEJO 350ML",
+    "precio": 315.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/248.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "249",
+    "nombre": "BRUGAL AÑEJO 700ML",
+    "precio": 615.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/249.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "25",
+    "nombre": "CERVEZA CORONA LATA 269ML",
+    "precio": 135.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/25.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "250",
+    "nombre": "BRUGAL DOBLE RESERVA 350ML",
+    "precio": 485.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/250.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "251",
+    "nombre": "BRUGAL DOBLE RESERVA 700ML",
+    "precio": 920.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/251.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "253",
+    "nombre": "BRUGAL EXTRAVIEJO 1000ML",
+    "precio": 845.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/253.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "254",
+    "nombre": "BRUGAL EXTRAVIEJO 1750ML",
+    "precio": 1485.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/254.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "255",
+    "nombre": "BRUGAL EXTRAVIEJO 350ML",
+    "precio": 335.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/255.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "256",
+    "nombre": "BRUGAL EXTRAVIEJO 700ML",
+    "precio": 660.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/256.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "257",
+    "nombre": "BRUGAL LEYENDA 5 ANIVERSARIO 750ML",
+    "precio": 1490.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/257.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "258",
+    "nombre": "BRUGAL LEYENDA 750ML",
+    "precio": 1295.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/258.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "259",
+    "nombre": "BRUGAL LEYENDA COGNAC 750ML",
+    "precio": 1635.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/259.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "26",
+    "nombre": "CERVEZA CORONA SIN ALCOHOL 355ML",
+    "precio": 95.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/26.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "260",
+    "nombre": "BRUGAL TRIPLE RESERVA 700ML",
+    "precio": 1050.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/260.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "261",
+    "nombre": "BRUGAL XV 1750ML",
+    "precio": 1590.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/261.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "262",
+    "nombre": "BRUGAL XV 350ML",
+    "precio": 380.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/262.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "263",
+    "nombre": "BRUGAL XV 700ML",
+    "precio": 710.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/263.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "264",
+    "nombre": "MACORIX AGUA DE COCO 700ML",
+    "precio": 395.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/264.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "265",
+    "nombre": "MACORIX AÑEJO 700ML",
+    "precio": 530.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/265.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "266",
+    "nombre": "MACORIX APPLETINI 750ML",
+    "precio": 610.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/266.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "267",
+    "nombre": "MACORIX BLANCO 750ML",
+    "precio": 555.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/267.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "268",
+    "nombre": "MACORIX COCO 1750ML",
+    "precio": 1350.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/268.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "269",
+    "nombre": "MACORIX COCO 700ML",
+    "precio": 610.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/269.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "27",
+    "nombre": "CERVEZA CORONITA 207ML",
+    "precio": 85.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/27.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "270",
+    "nombre": "MACORIX GRAN RESERVA 350ML",
+    "precio": 310.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/270.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "271",
+    "nombre": "MACORIX GRAN RESERVA 700ML",
+    "precio": 700.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/271.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "272",
+    "nombre": "MAMAJUANA MACORIX 700ML",
+    "precio": 665.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/272.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "273",
+    "nombre": "MACORIX PIÑA 1750ML",
+    "precio": 1350.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/273.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "274",
+    "nombre": "MACORIX PIÑA 700ML",
+    "precio": 610.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/274.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "275",
+    "nombre": "MACORIX REBEL 350ML",
+    "precio": 270.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/275.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "276",
+    "nombre": "MACORIX REBEL 700ML",
+    "precio": 515.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/276.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "277",
+    "nombre": "(OFERTA) MALIBU 750ML",
+    "precio": 1000.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/277.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "278",
+    "nombre": "MINIATURA E. LEON JIMENEZ 110 ANIVESARIO 5CL",
+    "precio": 400.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/278.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "279",
+    "nombre": "(OFERTA) RON ABUELO AÑEJO 12 AÑOS 750ML",
+    "precio": 1980.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/279.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "28",
+    "nombre": "CERVEZA DESPERADOS 330ML",
+    "precio": 145.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/28.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "280",
+    "nombre": "(OFERTA) RON ABUELO AÑEJO 7 AÑOS 750ML",
+    "precio": 1200.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/280.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "281",
+    "nombre": "(OFERTA) RON ABUELO AÑEJO 750ML",
+    "precio": 830.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/281.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "282",
+    "nombre": "RON BERMUDEZ 151 1000ML",
+    "precio": 1360.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/282.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "283",
+    "nombre": "RON BERMUDEZ ANIVERSARIO 700ML",
+    "precio": 1205.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/283.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "284",
+    "nombre": "RON BERMUDEZ BLANCO SUPERIOR 700ML",
+    "precio": 520.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/284.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "285",
+    "nombre": "RON BERMUDEZ DON ARMANDO RESERVA 700ML",
+    "precio": 860.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/285.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "286",
+    "nombre": "RON BERMUDEZ PALO VIEJO 350ML",
+    "precio": 250.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/286.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "287",
+    "nombre": "(OFERTA) RON BOTRAN 12 AÑOS 750ML",
+    "precio": 1620.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/287.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "288",
+    "nombre": "(OFERTA) RON BOTRAN 8 AÑOS 750ML",
+    "precio": 1475.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/288.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "289",
+    "nombre": "RON CONTRABANDO AÑEJO 700ML",
+    "precio": 980.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/289.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "29",
+    "nombre": "CERVEZA DESPERADOS MOJITO 330ML",
+    "precio": 145.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/29.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "290",
+    "nombre": "RON DIPLOMATICO AÑEJO 750ML",
+    "precio": 2690.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/290.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "291",
+    "nombre": "(OFERTA) RON DIPLOMATICO BLANCO 750ML",
+    "precio": 2300.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/291.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "292",
+    "nombre": "RON DON ISIDRO 700ML",
+    "precio": 1285.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/292.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "293",
+    "nombre": "RON DON MIGUEL HOMENAJE R.F. TOSTADO F. 725ML",
+    "precio": 3280.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/293.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "294",
+    "nombre": "(OFERTA) RON DON MIGUEL HOMENAJE R.F. TOSTADO M. 7",
+    "precio": 2880.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/294.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "295",
+    "nombre": "RON DON MIGUEL HOUSE BLEND 700ML",
+    "precio": 1445.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/295.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "296",
+    "nombre": "RON DON MIGUEL SPECIAL BLEND 700ML",
+    "precio": 1540.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/296.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "297",
+    "nombre": "RON E. LEON JIMENES 1903 EXTRA AÑEJADO 700ML",
+    "precio": 1890.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/297.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "298",
+    "nombre": "RON E. LEON JIMENEZ 110 ANIVESARIO 750ML",
+    "precio": 5740.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/298.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "299",
+    "nombre": "RON OZAMA GRAN AÑEJO 700ML",
+    "precio": 1420.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/299.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "3",
+    "nombre": "BENEDICTA PEQUEÑA 355ML",
+    "precio": 125.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/3.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "30",
+    "nombre": "CERVEZA DESPERADOS RED 330ML",
+    "precio": 145.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/30.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "300",
+    "nombre": "RON PUNTA CANA BLACK 750ML",
+    "precio": 1610.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/300.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "301",
+    "nombre": "RON PUNTA CANA ESPLENDIDO 700ML",
+    "precio": 1445.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/301.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "302",
+    "nombre": "RON PUNTA CANA MUY VIEJO 700ML",
+    "precio": 1055.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/302.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "303",
+    "nombre": "RON PUNTA CANA SILVER DRI 700ML",
+    "precio": 795.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/303.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "304",
+    "nombre": "RON PUNTA CANA TESORO 750ML",
+    "precio": 2605.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/304.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "305",
+    "nombre": "RON PUNTA CANA VIEJO 700ML",
+    "precio": 980.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/305.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "306",
+    "nombre": "RON ZACAPA AMBAR 12 AÑEJO 750ML",
+    "precio": 2375.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/306.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "307",
+    "nombre": "RON ZACAPA CENTENARIO 23 AÑOS 750ML",
+    "precio": 5320.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/307.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "308",
+    "nombre": "(OFERTA) RON SIBONEY 1920 GRAN RESERVA 700ML",
+    "precio": 1000.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/308.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "309",
+    "nombre": "(OFERTA) RON SIBONEY AÑEJO 700ML",
+    "precio": 550.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/309.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "31",
+    "nombre": "CERVEZA ERDINGER DUNKEL 500ML",
+    "precio": 215.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/31.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "310",
+    "nombre": "(OFERTA) RON SIBONEY BLANCO 700ML",
+    "precio": 450.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/310.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "311",
+    "nombre": "(OFERTA) SIBONEY 1920 GRAN RESERVA 700ML",
+    "precio": 1000.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/311.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "312",
+    "nombre": "TEQUILA 1800 COCONUT 750ML",
+    "precio": 2540.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/312.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "313",
+    "nombre": "TEQUILA 1800 CRISTALINO AÑEJO 700ML",
+    "precio": 3785.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/313.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "314",
+    "nombre": "TEQUILA 1800 REPOSADO 750ML",
+    "precio": 2565.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/314.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "315",
+    "nombre": "TEQUILA 1800 SILVER 750ML",
+    "precio": 2330.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/315.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "316",
+    "nombre": "(OFERTA) TEQUILA ALTOS AÑEJO 750ML",
+    "precio": 3000.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/316.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "317",
+    "nombre": "(OFERTA) TEQUILA ALTOS PLATA 750ML",
+    "precio": 2000.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/317.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "318",
+    "nombre": "(OFERTA) TEQUILA ALTOS REPOSADO 750ML",
+    "precio": 2500.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/318.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "319",
+    "nombre": "(OFERTA) TEQUILA CASAMIGOS AÑEJO 750ML",
+    "precio": 4350.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/319.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "32",
+    "nombre": "CERVEZA ERDINGER PIKANTUS 500ML",
+    "precio": 250.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/32.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "320",
+    "nombre": "(OFERTA) TEQUILA CASAMIGOS BLANCO 750ML",
+    "precio": 3600.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/320.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "321",
+    "nombre": "(OFERTA) TEQUILA CASAMIGOS REPOSADO 750ML",
+    "precio": 4000.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/321.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "322",
+    "nombre": "TEQUILA CAZADORES BLANCO 750ML",
+    "precio": 2210.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/322.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "323",
+    "nombre": "TEQUILA CINCO DE MAYO BLANCO 750ML",
+    "precio": 1075.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/323.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "324",
+    "nombre": "TEQUILA CINCO DE MAYO GOLD 750ML",
+    "precio": 1075.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/324.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "325",
+    "nombre": "TEQUILA CLASE AZUL REPOSADO 750ML",
+    "precio": 17595.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/325.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "326",
+    "nombre": "TEQUILA DON JULIO 1942 750ML",
+    "precio": 14125.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/326.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "327",
+    "nombre": "TEQUILA DON JULIO 70 750ML",
+    "precio": 6260.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/327.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "328",
+    "nombre": "TEQUILA DON JULIO AÑEJO 750ML",
+    "precio": 5455.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/328.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "329",
+    "nombre": "TEQUILA DON JULIO BLANCO 750ML",
+    "precio": 4535.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/329.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "33",
+    "nombre": "CERVEZA ERDINGER WEISSBIER 500ML",
+    "precio": 215.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/33.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "330",
+    "nombre": "TEQUILA DON JULIO REPOSADO 750ML",
+    "precio": 5385.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/330.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "331",
+    "nombre": "(OFERTA) TEQUILA EL JIMADOR AÑEJO 750ML",
+    "precio": 2575.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/331.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "332",
+    "nombre": "(OFERTA) TEQUILA EL JIMADOR BLANCO 750ML",
+    "precio": 1325.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/332.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "333",
+    "nombre": "(OFERTA) TEQUILA EL JIMADOR REPOSADO 750ML",
+    "precio": 1350.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/333.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "334",
+    "nombre": "TEQUILA HERRADURA AÑEJO 750ML",
+    "precio": 4680.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/334.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "335",
+    "nombre": "TEQUILA HERRADURA REPOSADO 750ML",
+    "precio": 4125.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/335.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "336",
+    "nombre": "(OFERTA) TEQUILA HERRADURA SILVER 750ML",
+    "precio": 2930.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/336.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "337",
+    "nombre": "TEQUILA HERRADURA ULTRA AÑEJO 750ML",
+    "precio": 4680.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/337.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "338",
+    "nombre": "TEQUILA JOSE CUERVO BLANCO 750ML",
+    "precio": 1525.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/338.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "339",
+    "nombre": "TEQUILA JOSE CUERVO REPOSADO 750ML",
+    "precio": 1525.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/339.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "34",
+    "nombre": "CERVEZA ESTRELLA GALICIA ESPECIAL 0.0 SIN ALCOHOL",
+    "precio": 95.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/34.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "340",
+    "nombre": "(OFERTA) TEQUILA LOS SUNDAYS BLANCO 750ML",
+    "precio": 2500.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/340.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "341",
+    "nombre": "(OFERTA) TEQUILA LOS SUNDAYS REPOSADO 750ML",
+    "precio": 2500.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/341.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "342",
+    "nombre": "(OFERTA) TEQUILA LUNA AZUL AÑEJO 750ML",
+    "precio": 2000.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/342.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "343",
+    "nombre": "TEQUILA LUNA AZUL BLANCO 750ML",
+    "precio": 2075.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/343.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "344",
+    "nombre": "TEQUILA LUNA AZUL REPOSADO 750ML",
+    "precio": 2325.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/344.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "345",
+    "nombre": "(OFERTA) TEQUILA MI CAMPO BLANCO 750ML",
+    "precio": 2500.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/345.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "346",
+    "nombre": "(OFERTA) TEQUILA PATRON AÑEJO 750ML",
+    "precio": 4140.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/346.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "347",
+    "nombre": "TEQUILA PATRON CAFE 750ML",
+    "precio": 4080.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/347.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "348",
+    "nombre": "(OFERTA) TEQUILA PATRON CRISTALINO 750ML",
+    "precio": 4550.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/348.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "349",
+    "nombre": "(OFERTA) TEQUILA PATRON REPOSADO 750ML",
+    "precio": 3785.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/349.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "35",
+    "nombre": "CERVEZA ESTRELLA GALICIA ESPECIAL 355ML",
+    "precio": 135.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/35.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "350",
+    "nombre": "TEQUILA PATRON SILVER 750ML",
+    "precio": 4205.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/350.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "351",
+    "nombre": "TEQUILA TISCAZ BLANCO",
+    "precio": 1250.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/351.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "352",
+    "nombre": "TEQUILA TISCAZ GOLD",
+    "precio": 1250.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/352.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "353",
+    "nombre": "(OFERTA) TEQUILA CAZADORES BLANCO 750ML",
+    "precio": 2010.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/353.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "354",
+    "nombre": "(OFERTA) TEQUILA CAZADORES REPOSADO 750ML",
+    "precio": 2220.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/354.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "355",
+    "nombre": "(OFERTA) TEQUILA DON JULIO REPOSADO 750ML",
+    "precio": 4850.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/355.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "356",
+    "nombre": "(OFERTA) TEQUILA HERRADURA AÑEJO 750ML",
+    "precio": 3920.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/356.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "357",
+    "nombre": "(OFERTA) TEQUILA HERRADURA REPOSADO 750ML",
+    "precio": 3400.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/357.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "358",
+    "nombre": "(OFERTA) TEQUILA HERRADURA ULTRA AÑEJO 750ML",
+    "precio": 3920.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/358.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "359",
+    "nombre": "(OFERTA) TEQUILA PATRON",
+    "precio": 4235.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/359.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "360",
+    "nombre": "VINO 19 CRIMES CALI RED 750ML",
+    "precio": 1540.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/360.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "361",
+    "nombre": "VINO 19 CRIMES CALI ROSE 750ML",
+    "precio": 1390.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/361.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "362",
+    "nombre": "VINO 19 CRIMES MARTHA'S CHARD 750ML",
+    "precio": 1400.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/362.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "363",
+    "nombre": "VINO 19 CRIMES RED BLEND 750ML",
+    "precio": 1460.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/363.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "364",
+    "nombre": "VINO 19 CRIMES THE BANISHED 750ML",
+    "precio": 1390.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/364.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "365",
+    "nombre": "VINO 19 CRIMES THE UPRISING 750ML",
+    "precio": 1450.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/365.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "366",
+    "nombre": "VINO 19 CRIMES THE WARDEN 750ML",
+    "precio": 2560.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/366.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "367",
+    "nombre": "VINO 689 TINTO 750ML",
+    "precio": 1500.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/367.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "371",
+    "nombre": "VINO BAREFOOT CABERNET 750ML",
+    "precio": 730.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/371.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "372",
+    "nombre": "VINO BAREFOOT MERLOT 750ML",
+    "precio": 730.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/372.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "373",
+    "nombre": "VINO BAREFOOT MOSCATO 750ML",
+    "precio": 725.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/373.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "374",
+    "nombre": "VINO BAREFOOT ZINFANDEL 750ML",
+    "precio": 725.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/374.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "375",
+    "nombre": "VINO BERINGER CABERNET 750ML",
+    "precio": 805.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/375.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "376",
+    "nombre": "VINO BERINGER MERLOT 750ML",
+    "precio": 805.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/376.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "377",
+    "nombre": "VINO BERINGER RED CRUSH 750ML",
+    "precio": 805.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/377.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "378",
+    "nombre": "VINO BERINGER WHITE ZINFANDEL 750ML",
+    "precio": 755.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/378.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "379",
+    "nombre": "VINO CARLOS ROSSI BLANCO 750ML",
+    "precio": 490.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/379.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "380",
+    "nombre": "VINO CARLOS ROSSI DARK 750ML",
+    "precio": 490.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/380.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "381",
+    "nombre": "VINO CARLOS ROSSI FRESCATO 750ML",
+    "precio": 490.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/381.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "382",
+    "nombre": "VINO CARLOS ROSSI FRUITY RED 750ML",
+    "precio": 490.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/382.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "383",
+    "nombre": "VINO CARLOS ROSSI RED 1.5L",
+    "precio": 950.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/383.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "384",
+    "nombre": "VINO CARLOS ROSSI RED 750ML",
+    "precio": 490.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/384.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "385",
+    "nombre": "VINO CARLOS ROSSI ROSADO 1.5L",
+    "precio": 955.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/385.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "386",
+    "nombre": "VINO CARLOS ROSSI ROSADO 750ML",
+    "precio": 490.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/386.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "391",
+    "nombre": "VINO FRONTERA BLACK AFTER MIDNIGHT 750ML",
+    "precio": 565.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/391.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "392",
+    "nombre": "VINO FRONTERA BLANCO 750ML",
+    "precio": 560.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/392.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "393",
+    "nombre": "VINO FRONTERA CABERNET S 750ML",
+    "precio": 560.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/393.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "394",
+    "nombre": "VINO FRONTERA MERLOT 750ML",
+    "precio": 565.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/394.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "395",
+    "nombre": "VINO FRONTERA ROSADO 750ML",
+    "precio": 565.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/395.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "396",
+    "nombre": "VINO FRONTERA SWEET SELECTION 750ML",
+    "precio": 565.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/396.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "397",
+    "nombre": "(OFERTA) VINO GATO NEGRO RED BLEND 750ML",
+    "precio": 400.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/397.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "398",
+    "nombre": "VINO GITANO 18 350ML",
+    "precio": 135.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/398.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "399",
+    "nombre": "VINO GITANO 18 700ML",
+    "precio": 250.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/399.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "4",
+    "nombre": "BUZZBALLZ FRESA 200ML",
+    "precio": 205.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/4.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "402",
+    "nombre": "(OFERTA) VINO LOS ENCINOS BLANCO 750ML",
+    "precio": 355.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/402.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "403",
+    "nombre": "VINO LOS ENCINOS ROSADO 750ML",
+    "precio": 355.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/403.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "404",
+    "nombre": "(OFERTA) VINO ORIGIUM ROBLE 750ML",
+    "precio": 500.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/404.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "405",
+    "nombre": "(OFERTA) VINO PAGOS DE ANGUIX OCHO DOS DOS 750ML",
+    "precio": 950.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/405.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "406",
+    "nombre": "VINO PRIMAL ROOTS 750ML",
+    "precio": 905.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/406.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "407",
+    "nombre": "VINO PROTOS CRIANZA 750ML",
+    "precio": 2380.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/407.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "408",
+    "nombre": "VINO PROTOS RESERVA 750ML",
+    "precio": 3505.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/408.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "409",
+    "nombre": "VINO PROTOS ROBLE 750ML",
+    "precio": 1285.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/409.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "41",
+    "nombre": "CERVEZA HEINEKEN 0.0 SIN ALCOHOL 330ML",
+    "precio": 140.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/41.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "410",
+    "nombre": "(OFERTA) VINO PYA RED BLEND 750ML",
+    "precio": 400.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/410.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "413",
+    "nombre": "(OFERTA) VINO SANTA RITA 120 MERLOT 750ML",
+    "precio": 630.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/413.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "414",
+    "nombre": "VINO SCARLETT DARK 750ML",
+    "precio": 855.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/414.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "416",
+    "nombre": "(OFERTA) VINO TARAPACA MERLOT 750ML",
+    "precio": 585.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/416.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "417",
+    "nombre": "VINO TINTO LA FUERZA 350ML",
+    "precio": 120.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/417.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "418",
+    "nombre": "VINO TINTO LA FUERZA 700ML",
+    "precio": 220.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/418.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "419",
+    "nombre": "VINO TINTO LA FUERZA GALON 3400ML",
+    "precio": 600.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/419.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "42",
+    "nombre": "CERVEZA HEINEKEN 330ML",
+    "precio": 150.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/42.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "420",
+    "nombre": "VINO TINTO LA FUERZA MEDIO G 1700ML",
+    "precio": 390.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/420.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "424",
+    "nombre": "VINO VALIENTE 350ML",
+    "precio": 95.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/424.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "426",
+    "nombre": "MINIATURA VODKA ERISTOF 5CL",
+    "precio": 150.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/426.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "427",
+    "nombre": "MINIATURA VODKA STOLICHNAYA 50ML",
+    "precio": 250.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/427.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "428",
+    "nombre": "VODKA ABSOLUT ORIGINAL 750ML",
+    "precio": 1190.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/428.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "429",
+    "nombre": "VODKA ABSOLUT WATERMELON 750ML",
+    "precio": 1400.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/429.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "43",
+    "nombre": "CERVEZA HEINEKEN 650ML",
+    "precio": 185.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/43.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "430",
+    "nombre": "(OFERTA) VODKA BELUGA 750ML",
+    "precio": 2170.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/430.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "431",
+    "nombre": "VODKA CAYMAN BLUE 700ML",
+    "precio": 850.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/431.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "432",
+    "nombre": "(OFERTA) VODKA CIROC 750ML",
+    "precio": 2735.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/432.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "433",
+    "nombre": "(OFERTA) VODKA DEEP EDDY LEMON 750ML",
+    "precio": 1200.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/433.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "434",
+    "nombre": "(OFERTA) VODKA DEEP EDDY RUBY RED 750ML",
+    "precio": 1200.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/434.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "435",
+    "nombre": "(OFERTA) VODKA DEEP EDDY STRAIGHT 750ML",
+    "precio": 1200.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/435.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "436",
+    "nombre": "VODKA ERISTOFF 1500ML GALON",
+    "precio": 1485.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/436.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "437",
+    "nombre": "VODKA ERISTOFF 700ML",
+    "precio": 820.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/437.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "438",
+    "nombre": "VODKA GREY GOOSE 750ML",
+    "precio": 2015.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/438.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "439",
+    "nombre": "(OFERTA) VODKA KETEL 750ML",
+    "precio": 1840.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/439.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "44",
+    "nombre": "CERVEZA HEINEKEN REGULAR LATA 500ML",
+    "precio": 125.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/44.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "440",
+    "nombre": "(OFERTA) VODKA POLIAKOV 700ML",
+    "precio": 750.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/440.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "441",
+    "nombre": "(OFERTA) VODKA SMIRNOFF 750ML",
+    "precio": 1000.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/441.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "442",
+    "nombre": "VODKA STOLICHANYA 1750ML",
+    "precio": 2710.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/442.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "443",
+    "nombre": "VODKA STOLICHNAYA 1000ML",
+    "precio": 1585.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/443.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "444",
+    "nombre": "VODKA STOLICHNAYA 375ML",
+    "precio": 645.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/444.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "445",
+    "nombre": "VODKA STOLICHNAYA 750ML",
+    "precio": 1150.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/445.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "448",
+    "nombre": "VODKA TITO'S 750ML",
+    "precio": 1705.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/448.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "449",
+    "nombre": "(OFERTA) GINEBRA BEEFEATER 24 750ML",
+    "precio": 1900.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/449.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "45",
+    "nombre": "CERVEZA HEINEKEN REGULAR LATA 8.5OZ",
+    "precio": 70.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/45.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "450",
+    "nombre": "GINEBRA BEEFEATER 750ML",
+    "precio": 1520.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/450.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "452",
+    "nombre": "GINEBRA BEEFEATER STRABERRY 750ML",
+    "precio": 1720.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/452.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "453",
+    "nombre": "GINEBRA BERMUDEZ CORRIENTE 175ML",
+    "precio": 145.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/453.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "454",
+    "nombre": "GINEBRA BERMUDEZ CORRIENTE 350ML",
+    "precio": 270.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/454.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "455",
+    "nombre": "GINEBRA BERMUDEZ LONDON GIN 350ML",
+    "precio": 345.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/455.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "456",
+    "nombre": "GINEBRA BOMBAY BRAMBLE 700ML",
+    "precio": 1730.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/456.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "457",
+    "nombre": "GINEBRA BOMBAY SAPPHIRE 750ML",
+    "precio": 1855.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/457.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "458",
+    "nombre": "(OFERTA) GINEBRA BROCKMANS 700ML",
+    "precio": 2300.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/458.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "459",
+    "nombre": "(OFERTA) GINEBRA GIBSON'S BLOOD ORANGE 700ML",
+    "precio": 1000.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/459.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "46",
+    "nombre": "CERVEZA LUXUS 500ML",
+    "precio": 100.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/46.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "460",
+    "nombre": "(OFERTA) GINEBRA GIBSON'S LONDON DRY 700ML",
+    "precio": 925.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/460.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "461",
+    "nombre": "(OFERTA) GINEBRA GIBSON'S PINK 700ML",
+    "precio": 950.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/461.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "462",
+    "nombre": "(OFERTA) GINEBRA GORDONS 750ML",
+    "precio": 900.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/462.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "463",
+    "nombre": "GINEBRA TANQUERAY 750ML",
+    "precio": 1925.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/463.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "464",
+    "nombre": "GINEBRA TANQUERAY FLOR DE SEVILLA 750ML",
+    "precio": 2175.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/464.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "465",
+    "nombre": "(OFERTA) GINEBRA TANQUERAY NO. TEN 750ML",
+    "precio": 2765.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/465.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "466",
+    "nombre": "(OFERTA) GINEBRA WHITLEY NEIL LONDON DRY GIN 700ML",
+    "precio": 1780.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/466.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "467",
+    "nombre": "(OFERTA) GINEBRA WHITLEY NEILL BLOOD ORANGE GIN 70",
+    "precio": 1780.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/467.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "468",
+    "nombre": "(OFERTA) GINEBRA WHITLEY NEILL RHUBARB GINGER GIN",
+    "precio": 1780.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/468.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "469",
+    "nombre": "(OFERTA) AMARO AVERNA SICILIANO 700ML",
+    "precio": 1000.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/469.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "47",
+    "nombre": "CERVEZA MAHOU 5 ESTRELLAS 330ML",
+    "precio": 135.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/47.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "470",
+    "nombre": "ANIS CONFITE 350ML",
+    "precio": 200.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/470.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "471",
+    "nombre": "ANIS CONFITE 700ML",
+    "precio": 395.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/471.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "472",
+    "nombre": "BAILEYS COLADA 750ML",
+    "precio": 1500.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/472.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "473",
+    "nombre": "BAILEYS ORIGINAL 375ML",
+    "precio": 800.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/473.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "474",
+    "nombre": "BAILEYS ORIGINAL 750ML",
+    "precio": 1315.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/474.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "475",
+    "nombre": "BAILEYS STRAWBERRY & CREAM 700ML",
+    "precio": 1380.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/475.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "476",
+    "nombre": "BARBERO SAMBUCA DI CANALE 750ML",
+    "precio": 1210.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/476.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "477",
+    "nombre": "BARCELO CREAM 700ML",
+    "precio": 1040.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/477.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "478",
+    "nombre": "(OFERTA) CREMA DE CACAO CARRION",
+    "precio": 450.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/478.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "48",
+    "nombre": "CERVEZA MAHOU LATA SIN ALCOHOL 330ML",
+    "precio": 60.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/48.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "486",
+    "nombre": "(OFERTA) LICOR 34 700ML",
+    "precio": 500.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/486.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "487",
+    "nombre": "LICOR AMARETO DISARONNO ORIGINALE 700ML",
+    "precio": 1585.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/487.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "488",
+    "nombre": "LICOR CAROLANS IRISH CREAM 750ML",
+    "precio": 945.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/488.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "489",
+    "nombre": "LICOR COINTREAU 700ML",
+    "precio": 2125.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/489.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "49",
+    "nombre": "CERVEZA MAHOU MAESTRA 330ML",
+    "precio": 155.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/49.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "490",
+    "nombre": "(OFERTA) LICOR FERNET BRANCA 750ML",
+    "precio": 1350.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/490.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "491",
+    "nombre": "LICOR FRANGELICO 700ML",
+    "precio": 1450.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/491.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "492",
+    "nombre": "LICOR JAGERMEISTER 750ML",
+    "precio": 1770.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/492.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "493",
+    "nombre": "(OFERTA) LICOR KAHLUA CAFE 700ML",
+    "precio": 1000.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/493.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "494",
+    "nombre": "LICOR LAGRANGE BLUE CURACAO 700ML",
+    "precio": 630.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/494.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "495",
+    "nombre": "LICOR LAGRANGE TRIPLE SEC 700ML",
+    "precio": 630.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/495.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "496",
+    "nombre": "(OFERTA) LICOR MIDORI 750ML",
+    "precio": 1500.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/496.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "497",
+    "nombre": "(OFERTA) LICOR VERMOUTH 750ML",
+    "precio": 500.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/497.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "498",
+    "nombre": "PONCHE BORDAS PREMIUM 700ML",
+    "precio": 800.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/498.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "499",
+    "nombre": "PONCHE CREMA DE ORO 700ML",
+    "precio": 460.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/499.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "5",
+    "nombre": "CERVEZA 1906 LA PELIRROJA 330ML",
+    "precio": 155.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/5.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "50",
+    "nombre": "CERVEZA MICHELOB ULTRA 355ML",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/50.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "500",
+    "nombre": "(OFERTA) LICOR RICARD PASTIS DE MARSEILLE 750ML",
+    "precio": 950.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/500.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "501",
+    "nombre": "ROYAL CLUB TRIPLE SEC 1000ML",
+    "precio": 575.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/501.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "502",
+    "nombre": "VILLA CARDEA LIMONCELLO",
+    "precio": 820.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/502.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "503",
+    "nombre": "VILLA CARDEA SAMBUCA 700ML",
+    "precio": 1035.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/503.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "504",
+    "nombre": "CAVA SEGURA VIUDAS BRUT 750ML",
+    "precio": 1220.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/504.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "505",
+    "nombre": "CAVA SEGURA VIUDAS BRUT ROSE 750ML",
+    "precio": 1220.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/505.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "506",
+    "nombre": "(OFERTA) ESPUMANTE ALEJANDRINO SPARKLING I 750ML",
+    "precio": 500.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/506.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "507",
+    "nombre": "(OFERTA) ESPUMANTE MARESTE FRIZZANTE 750ML",
+    "precio": 500.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/507.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "508",
+    "nombre": "FRESITA LIGERO 750ML",
+    "precio": 940.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/508.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "509",
+    "nombre": "J.P. CHENET ICE 200ML",
+    "precio": 335.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/509.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "51",
+    "nombre": "CERVEZA MILLER LATA 10OZ",
+    "precio": 70.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/51.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "510",
+    "nombre": "J.P. CHENET ICE 750ML",
+    "precio": 820.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/510.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "511",
+    "nombre": "J.P. CHENET ROSE 200ML",
+    "precio": 335.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/511.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "512",
+    "nombre": "J.P. CHENET ROSE 750ML",
+    "precio": 820.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/512.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "513",
+    "nombre": "MOET BRUT IMPERIAL 750ML",
+    "precio": 4775.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/513.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "514",
+    "nombre": "(OFERTA) MOET ICE IMPERIAL 750ML",
+    "precio": 4600.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/514.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "515",
+    "nombre": "MOET NECTAR IMPERIAL 750ML",
+    "precio": 5290.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/515.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "516",
+    "nombre": "(OFERTA) MOET NECTAR IMPERIAL ROSE 1500ML",
+    "precio": 9000.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/516.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "517",
+    "nombre": "(OFERTA) PERLINO PINOT CHARDONNAY BRUT 750ML",
+    "precio": 500.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/517.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "518",
+    "nombre": "(OFERTA) PERLINO PROSECCO 750ML",
+    "precio": 500.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/518.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "519",
+    "nombre": "(OFERTA) PERLINO ROSATO BRUT 750ML",
+    "precio": 500.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/519.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "52",
+    "nombre": "CERVEZA MILLER LATA 16OZ",
+    "precio": 115.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/52.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "520",
+    "nombre": "SIDRA LA SICHERA 700ML",
+    "precio": 280.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/520.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "521",
+    "nombre": "(OFERTA) SIDRA LA SICHERA 700ML",
+    "precio": 235.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/521.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "522",
+    "nombre": "(OFERTA) BRANDY BRIGADIER 700ML",
+    "precio": 1000.0,
+    "categoria": "Cognac",
+    "imagen": "assets/img/522.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "523",
+    "nombre": "(OFERTA) BRANDY BRIGADIER RESERVA 700ML",
+    "precio": 1000.0,
+    "categoria": "Cognac",
+    "imagen": "assets/img/523.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "524",
+    "nombre": "HENNESSY PURE WHITE 700ML",
+    "precio": 4800.0,
+    "categoria": "Cognac",
+    "imagen": "assets/img/524.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "525",
+    "nombre": "HENNESSY V.S.O.P 700ML",
+    "precio": 5280.0,
+    "categoria": "Cognac",
+    "imagen": "assets/img/525.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "526",
+    "nombre": "HENNESSY VERY SPECIAL 750ML",
+    "precio": 3000.0,
+    "categoria": "Cognac",
+    "imagen": "assets/img/526.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "527",
+    "nombre": "HENNESSY XO 750ML",
+    "precio": 15960.0,
+    "categoria": "Cognac",
+    "imagen": "assets/img/527.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "528",
+    "nombre": "REMY MARTIN V.S.O.P 750ML",
+    "precio": 4500.0,
+    "categoria": "Cognac",
+    "imagen": "assets/img/528.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "529",
+    "nombre": "AGUARDIENTE ANTIOQUEÑO ROJO 375ML",
+    "precio": 980.0,
+    "categoria": "Aguardiente",
+    "imagen": "assets/img/529.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "53",
+    "nombre": "CERVEZA MODELO ESPECIAL 355ML",
+    "precio": 130.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/53.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "530",
+    "nombre": "AGUARDIENTE ANTIOQUEÑO SIN AZUCAR VERDE 750ML",
+    "precio": 1675.0,
+    "categoria": "Aguardiente",
+    "imagen": "assets/img/530.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "531",
+    "nombre": "AGUARDIENTE CHEVALIER BLANCO 175ML",
+    "precio": 120.0,
+    "categoria": "Aguardiente",
+    "imagen": "assets/img/531.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "532",
+    "nombre": "AGUA GOYA CAÑA DE AZUCAR LATA 350ML",
+    "precio": 115.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/532.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "533",
+    "nombre": "AGUA GOYA COCO LATA 350ML",
+    "precio": 115.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/533.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "534",
+    "nombre": "AGUA GOYA GOYA 13.5OZ",
+    "precio": 175.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/534.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "535",
+    "nombre": "AGUA SALUTARIS LIMON 355ML",
+    "precio": 45.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/535.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "536",
+    "nombre": "CANADA DRY SODA 400ML",
+    "precio": 35.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/536.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "537",
+    "nombre": "CANADA DRY TONICA 400ML",
+    "precio": 35.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/537.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "538",
+    "nombre": "CLAMATO 221ML",
+    "precio": 65.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/538.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "539",
+    "nombre": "COCO RICO 400ML",
+    "precio": 35.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/539.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "54",
+    "nombre": "CERVEZA MODELO NEGRA 355ML",
+    "precio": 140.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/54.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "540",
+    "nombre": "JUGO OCEAN SPRAY CRANBERRY 15OZ",
+    "precio": 115.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/540.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "541",
+    "nombre": "JUGO OCEAN SPRAY CRANBERRY 32OZ",
+    "precio": 210.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/541.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "542",
+    "nombre": "JUGO OCEAN SPRAY CRANBERRY 64OZ",
+    "precio": 330.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/542.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "543",
+    "nombre": "DASANI SABORIZADA LIMON 591ML",
+    "precio": 40.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/543.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "544",
+    "nombre": "DASANI SABORIZADA TORONJA 591ML",
+    "precio": 40.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/544.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "545",
+    "nombre": "ENRIQUILLO AGUA CARBONATADA 1L",
+    "precio": 80.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/545.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "546",
+    "nombre": "ENRIQUILLO AGUA CARBONATADA 400ML",
+    "precio": 35.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/546.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "547",
+    "nombre": "ENRIQUILLO AGUA TONICA 1L",
+    "precio": 80.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/547.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "548",
+    "nombre": "ENRIQUILLO AGUA TONICA 400ML",
+    "precio": 35.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/548.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "549",
+    "nombre": "GATORADE ROJO 600ML",
+    "precio": 55.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/549.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "550",
+    "nombre": "GATORLIT FRESA KIWI 591ML",
+    "precio": 70.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/550.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "551",
+    "nombre": "GATORLIT ORANGE 591ML",
+    "precio": 70.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/551.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "552",
+    "nombre": "JUGO ALOE PURE PLUS 1500ML",
+    "precio": 290.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/552.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "553",
+    "nombre": "JUGO ALOE PURE PLUS 500ML",
+    "precio": 130.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/553.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "554",
+    "nombre": "JUGO ALOE PURE PLUS COCO 500ML",
+    "precio": 130.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/554.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "556",
+    "nombre": "JUGO MOTTS 10OZ",
+    "precio": 85.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/556.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "557",
+    "nombre": "JUGO MOTTS 32OZ",
+    "precio": 200.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/557.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "558",
+    "nombre": "JUGO MOTTS 64OZ",
+    "precio": 300.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/558.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "559",
+    "nombre": "JUGO PETIT COCTEL DE FRUTAS 1L",
+    "precio": 95.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/559.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "56",
+    "nombre": "CERVEZA PAULANER DUNKEL 500ML",
+    "precio": 235.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/56.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "560",
+    "nombre": "JUGO PETIT LATA 330ML",
+    "precio": 45.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/560.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "561",
+    "nombre": "JUGO PETIT MANZANA 1L",
+    "precio": 95.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/561.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "562",
+    "nombre": "JUGO RICA 100% 16OZ",
+    "precio": 75.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/562.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "563",
+    "nombre": "JUGO RICA 100% 32OZ",
+    "precio": 140.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/563.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "564",
+    "nombre": "JUGO RICA 100% 32OZ SIN AZUCAR",
+    "precio": 140.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/564.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "565",
+    "nombre": "MALTA LOWENBRAU 12OZ",
+    "precio": 75.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/565.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "567",
+    "nombre": "MASTER MIXES PIÑA COLADA 1L",
+    "precio": 460.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/567.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "568",
+    "nombre": "MASTER MIXES SOUR APPLE 1L",
+    "precio": 460.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/568.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "57",
+    "nombre": "CERVEZA PAULANER WEISSBIER 500ML",
+    "precio": 235.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/57.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "571",
+    "nombre": "RICA AGUA DE COCO 330ML",
+    "precio": 80.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/571.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "572",
+    "nombre": "SANPELLEGRINO ARANCIATA 330ML",
+    "precio": 150.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/572.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "573",
+    "nombre": "SANPELLEGRINO ARANCIATA ROSSA 330ML",
+    "precio": 150.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/573.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "574",
+    "nombre": "SANPELLEGRINO LIMONATA 330ML",
+    "precio": 150.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/574.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "575",
+    "nombre": "SANPELLEGRINO LIMONE & MENTA 330ML",
+    "precio": 150.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/575.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "576",
+    "nombre": "SANPELLEGRINO MELOGRANO & ARANCITA 330ML",
+    "precio": 150.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/576.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "578",
+    "nombre": "SUEROX 630ML",
+    "precio": 210.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/578.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "579",
+    "nombre": "CICLON 296ML",
+    "precio": 90.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/579.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "58",
+    "nombre": "CERVEZA PRESIDENTE JUMBO LIGHT 1000ML",
+    "precio": 200.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/58.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "580",
+    "nombre": "CICLON 500ML",
+    "precio": 120.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/580.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "581",
+    "nombre": "ENERGIZANTE 911 400ML",
+    "precio": 50.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/581.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "582",
+    "nombre": "ENERGY MONSTER 473ML",
+    "precio": 130.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/582.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "583",
+    "nombre": "ENERGY MONSTER MANGO LOCO 473ML",
+    "precio": 130.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/583.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "584",
+    "nombre": "ENERGY MONSTER SIN AZUCAR 473ML",
+    "precio": 130.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/584.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "585",
+    "nombre": "RED BULL 250ML",
+    "precio": 105.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/585.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "586",
+    "nombre": "RED BULL 355ML",
+    "precio": 130.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/586.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "587",
+    "nombre": "RED BULL 473ML",
+    "precio": 180.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/587.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "588",
+    "nombre": "RED BULL RED 250ML",
+    "precio": 110.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/588.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "589",
+    "nombre": "RED BULL SIN AZUCAR",
+    "precio": 110.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/589.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "59",
+    "nombre": "CERVEZA PRESIDENTE JUMBO DURA 1000ML",
+    "precio": 200.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/59.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "590",
+    "nombre": "7UP 1L",
+    "precio": 50.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/590.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "591",
+    "nombre": "7UP 2L BILIGUER",
+    "precio": 90.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/591.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "592",
+    "nombre": "7UP 400ML",
+    "precio": 25.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/592.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "593",
+    "nombre": "COCA COLA 2L",
+    "precio": 100.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/593.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "594",
+    "nombre": "COCA COLA 400ML",
+    "precio": 35.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/594.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "595",
+    "nombre": "RED ROCK FRAMBUESA 400ML",
+    "precio": 25.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/595.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "596",
+    "nombre": "RED ROCK MERENGUE 400ML",
+    "precio": 25.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/596.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "597",
+    "nombre": "RED ROCK NARANJA 400ML",
+    "precio": 25.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/597.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "598",
+    "nombre": "RED ROCK UVA 400ML",
+    "precio": 25.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/598.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "6",
+    "nombre": "CERVEZA 1906 RESERVA ESPECIAL 330ML",
+    "precio": 155.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/6.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "60",
+    "nombre": "CERVEZA PRESIDENTE LATA 12OZ LIGHT",
+    "precio": 90.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/60.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "601",
+    "nombre": "AGUA DASANI NATURAL 1.5L",
+    "precio": 50.0,
+    "categoria": "Agua",
+    "imagen": "assets/img/601.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "602",
+    "nombre": "AGUA DASANI NATURAL 591ML",
+    "precio": 25.0,
+    "categoria": "Agua",
+    "imagen": "assets/img/602.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "603",
+    "nombre": "AGUA EVIAN MINERAL 330ML",
+    "precio": 120.0,
+    "categoria": "Agua",
+    "imagen": "assets/img/603.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "604",
+    "nombre": "AGUA EVIAN SPARKLING 330ML",
+    "precio": 180.0,
+    "categoria": "Agua",
+    "imagen": "assets/img/604.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "606",
+    "nombre": "AGUA PERRIER 330ML",
+    "precio": 110.0,
+    "categoria": "Agua",
+    "imagen": "assets/img/606.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "607",
+    "nombre": "AGUA PERRIER 750ML",
+    "precio": 190.0,
+    "categoria": "Agua",
+    "imagen": "assets/img/607.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "608",
+    "nombre": "AGUA PLANETA AZUL 0.5L",
+    "precio": 15.0,
+    "categoria": "Agua",
+    "imagen": "assets/img/608.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "609",
+    "nombre": "AGUA PLANETA AZUL 1.5L",
+    "precio": 40.0,
+    "categoria": "Agua",
+    "imagen": "assets/img/609.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "61",
+    "nombre": "CERVEZA PRESIDENTE LATA 12OZ REGULAR",
+    "precio": 90.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/61.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "62",
+    "nombre": "CERVEZA PRESIDENTE LATA 16OZ LIGHT",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/62.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "625",
+    "nombre": "CIGARRO DON MANOLO CHOCOLATE",
+    "precio": 170.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/625.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "626",
+    "nombre": "CIGARRO DON MANOLO TORO NATURAL",
+    "precio": 330.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/626.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "627",
+    "nombre": "CIGARRO DON MANOLO TORPEDO NATURAL",
+    "precio": 330.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/627.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "629",
+    "nombre": "FRESH PACK CIGARRO CASA MAGNA 4 CIGARROS",
+    "precio": 1680.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/629.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "63",
+    "nombre": "CERVEZA PRESIDENTE LATA 16OZ REGULAR",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/63.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "630",
+    "nombre": "FRESH PACK CIGARRO GURKHA SAMPLER DE 6 TORO",
+    "precio": 2530.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/630.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "631",
+    "nombre": "FRESH PACK CIGARRO QUESADA BAG 4 CIGARROS",
+    "precio": 1650.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/631.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "64",
+    "nombre": "CERVEZA PRESIDENTE MEDIANA DURA 650ML",
+    "precio": 160.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/64.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "65",
+    "nombre": "CERVEZA PRESIDENTE MEDIANA LIGHT 650ML",
+    "precio": 160.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/65.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "657",
+    "nombre": "FRESH PACK CIGARRO PDR CAFE TORO DE 5",
+    "precio": 1610.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/657.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "659",
+    "nombre": "CIGARRO PRINCIPE CORONA BLOND",
+    "precio": 35.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/659.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "66",
+    "nombre": "CERVEZA PRESIDENTE PEQUEÑA DURA 355ML",
+    "precio": 100.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/66.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "660",
+    "nombre": "CIGARRO PRINCIPE CORONA BROWN",
+    "precio": 35.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/660.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "661",
+    "nombre": "CIGARRO PRINCIPE CORONA RED",
+    "precio": 35.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/661.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "67",
+    "nombre": "CERVEZA PRESIDENTE PEQUEÑA LIGHT 355ML",
+    "precio": 100.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/67.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "670",
+    "nombre": "CORTADOR CIGARRO METALICO",
+    "precio": 515.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/670.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "671",
+    "nombre": "CORTADOR CIGARRO PLASTICO (DOBLE HOJA)",
+    "precio": 210.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/671.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "672",
+    "nombre": "CROQUELADORE CZ-125S",
+    "precio": 350.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/672.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "675",
+    "nombre": "ENCENDEDOR JET FLAME TP101N NEON",
+    "precio": 385.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/675.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "676",
+    "nombre": "ENCENDEDOR SPECIAL BLUE L113",
+    "precio": 915.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/676.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "677",
+    "nombre": "ENCENDEDOR WT703",
+    "precio": 165.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/677.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "678",
+    "nombre": "FUNDA DE CIGARRO PREMIUM CON HUMEDAD",
+    "precio": 100.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/678.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "68",
+    "nombre": "CERVEZA PUERTO SANTO REGULAR 660ML",
+    "precio": 150.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/68.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "687",
+    "nombre": "LATA DE AMBIENTADOR WHITE TEA PARTY",
+    "precio": 400.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/687.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "688",
+    "nombre": "LATA DE GAS BUTANO LAL 18ML",
+    "precio": 150.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/688.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "689",
+    "nombre": "LATA DE GAS BUTANO SPECIAL BLUE 90ML",
+    "precio": 260.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/689.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "69",
+    "nombre": "CERVEZA REPUBLICA LATA 16.9OZ",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/69.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "690",
+    "nombre": "MARLBORO ARTESANAL MENTOL GRANDE",
+    "precio": 350.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/690.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "691",
+    "nombre": "MARLBORO ARTESANAL MENTOL MEDIA",
+    "precio": 175.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/691.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "692",
+    "nombre": "MARLBORO ARTESANAL ROJO GRANDE",
+    "precio": 350.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/692.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "693",
+    "nombre": "MARLBORO ARTESANAL ROJO MEDIA",
+    "precio": 175.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/693.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "694",
+    "nombre": "MARLBORO ARTESANAL SANDIA MEDIA",
+    "precio": 145.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/694.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "695",
+    "nombre": "MARLBORO FRESH ICE MEDIA",
+    "precio": 145.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/695.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "696",
+    "nombre": "MARLBORO GOLD GRANDE",
+    "precio": 410.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/696.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "697",
+    "nombre": "MARLBORO GOLD MEDIA",
+    "precio": 205.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/697.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "698",
+    "nombre": "MARLBORO ROJO GRANDES",
+    "precio": 410.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/698.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "699",
+    "nombre": "MARLBORO ROJO MEDIA",
+    "precio": 205.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/699.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "7",
+    "nombre": "CERVEZA 5,0 LAGER BEER LATA 500ML",
+    "precio": 115.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/7.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "70",
+    "nombre": "CERVEZA SEAGRAM'S 330ML",
+    "precio": 145.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/70.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "704",
+    "nombre": "PAPEL RAW NATURAL KING SIZE 32/1",
+    "precio": 150.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/704.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "705",
+    "nombre": "PAPEL SMOKING THINNEST MEDIUM 50/1",
+    "precio": 100.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/705.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "706",
+    "nombre": "PAQUETE LA AURORA FINOS REC TINS",
+    "precio": 625.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/706.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "707",
+    "nombre": "PAQUETE LEON JIMENES P. REC TINS",
+    "precio": 625.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/707.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "708",
+    "nombre": "PAQUETE LEON JIMENES PE VAINILLA REC TINS",
+    "precio": 530.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/708.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "709",
+    "nombre": "PAQUETE PRINCIPE CHICOS BLOND",
+    "precio": 155.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/709.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "71",
+    "nombre": "CERVEZA SMIRNOFF APPLE 355ML",
+    "precio": 145.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/71.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "710",
+    "nombre": "PAQUETE PRINCIPE CHICOS BLUE",
+    "precio": 155.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/710.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "711",
+    "nombre": "PAQUETE PRINCIPE CHICOS BROWN",
+    "precio": 155.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/711.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "712",
+    "nombre": "PAQUETE PRINCIPE CHICOS ORIGINAL",
+    "precio": 155.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/712.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "713",
+    "nombre": "PAQUETE PRINCIPE CHICOS RED",
+    "precio": 155.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/713.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "714",
+    "nombre": "PAQUETE PRINCIPE CORONA BLUE",
+    "precio": 180.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/714.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "715",
+    "nombre": "PAQUETE PRINCIPE CORONA BROWN",
+    "precio": 180.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/715.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "716",
+    "nombre": "PAQUETE PRINCIPE CORONA RED",
+    "precio": 180.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/716.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "717",
+    "nombre": "PAQUETE TATIANA CHOCOLATE TINS",
+    "precio": 615.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/717.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "718",
+    "nombre": "PAQUETE TATIANA HONEY TINS",
+    "precio": 615.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/718.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "719",
+    "nombre": "PORTA PUROS DE 2",
+    "precio": 1740.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/719.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "72",
+    "nombre": "CERVEZA SMIRNOFF APPLE LATA 350ML",
+    "precio": 130.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/72.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "724",
+    "nombre": "ACEITUNA GOYA GORDALES CON PIMIENTOS 7.52OZ",
+    "precio": 205.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/724.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "725",
+    "nombre": "ACEITUNA GOYA MANZANILLA CON PIMIENTOS 5.61OZ",
+    "precio": 120.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/725.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "726",
+    "nombre": "ACEITUNA GOYA RELLENAS ANCHOA 5.25OZ",
+    "precio": 255.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/726.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "73",
+    "nombre": "CERVEZA SMIRNOFF BLUE RASPABERRY 355ML",
+    "precio": 145.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/73.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "74",
+    "nombre": "CERVEZA SMIRNOFF ORIGINAL 355ML",
+    "precio": 145.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/74.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "747",
+    "nombre": "MANI FISHER GOLDEN ROASTED 400G",
+    "precio": 270.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/747.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "749",
+    "nombre": "MARETTI BRUSCHETTE QUESO 70G",
+    "precio": 55.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/749.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "75",
+    "nombre": "CERVEZA SMIRNOFF ORIGINAL LATA 350ML",
+    "precio": 130.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/75.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "750",
+    "nombre": "MARETTI BRUSCHETTE TOMATO OLIVE 70G",
+    "precio": 55.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/750.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "751",
+    "nombre": "MARETTI BRUSCHETTE VEGETABLES 70G",
+    "precio": 55.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/751.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "752",
+    "nombre": "MENTA HALLS 2X1",
+    "precio": 2.5,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/752.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "753",
+    "nombre": "MIEL DEL AMOR AMARILLA 10G",
+    "precio": 250.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/753.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "754",
+    "nombre": "MIEL DEL AMOR ROSADA 10G",
+    "precio": 250.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/754.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "758",
+    "nombre": "PRINGLES CEBOLLA 124G",
+    "precio": 195.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/758.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "759",
+    "nombre": "PRINGLES CEBOLLA 40G",
+    "precio": 65.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/759.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "76",
+    "nombre": "CERVEZA SMIRNOFF RASPABERRY 355ML",
+    "precio": 145.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/76.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "760",
+    "nombre": "PRINGLES CEBOLLA SNCK 21G",
+    "precio": 40.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/760.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "761",
+    "nombre": "PRINGLES ORIGINAL 124G",
+    "precio": 195.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/761.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "762",
+    "nombre": "PRINGLES ORIGINAL 37G",
+    "precio": 65.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/762.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "763",
+    "nombre": "PRINGLES ORIGINAL SNCK 19GR",
+    "precio": 40.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/763.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "764",
+    "nombre": "PRINGLES QUESO 124G",
+    "precio": 195.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/764.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "765",
+    "nombre": "PRINGLES QUESO 40G",
+    "precio": 65.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/765.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "766",
+    "nombre": "PRINGLES QUESO SNCK 21G",
+    "precio": 40.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/766.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "767",
+    "nombre": "RUFFLES CARNE 27G",
+    "precio": 30.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/767.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "768",
+    "nombre": "RUFFLES QUESO 27G",
+    "precio": 30.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/768.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "769",
+    "nombre": "SALCHICHAS GOYA VIENNA POLLO 4.6OZ",
+    "precio": 80.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/769.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "77",
+    "nombre": "CERVEZA STELLA ARTOIS 355ML",
+    "precio": 150.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/77.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "774",
+    "nombre": "TOSTITOS SANTA HELENA SALSA VERDE 32G",
+    "precio": 35.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/774.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "775",
+    "nombre": "TRIDENT SLAB 5S FRESA 8.5G",
+    "precio": 25.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/775.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "776",
+    "nombre": "TRIDENT SLAB 5S MENTA 8.5G",
+    "precio": 25.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/776.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "777",
+    "nombre": "TRIDENT SLAB 5S SANDIA 8.5G",
+    "precio": 25.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/777.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "778",
+    "nombre": "TRIDENT SLAB 5S YERBA 8.5G",
+    "precio": 25.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/778.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "779",
+    "nombre": "TRIDENT SPLASH FRESA LIMON 9S",
+    "precio": 45.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/779.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "78",
+    "nombre": "CERVEZA THE ONE LATA 16OZ",
+    "precio": 85.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/78.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "780",
+    "nombre": "TRIDENT SPLASH YERBABUENA 9S",
+    "precio": 45.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/780.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "781",
+    "nombre": "VIGORIZANTE BIGORUP",
+    "precio": 400.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/781.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "782",
+    "nombre": "VIGORIZANTE LA VAINITA",
+    "precio": 100.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/782.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "783",
+    "nombre": "VIGORIZANTE TROYAN",
+    "precio": 100.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/783.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "789",
+    "nombre": "BOLSA DE REGALO PEQUEÑA",
+    "precio": 80.0,
+    "categoria": "Generico",
+    "imagen": "assets/img/789.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "79",
+    "nombre": "CERVEZA THE ONE MEDIANA 650ML",
+    "precio": 140.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/79.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "790",
+    "nombre": "BOLSA DE REGALO MEDIANA",
+    "precio": 100.0,
+    "categoria": "Generico",
+    "imagen": "assets/img/790.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "794",
+    "nombre": "FUNDA DE HIELO",
+    "precio": 90.0,
+    "categoria": "Generico",
+    "imagen": "assets/img/794.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "795",
+    "nombre": "HIELERA FOAM 3",
+    "precio": 125.0,
+    "categoria": "Generico",
+    "imagen": "assets/img/795.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "797",
+    "nombre": "MEDIA FUNDA DE HIELO",
+    "precio": 45.0,
+    "categoria": "Generico",
+    "imagen": "assets/img/797.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "798",
+    "nombre": "NEVERA 10L FOAM",
+    "precio": 410.0,
+    "categoria": "Generico",
+    "imagen": "assets/img/798.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "799",
+    "nombre": "NEVERA 20L FOAM",
+    "precio": 500.0,
+    "categoria": "Generico",
+    "imagen": "assets/img/799.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "8",
+    "nombre": "CERVEZA 5,0 LATA CRAFT BEER 500ML",
+    "precio": 115.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/8.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "80",
+    "nombre": "CERVEZA THE ONE PEQUEÑA 355ML",
+    "precio": 90.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/80.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "801",
+    "nombre": "PAQUETE VASO 7OZ",
+    "precio": 75.0,
+    "categoria": "Generico",
+    "imagen": "assets/img/801.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "802",
+    "nombre": "PAQUETE VASO FOAM 12OZ",
+    "precio": 70.0,
+    "categoria": "Generico",
+    "imagen": "assets/img/802.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "803",
+    "nombre": "PAQUETE VASO FOAM 16OZ",
+    "precio": 110.0,
+    "categoria": "Generico",
+    "imagen": "assets/img/803.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "805",
+    "nombre": "VASO FOAM (UND)",
+    "precio": 5.0,
+    "categoria": "Generico",
+    "imagen": "assets/img/805.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "806",
+    "nombre": "RED BULL COCONUT 250ML",
+    "precio": 100.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/806.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "807",
+    "nombre": "RED BULL TROPICAL 250ML",
+    "precio": 100.0,
+    "categoria": "Energizante",
+    "imagen": "assets/img/807.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "808",
+    "nombre": "(OFERTA) SIX PACK CERVEZA THE ONE LATA 8OZ",
+    "precio": 300.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/808.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "809",
+    "nombre": "CERVEZA 1906 BLACK 330ML",
+    "precio": 155.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/809.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "810",
+    "nombre": "CERVEZA 1906 RED 330ML",
+    "precio": 155.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/810.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "811",
+    "nombre": "CERVEZA 5,0 CRAFT BEER 330ML",
+    "precio": 90.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/811.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "812",
+    "nombre": "CERVEZA APOSTEL DUNKEL 500ML",
+    "precio": 105.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/812.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "813",
+    "nombre": "CERVEZA APOSTEL WEISSBIER 500ML",
+    "precio": 105.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/813.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "814",
+    "nombre": "CERVEZA COORS LIGHT 22OZ",
+    "precio": 165.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/814.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "815",
+    "nombre": "CERVEZA DUFF BEER 500ML",
+    "precio": 100.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/815.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "816",
+    "nombre": "CERVEZA EICHBAUM RED LAGER 500ML",
+    "precio": 105.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/816.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "817",
+    "nombre": "CERVEZA MILLER 355ML",
+    "precio": 130.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/817.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "818",
+    "nombre": "CERVEZA MILLER 650ML",
+    "precio": 160.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/818.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "819",
+    "nombre": "CERVEZA PERONI 330ML",
+    "precio": 190.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/819.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "820",
+    "nombre": "CERVEZA PRESIDENTE BLACK 355ML",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/820.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "821",
+    "nombre": "CERVEZA PRESTIGE LAGER 355ML",
+    "precio": 160.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/821.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "822",
+    "nombre": "CERVEZA REPUBLICA 11.16OZ",
+    "precio": 85.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/822.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "823",
+    "nombre": "CERVEZA REPUBLICA LATA 11.16OZ",
+    "precio": 75.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/823.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "824",
+    "nombre": "CERVEZA SOL ORIGINAL 355ML",
+    "precio": 135.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/824.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "826",
+    "nombre": "CERVEZA THE ONE LATA 12OZ",
+    "precio": 70.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/826.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "827",
+    "nombre": "CERVEZA THE ONE LATA 8OZ",
+    "precio": 50.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/827.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "828",
+    "nombre": "CERVEZA EICHBAUM RADLER ELDERBERRY 0,0 SIN ALCOHOL",
+    "precio": 70.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/828.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "829",
+    "nombre": "CERVEZA EICHBAUM RADLER GRAPEFRUIT 0,0 SIN ALCOHOL",
+    "precio": 70.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/829.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "83",
+    "nombre": "FOUR LOKO BLUE 473ML",
+    "precio": 270.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/83.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "830",
+    "nombre": "CERVEZA EICHBAUM RADLER LEMON 0,0 SIN ALCOHOL",
+    "precio": 70.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/830.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "831",
+    "nombre": "FOUR LOKO WHITE 473ML",
+    "precio": 270.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/831.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "832",
+    "nombre": "KARMA FRESA DAIQUIRI 350ML",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/832.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "833",
+    "nombre": "KARMA GUARANA 350ML",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/833.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "834",
+    "nombre": "KARMA MOJITO 350ML",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/834.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "835",
+    "nombre": "KARMA PIÑA COLADA 350ML",
+    "precio": 110.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/835.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "836",
+    "nombre": "WHITE CLAW 355ML",
+    "precio": 140.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/836.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "837",
+    "nombre": "(OFERTA) DEWARS 12 AÑOS 750ML",
+    "precio": 2030.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/837.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "838",
+    "nombre": "(OFERTA) GLENFIDDICH 18 AÑOS 750ML",
+    "precio": 7135.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/838.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "839",
+    "nombre": "CHIVAS REGAL 12 AÑOS 1000ML",
+    "precio": 2940.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/839.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "84",
+    "nombre": "FOUR LOKO GOLD 473ML",
+    "precio": 270.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/84.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "840",
+    "nombre": "(OFERTA) CHIVAS REGAL 18 AÑOS 750ML",
+    "precio": 4835.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/840.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "841",
+    "nombre": "DEWARS WHITE LABEL 1750ML",
+    "precio": 1990.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/841.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "842",
+    "nombre": "DEWARS WHITE LABEL CHATA 375ML",
+    "precio": 530.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/842.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "843",
+    "nombre": "JACK DANIEL'S TENNESSEE WHISKEY NO.7 750ML",
+    "precio": 1900.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/843.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "844",
+    "nombre": "KINGS PRIDE 350ML",
+    "precio": 300.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/844.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "845",
+    "nombre": "KINGS PRIDE 700ML",
+    "precio": 570.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/845.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "846",
+    "nombre": "(OFERTA) SKREWBALL PEANUT BUTTER WHISKEY 750ML",
+    "precio": 2100.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/846.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "847",
+    "nombre": "SOMETHING SPECIAL 350ML",
+    "precio": 430.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/847.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "848",
+    "nombre": "SOMETHING SPECIAL 750ML",
+    "precio": 1000.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/848.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "849",
+    "nombre": "THE GLENLIVET 18 AÑOS 750ML",
+    "precio": 8855.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/849.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "85",
+    "nombre": "FOUR LOKO GREEN 473ML",
+    "precio": 270.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/85.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "850",
+    "nombre": "BACARDI COCONUT 750ML",
+    "precio": 755.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/850.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "851",
+    "nombre": "BACARDI DRY LIGHT 750ML",
+    "precio": 760.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/851.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "852",
+    "nombre": "BACARDI GOLD 750ML",
+    "precio": 760.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/852.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "853",
+    "nombre": "BARCELO AÑEJO 1750ML",
+    "precio": 1380.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/853.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "854",
+    "nombre": "BARCELO NOW 700ML",
+    "precio": 805.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/854.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "855",
+    "nombre": "HAVANA CLUB AÑEJO 3 AÑOS 750ML",
+    "precio": 855.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/855.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "856",
+    "nombre": "HAVANA CLUB AÑEJO 7 AÑOS 750ML",
+    "precio": 1445.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/856.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "857",
+    "nombre": "MACORIX AÑEJO 175ML",
+    "precio": 145.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/857.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "858",
+    "nombre": "MACORIX BLANCO 175ML",
+    "precio": 140.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/858.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "859",
+    "nombre": "MAMAJUANA SPICY 375ML",
+    "precio": 425.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/859.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "86",
+    "nombre": "FOUR LOKO MARACUYA 473ML",
+    "precio": 270.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/86.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "860",
+    "nombre": "RON BARBANCOURT 4 AÑOS 750ML",
+    "precio": 1635.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/860.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "861",
+    "nombre": "RON BARBANCOURT 8 AÑOS 750ML",
+    "precio": 2045.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/861.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "862",
+    "nombre": "RON LEGADO EL CABALLO MAYOR 700ML",
+    "precio": 2800.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/862.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "863",
+    "nombre": "RON NEW DOMINICAN 1000ML",
+    "precio": 4550.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/863.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "864",
+    "nombre": "RON OZAMA AÑEJO 700ML",
+    "precio": 1890.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/864.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "865",
+    "nombre": "RON OZAMA BLANCO 700ML",
+    "precio": 1095.0,
+    "categoria": "Ron",
+    "imagen": "assets/img/865.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "866",
+    "nombre": "LICOR APEROL 700ML",
+    "precio": 1285.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/866.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "867",
+    "nombre": "LICOR EL VALLE DE CHINOLA 750ML",
+    "precio": 1655.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/867.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "868",
+    "nombre": "(OFERTA) LICOR FERNET BRANCA MENTA 750ML",
+    "precio": 1350.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/868.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "869",
+    "nombre": "MAMAJUANA CLASSICO 175ML",
+    "precio": 115.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/869.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "87",
+    "nombre": "FOUR LOKO PONCHE FRUTA 473ML",
+    "precio": 270.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/87.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "870",
+    "nombre": "MAMAJUANA SPICY 750ML",
+    "precio": 675.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/870.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "871",
+    "nombre": "ROYAL CLUB AMARETTO 1000ML",
+    "precio": 575.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/871.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "872",
+    "nombre": "ROYAL CLUB BLUE CURACAO 1000ML",
+    "precio": 575.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/872.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "873",
+    "nombre": "SAMBUCA LUXARDO DEI CESARI 750ML",
+    "precio": 1650.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/873.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "874",
+    "nombre": "SAMBUCA MOLINARI EXTRA VAP 750ML",
+    "precio": 1750.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/874.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "875",
+    "nombre": "SAMBUCA ROMANA 750ML",
+    "precio": 1830.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/875.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "876",
+    "nombre": "TEQUILA 1800 RESERVA AÑEJO 700ML",
+    "precio": 3110.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/876.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "877",
+    "nombre": "(OFERTA) TEQUILA DON JULIO ROSADO 750ML",
+    "precio": 6480.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/877.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "878",
+    "nombre": "(OFERTA) TEQUILA EL JIMADOR CRISTALINO 750ML",
+    "precio": 1980.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/878.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "879",
+    "nombre": "TEQUILA JARANA BLANCO 1000ML",
+    "precio": 1485.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/879.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "88",
+    "nombre": "FOUR LOKO PURPLE 473ML",
+    "precio": 270.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/88.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "880",
+    "nombre": "TEQUILA JARANA REPOSADO 1000ML",
+    "precio": 1485.0,
+    "categoria": "Tequila",
+    "imagen": "assets/img/880.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "881",
+    "nombre": "COCA COLA 1.25L",
+    "precio": 70.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/881.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "882",
+    "nombre": "SPRITE 1.25L",
+    "precio": 70.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/882.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "883",
+    "nombre": "AGUA FIJI 500ML",
+    "precio": 135.0,
+    "categoria": "Agua",
+    "imagen": "assets/img/883.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "884",
+    "nombre": "ACEITUNA GOYA RELLENAS CON ATUN PICADO 5.25OZ",
+    "precio": 255.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/884.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "885",
+    "nombre": "ACEITUNA GOYA RELLENAS CON CHORRIZO PICANTE 5.25OZ",
+    "precio": 230.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/885.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "886",
+    "nombre": "ACEITUNA GOYA RELLENAS CON JAMON SERRANO 5.25OZ",
+    "precio": 230.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/886.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "887",
+    "nombre": "ACEITUNA GOYA RELLENAS CON PIMIENTO PICANTE 5.25OZ",
+    "precio": 255.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/887.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "89",
+    "nombre": "FOUR LOKO SANDIA 473ML",
+    "precio": 270.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/89.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "9",
+    "nombre": "CERVEZA 5,0 PILS BEER LATA 500ML",
+    "precio": 115.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/9.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "90",
+    "nombre": "(OFERTA) 4 PACK CERVEZA HEINEKEN REGULAR LATA 500M",
+    "precio": 420.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/90.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "900",
+    "nombre": "JALEA DEL AMOR",
+    "precio": 450.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/900.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "901",
+    "nombre": "MARETTI BRUSCHETTE PIZZA 70G",
+    "precio": 55.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/901.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "902",
+    "nombre": "MARETTI BRUSCHETTE SOUR CREAM 70G",
+    "precio": 55.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/902.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "905",
+    "nombre": "PEANUTS MANI CON SAL 65G",
+    "precio": 45.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/905.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "906",
+    "nombre": "SALCHICHAS GOYA VIENNA POLLO PICANTE 4.6OZ",
+    "precio": 115.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/906.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "907",
+    "nombre": "PAQUETE DE SERVILLETAS",
+    "precio": 120.0,
+    "categoria": "Generico",
+    "imagen": "assets/img/907.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "908",
+    "nombre": "TRIDENT SPLASH SANDIA LIMON 9S",
+    "precio": 45.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/908.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "909",
+    "nombre": "TRIDENT VUP COOL BUBBLE 30.6G",
+    "precio": 65.0,
+    "categoria": "Chucheria",
+    "imagen": "assets/img/909.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "91",
+    "nombre": "(OFERTA) CERVEZA COORS LIGHT LATA 10OZ",
+    "precio": 70.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/91.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "910",
+    "nombre": "J.P. CHENET ICE 750ML + COPAS",
+    "precio": 985.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/910.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "911",
+    "nombre": "J.P. CHENET ROSE 750ML + COPAS",
+    "precio": 985.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/911.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "912",
+    "nombre": "SIDRA EL MAYU ROSADA 750ML",
+    "precio": 185.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/912.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "913",
+    "nombre": "SIDRA EL MAYU VERDE 750ML",
+    "precio": 175.0,
+    "categoria": "Sidra",
+    "imagen": "assets/img/913.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "914",
+    "nombre": "VINO 689 CAB SAUVIGNON 750ML",
+    "precio": 1215.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/914.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "915",
+    "nombre": "VINO BERINGER MOSCATO 750ML",
+    "precio": 785.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/915.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "916",
+    "nombre": "VINO FRONTERA FRUTAL PINK PARADISE 750ML",
+    "precio": 470.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/916.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "917",
+    "nombre": "VINO FRONTERA FRUTAL TROPICAL 750ML",
+    "precio": 470.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/917.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "918",
+    "nombre": "VINO FRONTERA TINTO DE VERANO 750ML",
+    "precio": 470.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/918.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "919",
+    "nombre": "VINO GITANO SANGRIA 700ML",
+    "precio": 250.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/919.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "92",
+    "nombre": "(OFERTA) CERVEZA SMIRNOFF APPLE 355ML",
+    "precio": 130.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/92.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "920",
+    "nombre": "(OFERTA) VINO MARQUES SITCHES PERFECT RED 750ML",
+    "precio": 285.0,
+    "categoria": "Vino",
+    "imagen": "assets/img/920.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "923",
+    "nombre": "AGUA SALUTARIS TORONJA 355ML",
+    "precio": 45.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/923.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "924",
+    "nombre": "JUGO RICA 100% 16OZ SIN AZUCAR",
+    "precio": 75.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/924.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "925",
+    "nombre": "MALTA MORENA LATA 8OZ",
+    "precio": 40.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/925.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "926",
+    "nombre": "MASTER MIXES MOJITO 1L",
+    "precio": 460.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/926.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "927",
+    "nombre": "JUGO OCEAN SPRAY JUGO MANZANA 32OZ",
+    "precio": 220.0,
+    "categoria": "Jugo Y Soda",
+    "imagen": "assets/img/927.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "928",
+    "nombre": "(OFERTA) VODKA GREY GOOSE 750ML",
+    "precio": 1700.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/928.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "929",
+    "nombre": "MINIATURA VODKA GREY GOOSE 5CL",
+    "precio": 250.0,
+    "categoria": "Vodka",
+    "imagen": "assets/img/929.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "93",
+    "nombre": "(OFERTA) CERVEZA SMIRNOFF APPLE LATA 350ML",
+    "precio": 130.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/93.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "930",
+    "nombre": "GINEBRA BERMUDEZ LONDON GIN 700ML",
+    "precio": 670.0,
+    "categoria": "Ginebra",
+    "imagen": "assets/img/930.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "931",
+    "nombre": "AGUARDIENTE ANTIOQUEÑO ROJO 750ML",
+    "precio": 1675.0,
+    "categoria": "Aguardiente",
+    "imagen": "assets/img/931.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "932",
+    "nombre": "AGUARDIENTE ANTIOQUEÑO SIN AZUCAR AZUL 750ML",
+    "precio": 1675.0,
+    "categoria": "Aguardiente",
+    "imagen": "assets/img/932.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "933",
+    "nombre": "DON RHON AGUARDIENTE 350ML",
+    "precio": 235.0,
+    "categoria": "Aguardiente",
+    "imagen": "assets/img/933.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "936",
+    "nombre": "CIGARRO DON MANOLO VAINILLA",
+    "precio": 170.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/936.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "94",
+    "nombre": "(OFERTA) CERVEZA SMIRNOFF BLUE RASPABERRY 355ML",
+    "precio": 130.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/94.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "943",
+    "nombre": "L Y M VERDE MEDIA",
+    "precio": 140.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/943.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "945",
+    "nombre": "PAQUETE PRINCIPE CORONA BLOND",
+    "precio": 180.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/945.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "946",
+    "nombre": "PAQUETE PRINCIPE CORONA ORIGINAL",
+    "precio": 180.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/946.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "947",
+    "nombre": "FRESH PACK SAGA BAG 4 CIGARROS",
+    "precio": 1680.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/947.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "95",
+    "nombre": "(OFERTA) CERVEZA SMIRNOFF ORIGINAL 355ML",
+    "precio": 130.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/95.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "955",
+    "nombre": "ENCENDEDOR WA215",
+    "precio": 150.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/955.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "956",
+    "nombre": "ENCENDEDOR WT706",
+    "precio": 250.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/956.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "957",
+    "nombre": "ENCENDEDORA WT702",
+    "precio": 210.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/957.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "958",
+    "nombre": "LATA DE GAS BUTANO EAGLE 90-16",
+    "precio": 260.0,
+    "categoria": "Cigarrillo",
+    "imagen": "assets/img/958.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "96",
+    "nombre": "(OFERTA) CERVEZA SMIRNOFF ORIGINAL LATA 350ML",
+    "precio": 125.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/96.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "962",
+    "nombre": "BATERIA VIZZEL",
+    "precio": 500.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/962.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "965",
+    "nombre": "CARTUCHO VIZZEL",
+    "precio": 400.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/965.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "97",
+    "nombre": "(OFERTA) CERVEZA SMIRNOFF RASPABERRY 355ML",
+    "precio": 130.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/97.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "98",
+    "nombre": "(OFERTA) SIX PACK PRESIDENTE LATA 8OZ LIGHT",
+    "precio": 400.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/98.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "980",
+    "nombre": "MECHA VAPE VOOPOO ARGUS 0.3",
+    "precio": 200.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/980.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "981",
+    "nombre": "MECHA VAPE VOOPOO VMATE 0.7",
+    "precio": 250.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/981.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "983",
+    "nombre": "VAPE AFUEGO 90 30000PUFF",
+    "precio": 950.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/983.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "984",
+    "nombre": "VAPE SWFT ICON 7500PUFF",
+    "precio": 900.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/984.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "985",
+    "nombre": "VAPE VEEV NOW 2ML",
+    "precio": 300.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/985.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "986",
+    "nombre": "VAPE VEEV NOW 5ML",
+    "precio": 750.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/986.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "987",
+    "nombre": "VAPE VEEV ONE 1000PUFF",
+    "precio": 500.0,
+    "categoria": "Vape",
+    "imagen": "assets/img/987.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "988",
+    "nombre": "CARBON 3 KING",
+    "precio": 200.0,
+    "categoria": "Hooka",
+    "imagen": "assets/img/988.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "989",
+    "nombre": "CARBON CHARCOAL",
+    "precio": 100.0,
+    "categoria": "Hooka",
+    "imagen": "assets/img/989.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "99",
+    "nombre": "(OFERTA) SIX PACK PRESIDENTE LATA 8OZ REGULAR",
+    "precio": 400.0,
+    "categoria": "Cerveza",
+    "imagen": "assets/img/99.png",
+    "disponible": 1,
+    "es_oferta": 1
+  },
+  {
+    "id": "991",
+    "nombre": "MANGUERA EXTENDIBLE",
+    "precio": 200.0,
+    "categoria": "Hooka",
+    "imagen": "assets/img/991.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "992",
+    "nombre": "TABACO ADALYA BLUE MELON 50G",
+    "precio": 150.0,
+    "categoria": "Hooka",
+    "imagen": "assets/img/992.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "993",
+    "nombre": "TABACO ADALYA LOVE 66 50G",
+    "precio": 200.0,
+    "categoria": "Hooka",
+    "imagen": "assets/img/993.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "994",
+    "nombre": "TABACO ALFAKER MENTA 50G",
+    "precio": 200.0,
+    "categoria": "Hooka",
+    "imagen": "assets/img/994.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "996",
+    "nombre": "TARRO ADALYA BLUE MELON 250G",
+    "precio": 950.0,
+    "categoria": "Hooka",
+    "imagen": "assets/img/996.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "997",
+    "nombre": "BAILEYS CHOCOLATE 500ML",
+    "precio": 1460.0,
+    "categoria": "Licor",
+    "imagen": "assets/img/997.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "998",
+    "nombre": "SPRITE 400ML",
+    "precio": 25.0,
+    "categoria": "Refresco",
+    "imagen": "assets/img/998.png",
+    "disponible": 1,
+    "es_oferta": 0
+  },
+  {
+    "id": "999",
+    "nombre": "BUCHANAN'S DELUXE 12 AÑOS 750ML",
+    "precio": 2850.0,
+    "categoria": "Whisky",
+    "imagen": "assets/img/999.png",
+    "disponible": 1,
+    "es_oferta": 0
+  }
+]

@@ -2,8 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/productos.js",
-      "use": "@vercel/node"
+      "src": "productos.json",
+      "use": "@vercel/static"
     },
     {
       "src": "*.html",
@@ -15,10 +15,6 @@
     }
   ],
   "routes": [
-    {
-      "src": "/api/productos(.*)",
-      "dest": "/api/productos.js"
-    },
     {
       "src": "/(.*)",
       "dest": "/$1"
