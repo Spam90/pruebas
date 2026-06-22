@@ -41,11 +41,12 @@ function getProductImage(item) {
     if (item.imagen && item.imagen.trim() !== '' && item.imagen !== 'null' && item.imagen !== 'undefined') {
         var url = item.imagen.trim();
         
-        // Si es una ruta relativa (ej: assets/img/84.png), convertir a URL de GitHub raw
+        // Si es una ruta relativa (ej: assets/img/84.png), usar ruta relativa normal
+        // Esto sirve las imágenes desde el mismo servidor donde está alojada la página
         if (url.indexOf('http://') !== 0 && url.indexOf('https://') !== 0 && url.indexOf('//') !== 0) {
-            // Usar raw.githubusercontent.com para servir imágenes desde GitHub
-            url = 'https://raw.githubusercontent.com/Spam90/pruebas/main/' + url;
-            console.log('Ruta de GitHub generada:', item.imagen, '->', url);
+            // Mantener ruta relativa para que se sirva desde el mismo dominio
+            url = url;
+            console.log('Ruta relativa:', item.imagen, '->', url);
         } else if (url.indexOf('http://') === 0) {
             url = 'https://' + url.substring(7);
         }
