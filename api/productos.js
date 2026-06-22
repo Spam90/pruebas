@@ -1,9 +1,15 @@
-const { createClient } = require('@supabase/supabase-js');
+const sqlite3 = require('sqlite3').verbose();
+const path = require('path');
 
-const SUPABASE_URL = 'https://mflamrkyqjipbbjevfgv.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1mbGFtcmt5cWppcGJiamV2Zmd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIwMDc2NzgsImV4cCI6MjA5NzU4MzY3OH0.ASKpXVxk5nuaoZqGi5P9TuM55Lurju8BZbdK0fPVUB8';
+const DB_PATH = path.join(__dirname, '..', 'catalogo.db');
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+const db = new sqlite3.Database(DB_PATH, (err) => {
+    if (err) {
+        console.error('Error al abrir base de datos:', err);
+    } else {
+        console.log('Conectado a catalogo.db');
+    }
+});
 
 module.exports = async (req, res) => {
     // CORS COMPLETO para Android
@@ -25,36 +31,33 @@ module.exports = async (req, res) => {
 
     try {
         if (req.method === 'GET' && !req.query.id) {
-            const { data, error } = await supabase
-                .from('productos')
-                .select('*')
-                .order('id', { ascending: true });
-
-            if (error) throw error;
-            
-            // Forzar no caché en Android
-            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-            res.setHeader('Pragma', 'no-cache');
-            res.setHeader('Expires', '0');
-            res.json(data);
+            db.all('SELECT * FROM productos ORDER BY id ASC', (err, rows) => {
+                if (err) {
+                    console.error('Error en SELECT:', err);
+                    res.status(500).json({ error: err.message });
+                    return;
+                }
+                res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+                res.setHeader('Pragma', 'no-cache');
+                res.setHeader('Expires', '0');
+                res.json(rows);
+            });
             return;
         }
 
         if (req.method === 'GET' && req.query.id) {
-            const { data, error } = await supabase
-                .from('productos')
-                .select('*')
-                .eq('id', parseInt(req.query.id))
-                .single();
-
-            if (error) {
-                if (error.code === 'PGRST116') {
+            db.get('SELECT * FROM productos WHERE id = ?', [parseInt(req.query.id)], (err, row) => {
+                if (err) {
+                    console.error('Error en SELECT by ID:', err);
+                    res.status(500).json({ error: err.message });
+                    return;
+                }
+                if (!row) {
                     res.status(404).json({ error: 'Producto no encontrado' });
                     return;
                 }
-                throw error;
-            }
-            res.json(data);
+                res.json(row);
+            });
             return;
         }
 
@@ -66,32 +69,29 @@ module.exports = async (req, res) => {
                 return;
             }
 
-            const { data: existing } = await supabase
-                .from('productos')
-                .select('id')
-                .eq('id', parseInt(id))
-                .single();
+            db.get('SELECT id FROM productos WHERE id = ?', [parseInt(id)], (err, row) => {
+                if (err) {
+                    res.status(500).json({ error: err.message });
+                    return;
+                }
+                if (row) {
+                    res.status(409).json({ error: `El ID ${id} ya está en uso` });
+                    return;
+                }
 
-            if (existing) {
-                res.status(409).json({ error: `El ID ${id} ya está en uso` });
-                return;
-            }
-
-            const { data, error } = await supabase
-                .from('productos')
-                .insert({
-                    id: parseInt(id),
-                    nombre: nombre.trim(),
-                    categoria: categoria.trim(),
-                    precio: parseFloat(precio),
-                    imagen: imagen || '',
-                    es_oferta: es_oferta ? 1 : 0,
-                    disponible: disponible !== false ? 1 : 0
-                })
-                .select();
-
-            if (error) throw error;
-            res.json({ id: data[0].id, message: 'Producto creado' });
+                db.run(
+                    'INSERT INTO productos (id, nombre, categoria, precio, imagen, es_oferta, disponible) VALUES (?, ?, ?, ?, ?, ?, ?)',
+                    [parseInt(id), nombre.trim(), categoria.trim(), parseFloat(precio), imagen || '', es_oferta ? 1 : 0, disponible !== false ? 1 : 0],
+                    function(err) {
+                        if (err) {
+                            console.error('Error en INSERT:', err);
+                            res.status(500).json({ error: err.message });
+                            return;
+                        }
+                        res.json({ id: this.lastID, message: 'Producto creado' });
+                    }
+                );
+            });
             return;
         }
 
@@ -104,33 +104,40 @@ module.exports = async (req, res) => {
                 return;
             }
 
-            const { error } = await supabase
-                .from('productos')
-                .update({
-                    nombre: nombre.trim(),
-                    categoria: categoria.trim(),
-                    precio: parseFloat(precio),
-                    imagen: imagen || '',
-                    es_oferta: es_oferta ? 1 : 0,
-                    disponible: disponible !== false ? 1 : 0
-                })
-                .eq('id', id);
-
-            if (error) throw error;
-            res.json({ message: 'Producto actualizado' });
+            db.run(
+                'UPDATE productos SET nombre = ?, categoria = ?, precio = ?, imagen = ?, es_oferta = ?, disponible = ? WHERE id = ?',
+                [nombre.trim(), categoria.trim(), parseFloat(precio), imagen || '', es_oferta ? 1 : 0, disponible !== false ? 1 : 0, id],
+                function(err) {
+                    if (err) {
+                        console.error('Error en UPDATE:', err);
+                        res.status(500).json({ error: err.message });
+                        return;
+                    }
+                    if (this.changes === 0) {
+                        res.status(404).json({ error: 'Producto no encontrado' });
+                        return;
+                    }
+                    res.json({ message: 'Producto actualizado' });
+                }
+            );
             return;
         }
 
         if (req.method === 'DELETE' && req.query.id) {
             const id = parseInt(req.query.id);
 
-            const { error } = await supabase
-                .from('productos')
-                .delete()
-                .eq('id', id);
-
-            if (error) throw error;
-            res.json({ message: 'Producto eliminado' });
+            db.run('DELETE FROM productos WHERE id = ?', [id], function(err) {
+                if (err) {
+                    console.error('Error en DELETE:', err);
+                    res.status(500).json({ error: err.message });
+                    return;
+                }
+                if (this.changes === 0) {
+                    res.status(404).json({ error: 'Producto no encontrado' });
+                    return;
+                }
+                res.json({ message: 'Producto eliminado' });
+            });
             return;
         }
 
