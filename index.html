@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <!-- CAMBIADO: La política de referrer ahora permite la carga de imágenes en móviles -->
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <!-- SOLUCIÓN EXTREMA: Eliminar completamente la política de referrer para evitar bloqueos -->
+    <meta name="referrer" content="unsafe-url" />
     <link rel="icon" href="data:," />
     <title>M&M Drink Liquor · Catálogo Premium</title>
     <meta name="description" content="Catálogo oficial M&M Drink Liquor. Pide por WhatsApp, te armamos el coro y lo llevamos rápido en Santo Domingo." />
@@ -15,6 +15,70 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    
+    <style>
+        /* Estilos para el botón de rescate en móvil */
+        #rescue-button {
+            position: fixed;
+            bottom: 80px;
+            right: 16px;
+            z-index: 9999;
+            background: #D4AF37;
+            color: black;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: none;
+        }
+        #rescue-button:hover {
+            transform: scale(1.05);
+        }
+        #rescue-button:active {
+            transform: scale(0.95);
+        }
+        
+        /* Forzar tamaño mínimo para imágenes */
+        .img-wrap img {
+            min-height: 120px !important;
+            width: 100% !important;
+            background: #1a1a2e !important;
+        }
+        
+        /* Placeholder de imagen mejorado */
+        .no-image-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            inset: 0;
+            background: rgba(26, 26, 46, 0.9);
+            color: #666;
+            font-size: 12px;
+            text-align: center;
+            padding: 10px;
+        }
+        .no-image-text span {
+            font-size: 28px;
+            margin-bottom: 4px;
+        }
+        .no-image-text p {
+            margin: 0;
+            line-height: 1.3;
+        }
+        
+        /* Mostrar botón de rescate solo en móvil */
+        @media (max-width: 767px) {
+            #rescue-button {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body class="bg-brandDark-900 text-white font-sans antialiased">
 
@@ -22,7 +86,7 @@
     <div id="cinematic-overlay">
         <div class="cinematic-content">
             <div class="cinematic-logo">
-                <img src="assets/img/logo.png" alt="M&M Drink Liquor" class="cinematic-logo-img" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22%3E%3Crect width=%2280%22 height=%2280%22 rx=%2240%22 fill=%22%23C9A050%22/%3E%3Ctext x=%2240%22 y=%2252%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2236%22 font-weight=%22bold%22 fill=%22%23000%22%3EM%3C/text%3E%3C/svg%3E'" />
+                <img src="assets/img/logo.png" alt="M&M Drink Liquor" class="cinematic-logo-img" loading="lazy" referrerpolicy="unsafe-url" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22%3E%3Crect width=%2280%22 height=%2280%22 rx=%2240%22 fill=%22%23C9A050%22/%3E%3Ctext x=%2240%22 y=%2252%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2236%22 font-weight=%22bold%22 fill=%22%23000%22%3EM%3C/text%3E%3C/svg%3E'" />
                 <div class="cinematic-logo-ring"></div>
             </div>
             <h2 class="cinematic-title">M&M</h2>
@@ -41,7 +105,7 @@
                     <img src="assets/img/logo.png" alt="M&M Drink Liquor" 
                         class="w-10 h-10 sm:w-12 sm:h-12 object-contain transition-transform duration-500 group-hover:scale-105" 
                         loading="lazy"
-                        referrerpolicy="strict-origin-when-cross-origin"
+                        referrerpolicy="unsafe-url"
                         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22 viewBox=%220 0 48 48%22%3E%3Crect width=%2248%22 height=%2248%22 rx=%2224%22 fill=%22%23C9A050%22/%3E%3Ctext x=%2224%22 y=%2232%22 text-anchor=%22middle%22 font-family=%22serif%22 font-size=%2224%22 font-weight=%22bold%22 fill=%22%23000%22%3EM%3C/text%3E%3C/svg%3E'" />
                     <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-gold-400 rounded-full border-2 border-brandDark-900 transition-all duration-500 group-hover:scale-110"></span>
                 </div>
@@ -121,7 +185,7 @@
                 <div class="relative" data-aos="fade-left" data-aos-delay="200" data-aos-duration="700">
                     <div class="relative z-10">
                         <div class="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-gold-400/10 border border-white/5 transition-all duration-500 hover:shadow-gold-400/20 hover:scale-[1.02]">
-                            <img id="daily-drink-image" src="" alt="Producto del día" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" />
+                            <img id="daily-drink-image" src="" alt="Producto del día" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" referrerpolicy="unsafe-url" />
                             <div class="absolute inset-0 bg-gradient-to-t from-brandDark-900 via-transparent to-transparent"></div>
                             <div class="absolute inset-0 bg-gradient-to-r from-brandDark-900/30 via-transparent to-transparent"></div>
                         </div>
@@ -193,6 +257,11 @@
 
         <div id="paginationContainer"></div>
     </main>
+
+    <!-- ============ BOTÓN DE RESCATE PARA MÓVIL ============ -->
+    <button id="rescue-button" onclick="window.forceLoadAllImages && window.forceLoadAllImages()">
+        🔄 Cargar imágenes
+    </button>
 
     <!-- ============ CARRITO ============ -->
     <div id="cart-modal" class="fixed inset-0 z-50 pointer-events-none hidden">
@@ -281,5 +350,56 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="assets/js/script.js"></script>
+    
+    <script>
+        // Script de rescate adicional en caso de que el script principal falle
+        document.addEventListener('DOMContentLoaded', function() {
+            // Si después de 5 segundos no hay imágenes, mostrar el botón de rescate
+            setTimeout(function() {
+                var images = document.querySelectorAll('.product-card img');
+                var loaded = 0;
+                images.forEach(function(img) {
+                    if (img.complete && img.naturalHeight > 0) {
+                        loaded++;
+                    }
+                });
+                
+                if (loaded < images.length && images.length > 0) {
+                    var rescueBtn = document.getElementById('rescue-button');
+                    if (rescueBtn) {
+                        rescueBtn.style.display = 'block';
+                        rescueBtn.textContent = '⚠️ ' + (images.length - loaded) + ' imágenes sin cargar';
+                    }
+                }
+            }, 5000);
+        });
+        
+        // Función de rescate global
+        window.forceLoadAllImages = function() {
+            var images = document.querySelectorAll('.product-card img, .cart-item img, #daily-drink-image');
+            images.forEach(function(img) {
+                var src = img.getAttribute('src') || img.getAttribute('data-src');
+                if (src) {
+                    var baseUrl = src.split('?')[0];
+                    var newSrc = baseUrl + '?_t=' + Date.now() + '&_force=' + Math.random();
+                    img.src = newSrc;
+                    img.removeAttribute('data-src');
+                }
+            });
+            
+            var rescueBtn = document.getElementById('rescue-button');
+            if (rescueBtn) {
+                rescueBtn.textContent = '✅ ¡Intentando!';
+                setTimeout(function() {
+                    rescueBtn.textContent = '🔄 Cargar imágenes';
+                }, 3000);
+            }
+            
+            // También recargar el script si es necesario
+            if (typeof forceLoadAllImagesExtreme === 'function') {
+                forceLoadAllImagesExtreme();
+            }
+        };
+    </script>
 </body>
 </html>
