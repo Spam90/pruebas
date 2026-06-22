@@ -71,7 +71,7 @@ function getProductImage(item) {
         var baseUrl = url.split('?')[0];
         var timestamp = Date.now() + '_' + Math.random().toString(36).substr(2, 5);
         
-        // Construir URL con timestamp único
+        // Construir URL con timestamp único para evitar caché
         var finalUrl = baseUrl + '?_t=' + PAGE_LOAD_TIMESTAMP + '&_retry=' + timestamp;
         
         imageCache[key] = finalUrl;
@@ -215,6 +215,8 @@ function ensureImagesLoaded() {
                             if (menuProducts[i].nombre === productName) {
                                 var newUrl = getProductImage(menuProducts[i]);
                                 if (newUrl) {
+                                    // Eliminar el referrer policy problemático
+                                    img.referrerPolicy = 'strict-origin-when-cross-origin';
                                     img.src = newUrl;
                                     img.dataset.error = 'false';
                                 }
@@ -405,6 +407,11 @@ async function loadProducts() {
             document.addEventListener('scroll', function() {
                 setTimeout(ensureImagesLoaded, 500);
             }, { passive: true });
+            
+            // Verificar cuando se completa la carga de la página
+            window.addEventListener('load', function() {
+                setTimeout(ensureImagesLoaded, 1000);
+            });
         }
 
     } catch (e) {
@@ -475,7 +482,8 @@ function renderDailyDrink() {
             img.src = imgUrl;
             img.alt = dailyDrink.nombre || '';
             img.style.display = 'block';
-            img.referrerPolicy = 'no-referrer-when-downgrade';
+            // Cambiar política de referrer para evitar bloqueos
+            img.referrerPolicy = 'strict-origin-when-cross-origin';
             img.loading = 'lazy';
             img.dataset.imgId = 'daily_' + dailyDrink.id;
             img.onerror = function() {
@@ -615,11 +623,12 @@ function renderProducts(allItems) {
             html += '<div class="img-wrap">';
 
             if (tieneImagen) {
-                // En móvil, usar carga diferida más agresiva
+                // Política de referrer modificada para evitar bloqueos
+                // En móvil, usar data-src para lazy loading con IntersectionObserver
                 if (isMobile) {
-                    html += '<img data-src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-img-id="' + imgId + '" onerror="handleImageError(this)" style="min-height:120px;width:100%;" />';
+                    html += '<img data-src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" data-img-id="' + imgId + '" onerror="handleImageError(this)" style="min-height:120px;width:100%;" />';
                 } else {
-                    html += '<img src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-img-id="' + imgId + '" onerror="handleImageError(this)" style="min-height:120px;width:100%;" />';
+                    html += '<img src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" data-img-id="' + imgId + '" onerror="handleImageError(this)" style="min-height:120px;width:100%;" />';
                 }
             }
 
@@ -682,6 +691,8 @@ function loadVisibleImages() {
                 var img = entry.target;
                 var src = img.getAttribute('data-src');
                 if (src) {
+                    // Asegurar política de referrer correcta
+                    img.referrerPolicy = 'strict-origin-when-cross-origin';
                     img.src = src;
                     img.removeAttribute('data-src');
                 }
@@ -877,9 +888,9 @@ function updateCartUI() {
 
             if (tieneImagen) {
                 if (isMobile) {
-                    html += '<img data-src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-img-id="' + imgId + '" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
+                    html += '<img data-src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" data-img-id="' + imgId + '" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
                 } else {
-                    html += '<img src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-img-id="' + imgId + '" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
+                    html += '<img src="' + img + '" alt="' + nombreSeguro + '" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" data-img-id="' + imgId + '" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
                 }
             }
 
