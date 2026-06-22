@@ -1,0 +1,4 @@
+# No usar Git LFS para imágenes - mantener archivos PNG normales en el repositorio
+*.png -text
+*.jpeg -text
+*.jpg -text
