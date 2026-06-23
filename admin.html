@@ -24,6 +24,19 @@
         .toast.error { background: #ef4444; color: white; }
         .toast.success { background: #22c55e; color: white; }
         .toast.info { background: #3b82f6; color: white; }
+        
+        /* Botón Sincronizar en amarillo */
+        .btn-sync {
+            background: #D4AF37;
+            color: black;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .btn-sync:hover {
+            background: #C9A050;
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
     </style>
 </head>
 <body class="min-h-screen p-4 sm:p-6">
@@ -42,7 +55,7 @@
                 </div>
             </div>
             <div class="flex gap-2 sm:gap-4">
-                <button onclick="syncProducts()" class="glass px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm hover:bg-white/5 transition-all flex items-center gap-2">
+                <button onclick="syncProducts()" class="btn-sync px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm transition-all flex items-center gap-2">
                     <i class="fas fa-sync"></i>
                     <span class="hidden sm:inline">Sincronizar</span>
                 </button>
@@ -348,6 +361,7 @@
                 showToast('Supabase no conectado', 'error');
                 return;
             }
+            showToast('Sincronizando...', 'info');
             loadProducts();
         }
         
@@ -591,7 +605,6 @@
                 return;
             }
             
-            // Construir objeto con los campos de la tabla
             const productData = {
                 id: id,
                 nombre: nombre,
@@ -612,13 +625,11 @@
                 let result;
                 
                 if (isEditing) {
-                    // Actualizar producto existente
                     result = await supabaseClient
                         .from('productos')
                         .update(productData)
                         .eq('id', id);
                 } else {
-                    // Crear nuevo producto
                     result = await supabaseClient
                         .from('productos')
                         .insert([productData]);
@@ -631,7 +642,6 @@
                 
                 console.log('✅ Producto guardado correctamente');
                 
-                // Recargar productos
                 await loadProducts();
                 hideForm();
                 showToast(isEditing ? 'Producto actualizado' : 'Producto creado', 'success');
