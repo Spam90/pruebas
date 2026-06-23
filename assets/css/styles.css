@@ -1,13 +1,16 @@
+/* ============================================================
+   ROOT VARIABLES
+   ============================================================ */
 :root {
     --gold: #C9A050;
     --gold-dark: #B8923F;
     --gold-light: #DAB866;
     --bg-dark: #060608;
-    --card-bg: rgba(255, 255, 255, 0.03);
     --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
     --ease-premium: cubic-bezier(0.65, 0, 0.35, 1);
     --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
 }
 
 * {
@@ -25,11 +28,11 @@ body {
     color: #fff;
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
-    will-change: transform;
+    overflow-x: hidden;
 }
 
 /* ============================================================
-   CINEMATIC OVERLAY - MÁS PEQUEÑO Y ELEGANTE
+   CINEMATIC OVERLAY - REVISADO Y MÁS DINÁMICO
    ============================================================ */
 
 #cinematic-overlay {
@@ -41,15 +44,18 @@ body {
     align-items: center;
     justify-content: center;
     opacity: 1;
-    transition: opacity 0.8s var(--ease-premium), transform 0.8s var(--ease-premium);
+    transition: opacity 1.2s var(--ease-premium), 
+                transform 1.2s var(--ease-premium),
+                visibility 1.2s ease;
     pointer-events: all;
-    will-change: opacity, transform;
+    visibility: visible;
 }
 
 #cinematic-overlay.hidden {
     opacity: 0;
+    transform: scale(1.08) rotate(2deg);
+    visibility: hidden;
     pointer-events: none;
-    transform: scale(1.03) rotate(0.5deg);
 }
 
 .cinematic-content {
@@ -57,48 +63,68 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    animation: cinematicPulse 2.5s ease-in-out infinite;
+    gap: 8px;
+    animation: cinematicFloat 3s ease-in-out infinite;
     will-change: transform;
 }
 
-@keyframes cinematicPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
+@keyframes cinematicFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
 }
 
 .cinematic-logo {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .cinematic-logo-img {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     object-fit: contain;
     z-index: 2;
     position: relative;
-    animation: logoReveal 0.8s var(--ease-spring) forwards;
+    animation: logoZoom 1s var(--ease-spring) forwards;
+    filter: drop-shadow(0 0 30px rgba(201, 160, 80, 0.2));
 }
 
-@keyframes logoReveal {
-    0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
-    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+@keyframes logoZoom {
+    0% { 
+        opacity: 0; 
+        transform: scale(0.3) rotate(-15deg);
+    }
+    60% {
+        transform: scale(1.1) rotate(2deg);
+    }
+    100% { 
+        opacity: 1; 
+        transform: scale(1) rotate(0deg);
+    }
 }
 
 .cinematic-logo-ring {
     position: absolute;
-    inset: -5px;
+    inset: -6px;
     border-radius: 50%;
-    border: 1.5px solid transparent;
+    border: 2px solid transparent;
     border-top-color: var(--gold);
-    border-right-color: rgba(201, 160, 80, 0.2);
-    animation: ringSpin 2s linear infinite;
+    border-right-color: rgba(201, 160, 80, 0.15);
+    animation: ringSpin 2.5s linear infinite;
     will-change: transform;
+}
+
+.cinematic-logo-ring::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    border-bottom-color: rgba(201, 160, 80, 0.1);
+    animation: ringSpin 4s linear infinite reverse;
 }
 
 @keyframes ringSpin {
@@ -108,50 +134,75 @@ body {
 
 .cinematic-title {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 900;
     letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #fff 40%, #8a8a8a);
+    background: linear-gradient(135deg, #fff 30%, #C9A050 70%, #fff);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: 0;
-    animation: titleSlide 0.6s var(--ease-spring) 0.2s both;
+    animation: titleGradient 3s ease-in-out infinite, titleSlide 0.8s var(--ease-spring) 0.2s both;
+}
+
+@keyframes titleGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 @keyframes titleSlide {
-    0% { opacity: 0; transform: translateY(12px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .cinematic-subtitle {
     font-family: 'Inter', sans-serif;
     font-size: 9px;
     font-weight: 600;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.4em;
     color: var(--gold);
     text-transform: uppercase;
     margin: -4px 0 0 0;
-    animation: subtitleFade 0.6s ease 0.4s both;
+    animation: subtitleGlow 2s ease-in-out infinite, subtitleFade 0.8s ease 0.5s both;
+}
+
+@keyframes subtitleGlow {
+    0%, 100% { opacity: 0.8; text-shadow: 0 0 10px rgba(201, 160, 80, 0.1); }
+    50% { opacity: 1; text-shadow: 0 0 30px rgba(201, 160, 80, 0.3); }
 }
 
 @keyframes subtitleFade {
-    0% { opacity: 0; letter-spacing: 0.6em; }
-    100% { opacity: 1; letter-spacing: 0.3em; }
+    0% { opacity: 0; letter-spacing: 0.8em; transform: scale(0.8); }
+    100% { opacity: 1; letter-spacing: 0.4em; transform: scale(1); }
 }
 
 .cinematic-loader {
-    width: 100px;
+    width: 120px;
     height: 2px;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 4px;
     overflow: hidden;
-    margin-top: 4px;
-    animation: loaderAppear 0.4s ease 0.5s both;
+    margin-top: 6px;
+    position: relative;
+    animation: loaderAppear 0.6s ease 0.7s both;
+}
+
+.cinematic-loader::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    animation: loaderShine 1.5s ease-in-out infinite;
+}
+
+@keyframes loaderShine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 @keyframes loaderAppear {
-    0% { opacity: 0; transform: scaleX(0.6); }
+    0% { opacity: 0; transform: scaleX(0.5); }
     100% { opacity: 1; transform: scaleX(1); }
 }
 
@@ -160,15 +211,18 @@ body {
     width: 0%;
     background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
     border-radius: 4px;
-    animation: loaderProgress 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: loaderProgress 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     will-change: width;
+    position: relative;
+    z-index: 1;
 }
 
 @keyframes loaderProgress {
     0% { width: 0%; }
-    30% { width: 30%; }
-    60% { width: 65%; }
-    85% { width: 85%; }
+    20% { width: 15%; }
+    40% { width: 35%; }
+    60% { width: 55%; }
+    80% { width: 80%; }
     100% { width: 100%; }
 }
 
@@ -181,15 +235,14 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
     padding: 12px;
-    transition: all 0.5s var(--ease-premium);
+    transition: all 0.4s var(--ease-spring);
     cursor: pointer;
     position: relative;
     overflow: hidden;
     will-change: transform, box-shadow, border-color;
     backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased;
     opacity: 0;
-    animation: cardFadeIn 0.6s var(--ease-spring) forwards;
+    animation: cardReveal 0.7s var(--ease-spring) forwards;
 }
 
 .product-card:nth-child(1) { animation-delay: 0.05s; }
@@ -205,14 +258,17 @@ body {
 .product-card:nth-child(11) { animation-delay: 0.55s; }
 .product-card:nth-child(12) { animation-delay: 0.60s; }
 
-@keyframes cardFadeIn {
+@keyframes cardReveal {
     0% { 
         opacity: 0; 
-        transform: translateY(30px) scale(0.95);
+        transform: translateY(40px) scale(0.92) rotateX(5deg);
+    }
+    60% {
+        transform: translateY(-8px) scale(1.01) rotateX(0deg);
     }
     100% { 
         opacity: 1; 
-        transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1) rotateX(0deg);
     }
 }
 
@@ -221,22 +277,43 @@ body {
     position: absolute;
     inset: 0;
     border-radius: 16px;
-    background: linear-gradient(135deg, rgba(201, 160, 80, 0.03), transparent);
+    background: linear-gradient(135deg, rgba(201, 160, 80, 0.05), transparent 50%);
     opacity: 0;
     transition: opacity 0.5s ease;
     pointer-events: none;
 }
 
+.product-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(201, 160, 80, 0.03), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: scale(0.5);
+    pointer-events: none;
+}
+
 .product-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    border-color: rgba(201, 160, 80, 0.25);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 160, 80, 0.1);
-    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(201, 160, 80, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 
+                0 0 0 1px rgba(201, 160, 80, 0.15),
+                0 0 40px rgba(201, 160, 80, 0.05);
+    background: rgba(255, 255, 255, 0.07);
     transition: all 0.3s var(--ease-spring);
 }
 
 .product-card:hover::before {
     opacity: 1;
+}
+
+.product-card:hover::after {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .product-card .img-wrap {
@@ -257,95 +334,23 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: transform 0.6s var(--ease-premium);
+    transition: transform 0.7s var(--ease-premium), filter 0.4s ease;
     will-change: transform;
     padding: 8px;
 }
 
 .product-card:hover .img-wrap img {
-    transform: scale(1.08);
+    transform: scale(1.1) rotate(-1deg);
+    filter: brightness(1.05) contrast(1.05);
 }
 
-.product-card .img-wrap .no-image-text {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #0a0a0f;
-    color: #555;
-    font-size: 12px;
-    font-weight: 500;
-    gap: 6px;
-    text-align: center;
-    line-height: 1.3;
-    z-index: 2;
-}
-
-.product-card .img-wrap .no-image-text span {
-    font-size: 28px;
-    opacity: 0.6;
-}
-
-.product-card .img-wrap .no-image-text p {
-    margin: 0;
-    font-size: 11px;
-    color: #666;
-}
-
-.product-card .badge-vaso {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 5;
-    background: linear-gradient(135deg, #2d7d46, #1a5a33);
-    color: #fff;
-    font-size: 8px;
-    font-weight: 800;
-    text-transform: uppercase;
-    padding: 2px 10px;
-    border-radius: 100px;
-    letter-spacing: 0.05em;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.product-card .badge-vaso.oferta {
-    background: linear-gradient(135deg, #D4AF37, #B8923F);
-    color: #000;
-}
-
-.product-card .category-tag {
-    font-size: 9px;
-    color: var(--gold);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    display: block;
-    margin-bottom: 3px;
-}
-
-.product-card .product-name {
-    font-size: 13px;
-    font-weight: 600;
-    color: #fff;
-    line-height: 1.3;
-    min-height: 34px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.product-card .price {
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-}
+/* ============================================================
+   BOTÓN DE AGREGAR - ANIMADO
+   ============================================================ */
 
 .product-card .add-btn {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     border-radius: 10px;
     background: rgba(201, 160, 80, 0.12);
     color: var(--gold);
@@ -353,76 +358,130 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.35s var(--ease-spring);
+    transition: all 0.4s var(--ease-spring);
     cursor: pointer;
     flex-shrink: 0;
-    will-change: transform, background, color, box-shadow;
-}
-
-.product-card .add-btn:hover {
-    background: var(--gold);
-    color: #000;
-    transform: scale(1.08) rotate(90deg);
-    box-shadow: 0 6px 24px rgba(201, 160, 80, 0.3);
-}
-
-.product-card .add-btn:active {
-    transform: scale(0.93) rotate(0deg);
-}
-
-/* ============================================================
-   CATEGORÍAS - ANIMACIÓN
-   ============================================================ */
-
-.cat-btn-custom {
-    flex-shrink: 0;
-    padding: 8px 18px;
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 600;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    color: #8E8E93;
-    transition: all 0.35s var(--ease-spring);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
     will-change: transform, background, color, box-shadow;
     position: relative;
     overflow: hidden;
 }
 
-.cat-btn-custom::after {
+.product-card .add-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.product-card .add-btn i {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s var(--ease-spring);
+}
+
+.product-card .add-btn:hover {
+    background: var(--gold);
+    color: #000;
+    transform: scale(1.12) rotate(90deg);
+    box-shadow: 0 8px 30px rgba(201, 160, 80, 0.35);
+}
+
+.product-card .add-btn:hover::before {
+    opacity: 1;
+}
+
+.product-card .add-btn:hover i {
+    transform: rotate(-90deg) scale(1.1);
+}
+
+.product-card .add-btn:active {
+    transform: scale(0.9) rotate(0deg);
+}
+
+/* ============================================================
+   CATEGORÍAS - ANIMADAS
+   ============================================================ */
+
+.cat-btn-custom {
+    flex-shrink: 0;
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #8E8E93;
+    transition: all 0.4s var(--ease-spring);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    animation: categoryFade 0.5s var(--ease-spring) backwards;
+}
+
+.cat-btn-custom:nth-child(1) { animation-delay: 0.05s; }
+.cat-btn-custom:nth-child(2) { animation-delay: 0.08s; }
+.cat-btn-custom:nth-child(3) { animation-delay: 0.11s; }
+.cat-btn-custom:nth-child(4) { animation-delay: 0.14s; }
+.cat-btn-custom:nth-child(5) { animation-delay: 0.17s; }
+.cat-btn-custom:nth-child(6) { animation-delay: 0.20s; }
+.cat-btn-custom:nth-child(7) { animation-delay: 0.23s; }
+.cat-btn-custom:nth-child(8) { animation-delay: 0.26s; }
+
+@keyframes categoryFade {
+    0% { opacity: 0; transform: scale(0.8) translateX(-10px); }
+    100% { opacity: 1; transform: scale(1) translateX(0); }
+}
+
+.cat-btn-custom::before {
     content: '';
     position: absolute;
     inset: -1px;
     border-radius: 100px;
-    background: linear-gradient(135deg, var(--gold), transparent, var(--gold));
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark), var(--gold));
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: -1;
 }
 
+.cat-btn-custom::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 100px;
+    background: linear-gradient(135deg, rgba(201, 160, 80, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
 .cat-btn-custom:hover {
     background: rgba(255, 255, 255, 0.08);
     color: #fff;
-    transform: translateY(-2px) scale(1.04);
+    transform: translateY(-3px) scale(1.05);
     border-color: rgba(255, 255, 255, 0.15);
 }
 
+.cat-btn-custom:hover::before {
+    opacity: 0.15;
+}
+
 .cat-btn-custom:hover::after {
-    opacity: 0.3;
+    opacity: 1;
 }
 
 .cat-btn-custom.active {
     background: linear-gradient(135deg, #C9A050, #B8923F);
     color: #000;
     border-color: transparent;
-    box-shadow: 0 6px 24px rgba(201, 160, 80, 0.25);
-    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 30px rgba(201, 160, 80, 0.3);
+    transform: translateY(-3px) scale(1.06);
 }
 
-.cat-btn-custom.active::after {
+.cat-btn-custom.active::before {
     opacity: 0;
 }
 
@@ -463,13 +522,13 @@ body {
    ============================================================ */
 
 #cart-sheet {
-    background: rgba(6, 6, 8, 0.97);
+    background: rgba(6, 6, 8, 0.98);
     backdrop-filter: blur(20px);
     will-change: transform;
 }
 
 #cart-items-container .cart-item {
-    animation: slideIn 0.4s var(--ease-spring) backwards;
+    animation: cartSlide 0.5s var(--ease-spring) backwards;
     will-change: transform, opacity;
 }
 
@@ -479,89 +538,25 @@ body {
 .cart-item:nth-child(4) { animation-delay: 0.20s; }
 .cart-item:nth-child(5) { animation-delay: 0.25s; }
 
-@keyframes slideIn {
-    0% { opacity: 0; transform: translateX(30px) scale(0.95); }
+@keyframes cartSlide {
+    0% { opacity: 0; transform: translateX(40px) scale(0.9); }
     100% { opacity: 1; transform: translateX(0) scale(1); }
-}
-
-.cart-item img {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-    border-radius: 8px;
-    flex-shrink: 0;
 }
 
 /* ============================================================
    DAILY DRINK
    ============================================================ */
 
-.daily-no-image {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #0a0a0f;
-    color: #555;
-    font-size: 14px;
-    font-weight: 500;
-    gap: 8px;
-    text-align: center;
-    line-height: 1.3;
-    z-index: 2;
-}
-
-.daily-no-image span {
-    font-size: 32px;
-    opacity: 0.6;
-}
-
-.daily-no-image p {
-    margin: 0;
-    font-size: 13px;
-    color: #666;
-}
-
-.cart-no-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #0a0a0f;
-    border-radius: 8px;
-    flex-shrink: 0;
-    text-align: center;
-    line-height: 1.2;
-    width: 40px;
-    height: 40px;
-}
-
-.cart-no-image span {
-    font-size: 14px;
-    opacity: 0.5;
-}
-
-.cart-no-image span:last-child {
-    font-size: 6px;
-    color: #555;
-}
-
-/* ============================================================
-   DAILY DRINK IMAGE
-   ============================================================ */
-
 #daily-drink-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s var(--ease-premium);
+    transition: transform 0.7s var(--ease-premium);
     will-change: transform;
 }
 
 #daily-drink-image:hover {
-    transform: scale(1.06);
+    transform: scale(1.08);
 }
 
 /* ============================================================
@@ -569,7 +564,7 @@ body {
    ============================================================ */
 
 #main-header {
-    transition: all 0.4s var(--ease-smooth);
+    transition: all 0.5s var(--ease-smooth);
     will-change: background, border-color, backdrop-filter;
 }
 
@@ -585,6 +580,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 4px;
+    height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -620,6 +616,41 @@ body {
 }
 
 /* ============================================================
+   BADGE OFERTA
+   ============================================================ */
+
+.badge-vaso {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+    background: linear-gradient(135deg, #2d7d46, #1a5a33);
+    color: #fff;
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    border-radius: 100px;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    animation: badgePop 0.5s var(--ease-spring) backwards;
+}
+
+.badge-vaso:nth-child(1) { animation-delay: 0.3s; }
+.badge-vaso:nth-child(2) { animation-delay: 0.4s; }
+
+@keyframes badgePop {
+    0% { opacity: 0; transform: scale(0) rotate(-20deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+.badge-vaso.oferta {
+    background: linear-gradient(135deg, #D4AF37, #B8923F);
+    color: #000;
+    animation: badgePop 0.5s var(--ease-spring) 0.2s backwards;
+}
+
+/* ============================================================
    ANIMACIONES GENERALES
    ============================================================ */
 
@@ -630,17 +661,16 @@ body {
 
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-10px); }
 }
 
 @keyframes glow-pulse {
     0%, 100% { box-shadow: 0 0 20px rgba(201, 160, 80, 0.1); }
-    50% { box-shadow: 0 0 40px rgba(201, 160, 80, 0.25); }
+    50% { box-shadow: 0 0 50px rgba(201, 160, 80, 0.2); }
 }
 
 .animate-pulse-slow {
     animation: pulse-slow 8s ease-in-out infinite;
-    will-change: transform, opacity;
 }
 
 .animate-float {
@@ -673,7 +703,7 @@ body {
         border-radius: 8px;
     }
     .product-card .add-btn:hover {
-        transform: scale(1.06) rotate(90deg);
+        transform: scale(1.08) rotate(90deg);
     }
     .product-card .img-wrap {
         border-radius: 10px;
@@ -685,38 +715,6 @@ body {
     .cat-btn-custom {
         padding: 6px 14px;
         font-size: 10px;
-    }
-    .product-card .category-tag {
-        font-size: 8px;
-    }
-    .product-card .badge-vaso {
-        font-size: 7px;
-        padding: 2px 8px;
-        top: 8px;
-        right: 8px;
-    }
-    .cart-item img {
-        width: 40px;
-        height: 40px;
-    }
-    .product-card .img-wrap .no-image-text span {
-        font-size: 22px;
-    }
-    .product-card .img-wrap .no-image-text p {
-        font-size: 9px;
-    }
-    .daily-no-image span {
-        font-size: 24px;
-    }
-    .daily-no-image p {
-        font-size: 11px;
-    }
-    .cart-no-image {
-        width: 40px;
-        height: 40px;
-    }
-    .cart-no-image span {
-        font-size: 12px;
     }
     .cinematic-title {
         font-size: 24px;
@@ -734,9 +732,6 @@ body {
     }
     .cinematic-subtitle {
         font-size: 8px;
-    }
-    .cinematic-logo-ring {
-        inset: -4px;
     }
 }
 
