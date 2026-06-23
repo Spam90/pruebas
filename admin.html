@@ -22,12 +22,19 @@
         .upload-status.error { display: block; background: rgba(239,68,68,0.15); color: #ef4444; border: 1px solid rgba(239,68,68,0.2); }
         .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.2); border-top-color: #000; border-radius: 50%; animation: spin 0.6s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
+        .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 12px 24px; border-radius: 9999px; font-weight: 700; box-shadow: 0 20px 60px rgba(0,0,0,0.5); z-index: 9999; transition: all 0.3s ease; background: #D4AF37; color: black; font-size: 14px; max-width: 90%; text-align: center; }
+        .toast.hidden { opacity: 0; transform: translateX(-50%) translateY(20px); pointer-events: none; }
+        .toast.error { background: #ef4444; color: white; }
+        .toast.success { background: #22c55e; color: white; }
+        .toast.info { background: #3b82f6; color: white; }
+        .loading-spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.2); border-top-color: #D4AF37; border-radius: 50%; animation: spin 0.6s linear infinite; margin-right: 8px; vertical-align: middle; }
     </style>
 </head>
 <body class="min-h-screen p-4 sm:p-6">
 
     <div class="max-w-6xl mx-auto">
 
+        <!-- HEADER -->
         <div class="flex items-center justify-between mb-6 sm:mb-8">
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gold-400 rounded-xl flex items-center justify-center">
@@ -35,7 +42,7 @@
                 </div>
                 <div>
                     <h1 class="text-xl sm:text-2xl font-black">M&M <span class="text-gold-400">Admin</span></h1>
-                    <p class="text-[10px] sm:text-xs text-gray-500">Gestiona tu catálogo</p>
+                    <p class="text-[10px] sm:text-xs text-gray-500">Gestiona tu catálogo · Supabase</p>
                 </div>
             </div>
             <div class="flex gap-2 sm:gap-4">
@@ -50,6 +57,7 @@
             </div>
         </div>
 
+        <!-- LOGIN -->
         <div id="loginBox" class="glass max-w-md mx-auto p-6 sm:p-8 rounded-2xl sm:rounded-3xl text-center">
             <div class="w-16 h-16 bg-gold-400/10 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-gold-400/20">
                 <i class="fas fa-lock text-2xl text-gold-400"></i>
@@ -64,7 +72,16 @@
             </button>
         </div>
 
+        <!-- ADMIN PANEL -->
         <div id="adminPanel" class="hidden">
+            
+            <!-- Estado de conexión -->
+            <div id="connectionStatus" class="mb-4 p-3 rounded-xl text-sm flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/20 text-yellow-400">
+                <i class="fas fa-circle-notch fa-spin"></i>
+                <span>Conectando a Supabase...</span>
+            </div>
+
+            <!-- Barra de búsqueda y acciones -->
             <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div class="flex-1 relative">
                     <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
@@ -76,6 +93,7 @@
                 </button>
             </div>
 
+            <!-- FORMULARIO -->
             <div id="formBox" class="hidden glass p-4 sm:p-6 rounded-2xl mb-4 sm:mb-6 border border-white/5">
                 <div class="flex items-center justify-between mb-4">
                     <h3 id="formTitle" class="font-bold text-base sm:text-lg">Nuevo Producto</h3>
@@ -104,6 +122,18 @@
                     <div>
                         <label class="text-[10px] text-gray-500 block mb-1">Categoría</label>
                         <select id="prodCategoria" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400/30 transition-all">
+                            <option value="Ron">Ron</option>
+                            <option value="Whisky">Whisky</option>
+                            <option value="Vodka">Vodka</option>
+                            <option value="Tequila">Tequila</option>
+                            <option value="Ginebra">Ginebra</option>
+                            <option value="Licor">Licor</option>
+                            <option value="Cerveza">Cerveza</option>
+                            <option value="Vino">Vino</option>
+                            <option value="Champagne">Champagne</option>
+                            <option value="Refresco">Refresco</option>
+                            <option value="Agua">Agua</option>
+                            <option value="Energética">Energética</option>
                             <option value="Otros">Otros</option>
                         </select>
                     </div>
@@ -111,7 +141,7 @@
                     <div class="sm:col-span-2">
                         <label class="text-[10px] text-gray-500 block mb-1">URL Imagen</label>
                         <div class="flex gap-2">
-                            <input type="text" id="prodImagen" class="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400/30 transition-all" placeholder="https://...">
+                            <input type="text" id="prodImagen" class="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400/30 transition-all" placeholder="https://... o /assets/img/...">
                             <div class="file-input-wrapper">
                                 <button type="button" id="uploadBtn" class="bg-blue-500/20 text-blue-400 px-4 py-2 rounded-lg text-sm hover:bg-blue-500/30 transition-all whitespace-nowrap">
                                     <i class="fas fa-upload mr-1"></i> Subir
@@ -120,7 +150,7 @@
                             </div>
                         </div>
                         <div id="uploadStatus" class="upload-status"></div>
-                        <p class="text-[10px] text-gray-500 mt-1">Pega una URL o sube una imagen</p>
+                        <p class="text-[10px] text-gray-500 mt-1">Pega una URL o sube una imagen a Supabase</p>
                     </div>
 
                     <div class="sm:col-span-3">
@@ -135,6 +165,10 @@
                             <input type="checkbox" id="prodDisponible" checked class="w-4 h-4 rounded border-gray-600 text-gold-400 focus:ring-gold-400">
                             <span>Disponible</span>
                         </label>
+                        <label class="flex items-center gap-2 text-sm cursor-pointer">
+                            <input type="checkbox" id="prodOferta" class="w-4 h-4 rounded border-gray-600 text-gold-400 focus:ring-gold-400">
+                            <span>En Oferta</span>
+                        </label>
                     </div>
                     
                     <div class="sm:col-span-3 flex gap-2">
@@ -148,6 +182,7 @@
                 </form>
             </div>
 
+            <!-- TABLA DE PRODUCTOS -->
             <div class="glass rounded-2xl overflow-hidden">
                 <div class="overflow-x-auto" style="max-height: 60vh;">
                     <table class="w-full text-left text-sm">
@@ -163,43 +198,88 @@
                         <tbody id="adminTableBody" class="divide-y divide-white/5"></tbody>
                     </table>
                 </div>
-                <div class="p-3 border-t border-white/5 text-xs text-gray-500 flex justify-between">
+                <div class="p-3 border-t border-white/5 text-xs text-gray-500 flex justify-between items-center">
                     <span id="adminCount">0</span>
-                    <span>productos</span>
+                    <span>productos en Supabase</span>
                 </div>
             </div>
         </div>
 
     </div>
 
+    <!-- TOAST -->
+    <div id="toast" class="toast hidden"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        const API_URL = window.location.origin + '/api';
+        // ============================================================
+        //  CONFIGURACIÓN SUPABASE
+        // ============================================================
+        
         const ADMIN_PASSWORD = 'xslxeprr12';
         const SUPABASE_URL = 'https://mflamrkyqjipbbjevfgv.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1mbGFtcmt5cWppcGJiamV2Zmd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIwMDc2NzgsImV4cCI6MjA5NzU4MzY3OH0.ASKpXVxk5nuaoZqGi5P9TuM55Lurju8BZbdK0fPVUB8';
-
+        
         let products = [];
         let isLoggedIn = false;
         let supabaseClient = null;
-
+        let isLoading = false;
+        
+        // ============================================================
+        //  INICIALIZAR SUPABASE
+        // ============================================================
+        
         function initSupabase() {
             if (typeof supabase !== 'undefined') {
                 supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+                updateConnectionStatus(true, 'Conectado a Supabase');
                 return true;
             }
             return false;
         }
-
+        
+        function updateConnectionStatus(connected, message) {
+            const status = document.getElementById('connectionStatus');
+            if (!status) return;
+            if (connected) {
+                status.className = 'mb-4 p-3 rounded-xl text-sm flex items-center gap-2 bg-green-500/10 border border-green-500/20 text-green-400';
+                status.innerHTML = '<i class="fas fa-check-circle"></i><span>' + message + '</span>';
+            } else {
+                status.className = 'mb-4 p-3 rounded-xl text-sm flex items-center gap-2 bg-red-500/10 border border-red-500/20 text-red-400';
+                status.innerHTML = '<i class="fas fa-exclamation-circle"></i><span>' + message + '</span>';
+            }
+        }
+        
         if (!initSupabase()) {
             const checkInterval = setInterval(() => {
                 if (typeof supabase !== 'undefined') {
                     clearInterval(checkInterval);
                     initSupabase();
+                    // Si ya estamos logueados, cargar productos
+                    if (isLoggedIn) loadProducts();
                 }
             }, 500);
         }
-
+        
+        // ============================================================
+        //  TOAST
+        // ============================================================
+        
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast ' + type;
+            toast.classList.remove('hidden');
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+        
+        // ============================================================
+        //  LOGIN
+        // ============================================================
+        
         function checkLogin() {
             const pass = document.getElementById('adminPass').value;
             if (pass === ADMIN_PASSWORD) {
@@ -208,52 +288,97 @@
                 document.getElementById('adminPanel').classList.remove('hidden');
                 loadProducts();
             } else {
-                alert('Clave incorrecta');
+                showToast('Clave incorrecta', 'error');
                 document.getElementById('adminPass').value = '';
             }
         }
-
+        
         document.getElementById('adminPass').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') checkLogin();
         });
-
+        
+        // ============================================================
+        //  CARGAR PRODUCTOS DESDE SUPABASE
+        // ============================================================
+        
         async function loadProducts() {
+            if (isLoading) return;
+            isLoading = true;
+            
             try {
-                const res = await fetch(`${API_URL}/productos`);
-                if (!res.ok) throw new Error('Error al cargar');
-                products = await res.json();
+                showToast('Cargando productos desde Supabase...', 'info');
+                updateConnectionStatus(true, 'Cargando productos...');
+                
+                if (!supabaseClient) {
+                    throw new Error('Supabase no inicializado');
+                }
+                
+                const { data, error } = await supabaseClient
+                    .from('productos')
+                    .select('*')
+                    .order('id', { ascending: true });
+                
+                if (error) throw error;
+                
+                if (data && data.length > 0) {
+                    products = data;
+                    showToast('Productos cargados: ' + products.length, 'success');
+                    updateConnectionStatus(true, 'Conectado a Supabase · ' + products.length + ' productos');
+                } else {
+                    products = [];
+                    showToast('No hay productos en la base de datos', 'info');
+                    updateConnectionStatus(true, 'Conectado a Supabase · 0 productos');
+                }
+                
                 updateCategories();
                 renderTable();
+                
             } catch (e) {
-                console.error(e);
-                showToast('Error al cargar productos');
+                console.error('Error cargando productos:', e);
+                showToast('Error al cargar productos: ' + e.message, 'error');
+                updateConnectionStatus(false, 'Error: ' + e.message);
+                products = [];
+                renderTable();
             }
+            
+            isLoading = false;
         }
-
+        
+        // ============================================================
+        //  SINCRONIZAR / RECARGAR
+        // ============================================================
+        
         function syncProducts() {
-            showToast('Sincronizando...');
+            if (!supabaseClient) {
+                showToast('Supabase no conectado', 'error');
+                return;
+            }
             loadProducts();
         }
-
+        
+        // ============================================================
+        //  RENDERIZAR TABLA
+        // ============================================================
+        
         function renderTable() {
             const tbody = document.getElementById('adminTableBody');
             const query = document.getElementById('adminSearch').value.toLowerCase();
             const filtered = products.filter(p => String(p.nombre || '').toLowerCase().includes(query));
-
+            
             document.getElementById('adminCount').textContent = filtered.length;
-
+            
             if (filtered.length === 0) {
                 tbody.innerHTML = `
                     <tr>
                         <td colspan="5" class="px-3 py-8 text-center text-gray-500 text-sm">
                             <i class="fas fa-box-open text-2xl block mb-2 opacity-30"></i>
-                            No hay productos
+                            ${products.length === 0 ? 'No hay productos en Supabase' : 'No se encontraron productos'}
                         </td>
                     </tr>
                 `;
                 return;
             }
-
+            
             tbody.innerHTML = filtered.map(p => `
                 <tr class="hover:bg-white/[0.02] transition-colors">
                     <td class="px-3 py-3 text-xs text-gray-400">${p.id}</td>
@@ -266,12 +391,13 @@
                                 <div class="font-bold text-sm text-white line-clamp-1">${p.nombre}</div>
                                 <div class="text-[10px] flex gap-2 mt-0.5">
                                     ${p.disponible !== false ? '<span class="text-green-500">En Stock</span>' : '<span class="text-red-500">Agotado</span>'}
+                                    ${p.es_oferta ? '<span class="text-gold-400">🔥 Oferta</span>' : ''}
                                 </div>
                             </div>
                         </div>
                     </td>
-                    <td class="px-3 py-3 text-gray-400 text-sm hidden sm:table-cell">${p.categoria}</td>
-                    <td class="px-3 py-3 font-bold text-gold-400 text-sm">RD$ ${p.precio.toLocaleString()}</td>
+                    <td class="px-3 py-3 text-gray-400 text-sm hidden sm:table-cell">${p.categoria || 'Otros'}</td>
+                    <td class="px-3 py-3 font-bold text-gold-400 text-sm">RD$ ${(p.precio || 0).toLocaleString()}</td>
                     <td class="px-3 py-3 text-right">
                         <div class="flex justify-end gap-2">
                             <button onclick="editProduct(${p.id})" class="w-7 h-7 rounded-lg bg-blue-500/10 text-blue-400 hover:bg-blue-500 hover:text-white transition-all">
@@ -285,36 +411,47 @@
                 </tr>
             `).join('');
         }
-
+        
+        // ============================================================
+        //  CATEGORÍAS
+        // ============================================================
+        
         function updateCategories() {
             const select = document.getElementById('prodCategoria');
-            const categories = [...new Set(products.map(p => p.categoria))].filter(Boolean).sort();
+            const categories = [...new Set(products.map(p => p.categoria).filter(Boolean))].sort();
             const currentVal = select.value;
-
-            select.innerHTML = categories.map(c => `<option value="${c}">${c}</option>`).join('') +
-                '<option value="Otros">Otros</option>';
-
+            
+            const defaultOptions = ['Ron', 'Whisky', 'Vodka', 'Tequila', 'Ginebra', 'Licor', 'Cerveza', 'Vino', 'Champagne', 'Refresco', 'Agua', 'Energética', 'Otros'];
+            const allCategories = [...new Set([...categories, ...defaultOptions])].sort();
+            
+            select.innerHTML = allCategories.map(c => `<option value="${c}">${c}</option>`).join('');
+            
             if (categories.includes(currentVal)) select.value = currentVal;
         }
-
+        
+        // ============================================================
+        //  FORMULARIO
+        // ============================================================
+        
         function showForm(product = null) {
             const form = document.getElementById('formBox');
             form.classList.remove('hidden');
             document.getElementById('isEditing').value = product ? 'true' : 'false';
-
+            
             const status = document.getElementById('uploadStatus');
             status.className = 'upload-status';
             status.textContent = '';
-
+            
             if (product) {
                 document.getElementById('formTitle').textContent = 'Editar Producto';
                 document.getElementById('prodId').value = product.id;
                 document.getElementById('prodId').disabled = true;
-                document.getElementById('prodNombre').value = product.nombre;
-                document.getElementById('prodPrecio').value = product.precio;
-                document.getElementById('prodCategoria').value = product.categoria;
+                document.getElementById('prodNombre').value = product.nombre || '';
+                document.getElementById('prodPrecio').value = product.precio || '';
+                document.getElementById('prodCategoria').value = product.categoria || 'Otros';
                 document.getElementById('prodImagen').value = product.imagen || '';
                 document.getElementById('prodDisponible').checked = product.disponible !== false;
+                document.getElementById('prodOferta').checked = product.es_oferta === true;
                 document.getElementById('submitBtn').innerHTML = '<i class="fas fa-save mr-2"></i> Actualizar';
                 
                 if (product.imagen) {
@@ -331,12 +468,13 @@
                 document.getElementById('prodPrecio').value = '';
                 document.getElementById('prodImagen').value = '';
                 document.getElementById('prodDisponible').checked = true;
+                document.getElementById('prodOferta').checked = false;
                 document.getElementById('submitBtn').innerHTML = '<i class="fas fa-save mr-2"></i> Guardar';
                 document.getElementById('imagePreview').classList.add('hidden');
             }
             document.getElementById('prodNombre').focus();
         }
-
+        
         function hideForm() {
             document.getElementById('formBox').classList.add('hidden');
             document.getElementById('imagePreview').classList.add('hidden');
@@ -344,46 +482,50 @@
             status.className = 'upload-status';
             status.textContent = '';
         }
-
+        
+        // ============================================================
+        //  SUBIR IMAGEN A SUPABASE STORAGE
+        // ============================================================
+        
         async function uploadImage(event) {
             const file = event.target.files[0];
             if (!file) return;
-
+            
             const status = document.getElementById('uploadStatus');
             const btn = document.getElementById('uploadBtn');
             const originalText = btn.innerHTML;
-
+            
             status.className = 'upload-status';
             status.textContent = '';
-
+            
             if (!supabaseClient) {
                 status.className = 'upload-status error';
                 status.textContent = 'Supabase no inicializado';
                 return;
             }
-
+            
             if (!file.type.startsWith('image/')) {
                 status.className = 'upload-status error';
                 status.textContent = 'Solo se permiten imágenes';
                 return;
             }
-
+            
             if (file.size > 5 * 1024 * 1024) {
                 status.className = 'upload-status error';
                 status.textContent = 'La imagen no puede superar los 5MB';
                 return;
             }
-
+            
             btn.innerHTML = '<span class="spinner"></span> Subiendo...';
             btn.disabled = true;
-
+            
             try {
                 const ext = file.name.split('.').pop();
                 const fileName = `${Date.now()}_${Math.random().toString(36).substring(2, 8)}.${ext}`;
                 const filePath = `productos/${fileName}`;
-
+                
                 const arrayBuffer = await file.arrayBuffer();
-
+                
                 const { data, error } = await supabaseClient.storage
                     .from('productos')
                     .upload(filePath, arrayBuffer, {
@@ -391,22 +533,22 @@
                         upsert: true,
                         contentType: file.type
                     });
-
+                
                 if (error) throw error;
-
+                
                 const { data: urlData } = supabaseClient.storage
                     .from('productos')
                     .getPublicUrl(filePath);
-
+                
                 const publicUrl = urlData.publicUrl;
-
+                
                 document.getElementById('prodImagen').value = publicUrl;
                 document.getElementById('previewImg').src = publicUrl;
                 document.getElementById('imagePreview').classList.remove('hidden');
-
+                
                 status.className = 'upload-status success';
                 status.textContent = 'Imagen subida correctamente';
-
+                
             } catch (error) {
                 console.error(error);
                 status.className = 'upload-status error';
@@ -417,14 +559,19 @@
                 event.target.value = '';
             }
         }
-
-        function isIdUnique(id, excludeId = null) {
-            return !products.some(p => p.id === id && (excludeId === null || p.id !== excludeId));
-        }
-
-        document.getElementById('productForm').addEventListener('submit', async (e) => {
+        
+        // ============================================================
+        //  GUARDAR PRODUCTO EN SUPABASE
+        // ============================================================
+        
+        document.getElementById('productForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-
+            
+            if (!supabaseClient) {
+                showToast('Supabase no conectado', 'error');
+                return;
+            }
+            
             const id = parseInt(document.getElementById('prodId').value);
             const isEditing = document.getElementById('isEditing').value === 'true';
             const nombre = document.getElementById('prodNombre').value.trim();
@@ -432,92 +579,112 @@
             const categoria = document.getElementById('prodCategoria').value;
             const imagen = document.getElementById('prodImagen').value.trim() || '';
             const disponible = document.getElementById('prodDisponible').checked;
-
+            const es_oferta = document.getElementById('prodOferta').checked;
+            
             if (!id || id <= 0) {
-                showToast('El ID debe ser un número mayor a 0');
+                showToast('El ID debe ser un número mayor a 0', 'error');
                 return;
             }
-
+            
             if (!nombre) {
-                showToast('El nombre es requerido');
+                showToast('El nombre es requerido', 'error');
                 return;
             }
-
+            
             if (!precio || precio <= 0) {
-                showToast('El precio debe ser mayor a 0');
+                showToast('El precio debe ser mayor a 0', 'error');
                 return;
             }
-
-            if (!isEditing && !isIdUnique(id)) {
-                showToast('El ID ' + id + ' ya está en uso. Elige otro.');
-                document.getElementById('prodId').focus();
-                document.getElementById('prodId').select();
-                return;
-            }
-
-            const data = {
+            
+            const productData = {
                 id: id,
                 nombre: nombre,
                 precio: precio,
                 categoria: categoria,
                 imagen: imagen,
                 disponible: disponible,
-                es_oferta: 0
+                es_oferta: es_oferta
             };
-
-            const url = isEditing ? `${API_URL}/productos?id=${id}` : `${API_URL}/productos`;
-            const method = isEditing ? 'PUT' : 'POST';
-
+            
             try {
-                const res = await fetch(url, {
-                    method: method,
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-
-                if (!res.ok) {
-                    const error = await res.json();
-                    throw new Error(error.error || 'Error al guardar');
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner"></span> Guardando...';
+                
+                let result;
+                
+                if (isEditing) {
+                    // Actualizar producto existente
+                    result = await supabaseClient
+                        .from('productos')
+                        .update(productData)
+                        .eq('id', id);
+                } else {
+                    // Crear nuevo producto
+                    result = await supabaseClient
+                        .from('productos')
+                        .insert([productData]);
                 }
-
+                
+                if (result.error) throw result.error;
+                
+                // Recargar productos
                 await loadProducts();
                 hideForm();
-                showToast(isEditing ? 'Producto actualizado' : 'Producto creado');
-
+                showToast(isEditing ? 'Producto actualizado' : 'Producto creado', 'success');
+                
             } catch (e) {
-                console.error(e);
-                showToast('Error: ' + e.message);
+                console.error('Error guardando:', e);
+                showToast('Error al guardar: ' + e.message, 'error');
+            } finally {
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = isEditing ? '<i class="fas fa-save mr-2"></i> Actualizar' : '<i class="fas fa-save mr-2"></i> Guardar';
             }
         });
-
+        
+        // ============================================================
+        //  EDITAR / ELIMINAR PRODUCTO
+        // ============================================================
+        
         function editProduct(id) {
             const p = products.find(prod => prod.id === id);
-            if (!p) return;
+            if (!p) {
+                showToast('Producto no encontrado', 'error');
+                return;
+            }
             showForm(p);
         }
-
+        
         async function deleteProduct(id) {
             if (!confirm('¿Seguro que quieres eliminar este producto?')) return;
-
+            
+            if (!supabaseClient) {
+                showToast('Supabase no conectado', 'error');
+                return;
+            }
+            
             try {
-                const res = await fetch(`${API_URL}/productos?id=${id}`, {
-                    method: 'DELETE'
-                });
-
-                if (!res.ok) {
-                    const error = await res.json();
-                    throw new Error(error.error || 'Error al eliminar');
-                }
-
+                const { error } = await supabaseClient
+                    .from('productos')
+                    .delete()
+                    .eq('id', id);
+                
+                if (error) throw error;
+                
                 await loadProducts();
-                showToast('Producto eliminado');
-
+                showToast('Producto eliminado', 'success');
+                
             } catch (e) {
-                console.error(e);
-                showToast('Error: ' + e.message);
+                console.error('Error eliminando:', e);
+                showToast('Error al eliminar: ' + e.message, 'error');
             }
         }
-
+        
+        // ============================================================
+        //  PREVIEW DE IMAGEN
+        // ============================================================
+        
         document.getElementById('prodImagen').addEventListener('input', function() {
             const url = this.value.trim();
             if (url) {
@@ -527,17 +694,19 @@
                 document.getElementById('imagePreview').classList.add('hidden');
             }
         });
-
-        function showToast(msg) {
-            const toast = document.createElement('div');
-            toast.className = `fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-full font-bold shadow-2xl z-50 transition-all bg-gold-400 text-black text-sm sm:text-base max-w-[90%] text-center`;
-            toast.innerHTML = msg;
-            document.body.appendChild(toast);
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                setTimeout(() => toast.remove(), 500);
-            }, 4000);
-        }
+        
+        // ============================================================
+        //  RECARGAR PRODUCTOS AL ENTRAR EN EL PANEL
+        // ============================================================
+        
+        // Si el usuario ya está logueado y Supabase se conecta después, recargar
+        const observer = new MutationObserver(() => {
+            if (isLoggedIn && supabaseClient && document.getElementById('adminPanel').classList.contains('hidden') === false) {
+                loadProducts();
+                observer.disconnect();
+            }
+        });
+        observer.observe(document.getElementById('adminPanel'), { attributes: true, attributeFilter: ['class'] });
     </script>
 </body>
 </html>
