@@ -1,5 +1,5 @@
 // =====================================================
-//  M&M DRINK LIQUOR - CON SUPABASE
+//  M&M DRINK LIQUOR - CON SUPABASE Y ANIMACIONES
 // =====================================================
 
 // =====================================================
@@ -119,17 +119,29 @@ function escapeHtml(s) {
     return d.innerHTML;
 }
 
+// =====================================================
+//  OCULTAR OVERLAY CON ANIMACIÓN MEJORADA
+// =====================================================
+
 function hideCinematicOverlay() {
     var overlay = document.getElementById('cinematic-overlay');
     if (overlay) {
+        // Esperar a que la barra de progreso termine
         setTimeout(function() {
             overlay.classList.add('hidden');
+            // Después de la animación, permitir scroll y refrescar AOS
             setTimeout(function() {
                 overlay.style.display = 'none';
                 document.body.style.overflow = 'auto';
-                if (typeof AOS !== 'undefined') AOS.refresh();
-            }, 800);
-        }, 1500);
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
+                }
+                // Disparar evento de carga de imágenes
+                if (typeof window.forceLoadAllImages === 'function') {
+                    setTimeout(window.forceLoadAllImages, 300);
+                }
+            }, 1200);
+        }, 2000); // Esperar a que termine la animación de carga
     }
 }
 
@@ -630,6 +642,10 @@ function shareCatalog() {
     }
 }
 
+// =====================================================
+//  FUNCIÓN DE RESCATE PARA FORZAR CARGA DE IMÁGENES
+// =====================================================
+
 window.forceLoadAllImages = function() {
     var allImages = document.querySelectorAll('.product-card img, .cart-item img, #daily-drink-image');
     allImages.forEach(function(img) {
@@ -685,4 +701,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 150);
 });
 
+// Exponer funciones globalmente
 window.menuProducts = menuProducts;
+window.forceLoadAllImages = window.forceLoadAllImages || function() {};
