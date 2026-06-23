@@ -7,6 +7,7 @@
     --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
     --ease-premium: cubic-bezier(0.65, 0, 0.35, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 * {
@@ -27,6 +28,10 @@ body {
     will-change: transform;
 }
 
+/* ============================================================
+   CINEMATIC OVERLAY - MÁS PEQUEÑO Y ELEGANTE
+   ============================================================ */
+
 #cinematic-overlay {
     position: fixed;
     inset: 0;
@@ -44,7 +49,7 @@ body {
 #cinematic-overlay.hidden {
     opacity: 0;
     pointer-events: none;
-    transform: scale(1.05) rotate(1deg);
+    transform: scale(1.03) rotate(0.5deg);
 }
 
 .cinematic-content {
@@ -52,47 +57,47 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 14px;
+    gap: 10px;
     animation: cinematicPulse 2.5s ease-in-out infinite;
     will-change: transform;
 }
 
 @keyframes cinematicPulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.015); }
+    50% { transform: scale(1.02); }
 }
 
 .cinematic-logo {
     position: relative;
-    width: 76px;
-    height: 76px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .cinematic-logo-img {
-    width: 76px;
-    height: 76px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     z-index: 2;
     position: relative;
-    animation: logoReveal 1s var(--ease-spring) forwards;
+    animation: logoReveal 0.8s var(--ease-spring) forwards;
 }
 
 @keyframes logoReveal {
-    0% { opacity: 0; transform: scale(0.6) rotate(-8deg); }
+    0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
     100% { opacity: 1; transform: scale(1) rotate(0deg); }
 }
 
 .cinematic-logo-ring {
     position: absolute;
-    inset: -6px;
+    inset: -5px;
     border-radius: 50%;
-    border: 2px solid transparent;
+    border: 1.5px solid transparent;
     border-top-color: var(--gold);
-    border-right-color: rgba(201, 160, 80, 0.25);
-    animation: ringSpin 2.5s linear infinite;
+    border-right-color: rgba(201, 160, 80, 0.2);
+    animation: ringSpin 2s linear infinite;
     will-change: transform;
 }
 
@@ -103,7 +108,7 @@ body {
 
 .cinematic-title {
     font-family: 'Playfair Display', serif;
-    font-size: 40px;
+    font-size: 28px;
     font-weight: 900;
     letter-spacing: -0.02em;
     background: linear-gradient(135deg, #fff 40%, #8a8a8a);
@@ -111,38 +116,38 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: 0;
-    animation: titleSlide 0.7s var(--ease-spring) 0.3s both;
+    animation: titleSlide 0.6s var(--ease-spring) 0.2s both;
 }
 
 @keyframes titleSlide {
-    0% { opacity: 0; transform: translateY(18px); }
+    0% { opacity: 0; transform: translateY(12px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
 .cinematic-subtitle {
     font-family: 'Inter', sans-serif;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 600;
-    letter-spacing: 0.35em;
+    letter-spacing: 0.3em;
     color: var(--gold);
     text-transform: uppercase;
-    margin: -6px 0 2px 0;
-    animation: subtitleFade 0.7s ease 0.5s both;
+    margin: -4px 0 0 0;
+    animation: subtitleFade 0.6s ease 0.4s both;
 }
 
 @keyframes subtitleFade {
-    0% { opacity: 0; letter-spacing: 0.7em; }
-    100% { opacity: 1; letter-spacing: 0.35em; }
+    0% { opacity: 0; letter-spacing: 0.6em; }
+    100% { opacity: 1; letter-spacing: 0.3em; }
 }
 
 .cinematic-loader {
-    width: 150px;
+    width: 100px;
     height: 2px;
     background: rgba(255, 255, 255, 0.06);
     border-radius: 4px;
     overflow: hidden;
-    margin-top: 6px;
-    animation: loaderAppear 0.5s ease 0.6s both;
+    margin-top: 4px;
+    animation: loaderAppear 0.4s ease 0.5s both;
 }
 
 @keyframes loaderAppear {
@@ -155,7 +160,7 @@ body {
     width: 0%;
     background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
     border-radius: 4px;
-    animation: loaderProgress 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: loaderProgress 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     will-change: width;
 }
 
@@ -167,110 +172,9 @@ body {
     100% { width: 100%; }
 }
 
-@keyframes pulse-slow {
-    0%, 100% { opacity: 0.4; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(1.04); }
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-}
-
-@keyframes glow-pulse {
-    0%, 100% { box-shadow: 0 0 20px rgba(201, 160, 80, 0.1); }
-    50% { box-shadow: 0 0 40px rgba(201, 160, 80, 0.25); }
-}
-
-.animate-pulse-slow {
-    animation: pulse-slow 8s ease-in-out infinite;
-    will-change: transform, opacity;
-}
-
-.animate-float {
-    animation: float 4s ease-in-out infinite;
-}
-
-.animate-glow {
-    animation: glow-pulse 3s ease-in-out infinite;
-}
-
-#main-header {
-    transition: all 0.4s var(--ease-smooth);
-    will-change: background, border-color, backdrop-filter;
-}
-
-#main-header.scrolled {
-    background: rgba(6, 6, 8, 0.92);
-    border-bottom-color: rgba(201, 160, 80, 0.12);
-    backdrop-filter: blur(20px) saturate(180%);
-}
-
-.hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-#categories-scroll {
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-}
-
-.cat-btn-custom {
-    flex-shrink: 0;
-    padding: 8px 18px;
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 600;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    color: #8E8E93;
-    transition: all 0.35s var(--ease-smooth);
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
-    will-change: transform, background, color, box-shadow;
-    position: relative;
-    overflow: hidden;
-}
-
-.cat-btn-custom::after {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: 100px;
-    background: linear-gradient(135deg, var(--gold), transparent, var(--gold));
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
-}
-
-.cat-btn-custom:hover {
-    background: rgba(255, 255, 255, 0.08);
-    color: #fff;
-    transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.15);
-}
-
-.cat-btn-custom:hover::after {
-    opacity: 0.3;
-}
-
-.cat-btn-custom.active {
-    background: linear-gradient(135deg, #C9A050, #B8923F);
-    color: #000;
-    border-color: transparent;
-    box-shadow: 0 6px 24px rgba(201, 160, 80, 0.25);
-    transform: translateY(-2px) scale(1.02);
-}
-
-.cat-btn-custom.active::after {
-    opacity: 0;
-}
+/* ============================================================
+   ANIMACIONES DE ENTRADA PARA PRODUCTOS
+   ============================================================ */
 
 .product-card {
     background: rgba(255, 255, 255, 0.03);
@@ -284,6 +188,32 @@ body {
     will-change: transform, box-shadow, border-color;
     backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
+    opacity: 0;
+    animation: cardFadeIn 0.6s var(--ease-spring) forwards;
+}
+
+.product-card:nth-child(1) { animation-delay: 0.05s; }
+.product-card:nth-child(2) { animation-delay: 0.10s; }
+.product-card:nth-child(3) { animation-delay: 0.15s; }
+.product-card:nth-child(4) { animation-delay: 0.20s; }
+.product-card:nth-child(5) { animation-delay: 0.25s; }
+.product-card:nth-child(6) { animation-delay: 0.30s; }
+.product-card:nth-child(7) { animation-delay: 0.35s; }
+.product-card:nth-child(8) { animation-delay: 0.40s; }
+.product-card:nth-child(9) { animation-delay: 0.45s; }
+.product-card:nth-child(10) { animation-delay: 0.50s; }
+.product-card:nth-child(11) { animation-delay: 0.55s; }
+.product-card:nth-child(12) { animation-delay: 0.60s; }
+
+@keyframes cardFadeIn {
+    0% { 
+        opacity: 0; 
+        transform: translateY(30px) scale(0.95);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0) scale(1);
+    }
 }
 
 .product-card::before {
@@ -302,6 +232,7 @@ body {
     border-color: rgba(201, 160, 80, 0.25);
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 160, 80, 0.1);
     background: rgba(255, 255, 255, 0.06);
+    transition: all 0.3s var(--ease-spring);
 }
 
 .product-card:hover::before {
@@ -332,7 +263,7 @@ body {
 }
 
 .product-card:hover .img-wrap img {
-    transform: scale(1.06);
+    transform: scale(1.08);
 }
 
 .product-card .img-wrap .no-image-text {
@@ -377,6 +308,11 @@ body {
     border-radius: 100px;
     letter-spacing: 0.05em;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.product-card .badge-vaso.oferta {
+    background: linear-gradient(135deg, #D4AF37, #B8923F);
+    color: #000;
 }
 
 .product-card .category-tag {
@@ -426,50 +362,73 @@ body {
 .product-card .add-btn:hover {
     background: var(--gold);
     color: #000;
-    transform: scale(1.08);
+    transform: scale(1.08) rotate(90deg);
     box-shadow: 0 6px 24px rgba(201, 160, 80, 0.3);
 }
 
 .product-card .add-btn:active {
-    transform: scale(0.93);
+    transform: scale(0.93) rotate(0deg);
 }
 
-.add-btn-small {
-    width: 24px;
-    height: 24px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.06);
-    color: #8E8E93;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s var(--ease-spring);
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 700;
+/* ============================================================
+   CATEGORÍAS - ANIMACIÓN
+   ============================================================ */
+
+.cat-btn-custom {
     flex-shrink: 0;
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #8E8E93;
+    transition: all 0.35s var(--ease-spring);
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    will-change: transform, background, color, box-shadow;
+    position: relative;
+    overflow: hidden;
 }
 
-.add-btn-small:hover {
-    background: var(--gold);
+.cat-btn-custom::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 100px;
+    background: linear-gradient(135deg, var(--gold), transparent, var(--gold));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.cat-btn-custom:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.cat-btn-custom:hover::after {
+    opacity: 0.3;
+}
+
+.cat-btn-custom.active {
+    background: linear-gradient(135deg, #C9A050, #B8923F);
     color: #000;
-    transform: scale(1.06);
-    box-shadow: 0 4px 16px rgba(201, 160, 80, 0.25);
     border-color: transparent;
+    box-shadow: 0 6px 24px rgba(201, 160, 80, 0.25);
+    transform: translateY(-2px) scale(1.04);
 }
 
-.add-btn-small.gold {
-    background: rgba(201, 160, 80, 0.15);
-    color: var(--gold);
-    border-color: rgba(201, 160, 80, 0.15);
+.cat-btn-custom.active::after {
+    opacity: 0;
 }
 
-.add-btn-small.gold:hover {
-    background: var(--gold);
-    color: #000;
-    border-color: transparent;
-}
+/* ============================================================
+   SKELETON LOADING
+   ============================================================ */
 
 .skeleton {
     background: linear-gradient(90deg, #121216 0%, #1e1e26 30%, #121216 60%, #1e1e26 100%);
@@ -485,6 +444,10 @@ body {
     100% { background-position: 300% 0%; }
 }
 
+/* ============================================================
+   TOAST
+   ============================================================ */
+
 #toast-notification {
     transition: all 0.6s var(--ease-spring);
     will-change: transform, opacity;
@@ -495,6 +458,10 @@ body {
     opacity: 1;
 }
 
+/* ============================================================
+   CARRITO
+   ============================================================ */
+
 #cart-sheet {
     background: rgba(6, 6, 8, 0.97);
     backdrop-filter: blur(20px);
@@ -502,13 +469,19 @@ body {
 }
 
 #cart-items-container .cart-item {
-    animation: slideIn 0.35s var(--ease-spring) backwards;
+    animation: slideIn 0.4s var(--ease-spring) backwards;
     will-change: transform, opacity;
 }
 
+.cart-item:nth-child(1) { animation-delay: 0.05s; }
+.cart-item:nth-child(2) { animation-delay: 0.10s; }
+.cart-item:nth-child(3) { animation-delay: 0.15s; }
+.cart-item:nth-child(4) { animation-delay: 0.20s; }
+.cart-item:nth-child(5) { animation-delay: 0.25s; }
+
 @keyframes slideIn {
-    0% { opacity: 0; transform: translateX(16px); }
-    100% { opacity: 1; transform: translateX(0); }
+    0% { opacity: 0; transform: translateX(30px) scale(0.95); }
+    100% { opacity: 1; transform: translateX(0) scale(1); }
 }
 
 .cart-item img {
@@ -518,6 +491,10 @@ body {
     border-radius: 8px;
     flex-shrink: 0;
 }
+
+/* ============================================================
+   DAILY DRINK
+   ============================================================ */
 
 .daily-no-image {
     position: absolute;
@@ -571,17 +548,40 @@ body {
     color: #555;
 }
 
+/* ============================================================
+   DAILY DRINK IMAGE
+   ============================================================ */
+
 #daily-drink-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s var(--ease-smooth);
+    transition: transform 0.6s var(--ease-premium);
     will-change: transform;
 }
 
 #daily-drink-image:hover {
-    transform: scale(1.04);
+    transform: scale(1.06);
 }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+#main-header {
+    transition: all 0.4s var(--ease-smooth);
+    will-change: background, border-color, backdrop-filter;
+}
+
+#main-header.scrolled {
+    background: rgba(6, 6, 8, 0.92);
+    border-bottom-color: rgba(201, 160, 80, 0.12);
+    backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
 
 ::-webkit-scrollbar {
     width: 4px;
@@ -601,6 +601,60 @@ body {
     background: var(--gold-light);
 }
 
+/* ============================================================
+   HIDE SCROLLBAR
+   ============================================================ */
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+#categories-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ============================================================
+   ANIMACIONES GENERALES
+   ============================================================ */
+
+@keyframes pulse-slow {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.04); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(201, 160, 80, 0.1); }
+    50% { box-shadow: 0 0 40px rgba(201, 160, 80, 0.25); }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 8s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-glow {
+    animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
 @media (max-width: 640px) {
     .product-card {
         padding: 10px;
@@ -617,6 +671,9 @@ body {
         width: 28px;
         height: 28px;
         border-radius: 8px;
+    }
+    .product-card .add-btn:hover {
+        transform: scale(1.06) rotate(90deg);
     }
     .product-card .img-wrap {
         border-radius: 10px;
@@ -637,12 +694,6 @@ body {
         padding: 2px 8px;
         top: 8px;
         right: 8px;
-    }
-    .add-btn-small {
-        width: 22px;
-        height: 22px;
-        font-size: 10px;
-        border-radius: 6px;
     }
     .cart-item img {
         width: 40px;
@@ -668,18 +719,24 @@ body {
         font-size: 12px;
     }
     .cinematic-title {
-        font-size: 30px;
+        font-size: 24px;
     }
     .cinematic-logo {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
     .cinematic-logo-img {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
     .cinematic-loader {
-        width: 120px;
+        width: 80px;
+    }
+    .cinematic-subtitle {
+        font-size: 8px;
+    }
+    .cinematic-logo-ring {
+        inset: -4px;
     }
 }
 
