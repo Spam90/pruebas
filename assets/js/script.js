@@ -39,14 +39,11 @@ function initSupabase() {
     return false;
 }
 
-// Intentar inicializar
 if (!initSupabase()) {
-    // Esperar a que cargue Supabase
     var checkInterval = setInterval(function() {
         if (typeof supabase !== 'undefined') {
             clearInterval(checkInterval);
             initSupabase();
-            // Si ya cargamos productos, recargar
             if (menuProducts.length > 0) {
                 loadProducts();
             }
@@ -163,7 +160,6 @@ async function loadProducts() {
 
         if (!supabaseClient) {
             console.warn('⏳ Esperando conexión a Supabase...');
-            // Esperar un poco y reintentar
             await new Promise(resolve => setTimeout(resolve, 1000));
             if (!supabaseClient) {
                 initSupabase();
@@ -186,7 +182,7 @@ async function loadProducts() {
             throw new Error('No hay productos en la base de datos');
         }
 
-        menuProducts = groupProductsWithGlass(data);
+        menuProducts = data;
         window.menuProducts = menuProducts;
 
         renderCategories();
@@ -211,86 +207,6 @@ async function loadProducts() {
                 '</div></div>';
         }
     }
-}
-
-// =====================================================
-//  AGRUPACIÓN DE PRODUCTOS CON VASO
-// =====================================================
-
-function groupProductsWithGlass(products) {
-    var grouped = {};
-    var glassProducts = [];
-    var normalProducts = [];
-
-    for (var i = 0; i < products.length; i++) {
-        var p = products[i];
-        if (p.nombre && (p.nombre.toLowerCase().indexOf('+ vaso') !== -1 || p.nombre.toLowerCase().indexOf('con vaso') !== -1)) {
-            glassProducts.push(p);
-        } else {
-            normalProducts.push(p);
-        }
-    }
-
-    for (var j = 0; j < glassProducts.length; j++) {
-        var p2 = glassProducts[j];
-        var baseName = p2.nombre.replace(/\s*\+\s*vaso/i, '').replace(/\s*con\s*vaso/i, '').trim();
-        if (!baseName || baseName.toLowerCase() === 'vaso') {
-            baseName = p2.nombre;
-        }
-
-        if (!grouped[baseName]) {
-            grouped[baseName] = {
-                id: p2.id,
-                nombre: baseName,
-                categoria: p2.categoria,
-                imagen: p2.imagen,
-                es_oferta: p2.es_oferta || false,
-                disponible: p2.disponible !== false,
-                precio_sin_vaso: null,
-                precio_con_vaso: null,
-                id_sin_vaso: null,
-                id_con_vaso: null,
-                tiene_vaso: true,
-                productos: []
-            };
-        }
-
-        if (p2.nombre.toLowerCase().indexOf('+ vaso') !== -1 || p2.nombre.toLowerCase().indexOf('con vaso') !== -1) {
-            grouped[baseName].precio_con_vaso = p2.precio;
-            grouped[baseName].id_con_vaso = p2.id;
-        } else {
-            grouped[baseName].precio_sin_vaso = p2.precio;
-            grouped[baseName].id_sin_vaso = p2.id;
-        }
-
-        grouped[baseName].productos.push(p2);
-    }
-
-    var groupedArray = [];
-    for (var key in grouped) {
-        if (grouped.hasOwnProperty(key)) {
-            var g = grouped[key];
-            if (g.precio_con_vaso !== null || g.precio_sin_vaso !== null) {
-                groupedArray.push(g);
-            }
-        }
-    }
-
-    for (var k = 0; k < groupedArray.length; k++) {
-        var g2 = groupedArray[k];
-        if (g2.precio_sin_vaso === null && g2.precio_con_vaso !== null) {
-            g2.precio_sin_vaso = g2.precio_con_vaso;
-            g2.id_sin_vaso = g2.id_con_vaso;
-        }
-        if (g2.precio_con_vaso === null && g2.precio_sin_vaso !== null) {
-            g2.precio_con_vaso = g2.precio_sin_vaso;
-            g2.id_con_vaso = g2.id_sin_vaso;
-        }
-        g2.precio = g2.precio_sin_vaso;
-        g2.id = g2.id_sin_vaso;
-    }
-
-    return normalProducts.concat(groupedArray);
 }
 
 // =====================================================
@@ -436,14 +352,10 @@ function renderProducts(allItems) {
         for (var i = 0; i < slice.length; i++) {
             var prod = slice[i];
             var img = getProductImage(prod);
-            var tieneVaso = prod.tiene_vaso === true;
-            var precioSinVaso = prod.precio_sin_vaso || prod.precio;
-            var precioConVaso = prod.precio_con_vaso || prod.precio;
-            var tieneAmbasOpciones = tieneVaso && ((prod.id_sin_vaso && prod.id_con_vaso) || (prod.precio_sin_vaso && prod.precio_con_vaso));
             var delay = Math.min(i * 40, 300);
             var nombreSeguro = escapeHtml(prod.nombre);
             var catSeguro = escapeHtml(prod.categoria);
-            var esOferta = prod.es_oferta === true;
+            var esOferta = prod.es_oferta == 1;
 
             html += '<div class="product-card" data-aos="fade-up" data-aos-duration="500" data-aos-delay="' + delay + '">';
             html += '<div class="img-wrap">';
@@ -452,22 +364,12 @@ function renderProducts(allItems) {
 
             html += '<div class="no-image-text" style="display:none;"><span>🍷</span><p>No hay imagen<br>disponible</p></div>';
 
-            if (tieneVaso) html += '<span class="badge-vaso">🥔 +Vaso</span>';
-            if (esOferta) html += '<span class="badge-vaso" style="background:linear-gradient(135deg,#D4AF37,#B8923F);color:#000;">🔥 Oferta</span>';
+            if (esOferta) html += '<span class="badge-vaso oferta">🔥 Oferta</span>';
 
             html += '</div>';
             html += '<span class="category-tag">' + catSeguro + '</span>';
             html += '<h4 class="product-name">' + nombreSeguro + '</h4>';
-
-            if (tieneAmbasOpciones) {
-                html += '<div class="mt-2 flex flex-col gap-1.5">';
-                html += '<div class="flex items-center justify-between text-xs"><span class="text-gray-400">Sin vaso</span><span class="text-white font-semibold">RD$ ' + formatPrice(precioSinVaso) + '</span><button onclick="addToCartWithGlass(' + (prod.id_sin_vaso || prod.id) + ', false)" class="add-btn-small">+</button></div>';
-                html += '<div class="flex items-center justify-between text-xs border-t border-white/5 pt-1.5"><span class="text-gray-400">Con vaso 🥔</span><span class="text-gold-400 font-semibold">RD$ ' + formatPrice(precioConVaso) + '</span><button onclick="addToCartWithGlass(' + (prod.id_con_vaso || prod.id) + ', true)" class="add-btn-small gold">+</button></div>';
-                html += '</div>';
-            } else {
-                html += '<div class="flex items-center justify-between mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-white/5"><span class="price">RD$ ' + formatPrice(prod.precio) + '</span><button onclick="addToCart(' + prod.id + ')" class="add-btn"><i class="fa-solid fa-plus text-xs sm:text-sm"></i></button></div>';
-            }
-
+            html += '<div class="flex items-center justify-between mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-white/5"><span class="price">RD$ ' + formatPrice(prod.precio) + '</span><button onclick="addToCart(' + prod.id + ')" class="add-btn"><i class="fa-solid fa-plus text-xs sm:text-sm"></i></button></div>';
             html += '</div>';
         }
 
@@ -562,63 +464,6 @@ function addToCart(id) {
     showToast('"' + item.nombre + '" añadido');
 }
 
-function addToCartWithGlass(id, conVaso) {
-    var item = null;
-    for (var i = 0; i < menuProducts.length; i++) {
-        if (menuProducts[i].id === Number(id)) { item = menuProducts[i]; break; }
-    }
-
-    if (!item) {
-        for (var j = 0; j < menuProducts.length; j++) {
-            var p = menuProducts[j];
-            if (p.id_sin_vaso === Number(id) || p.id_con_vaso === Number(id)) {
-                item = p;
-                break;
-            }
-        }
-    }
-
-    if (!item) return;
-
-    var nombreMostrar = item.nombre;
-    if (item.tiene_vaso) {
-        nombreMostrar = conVaso ? item.nombre + ' + Vaso 🥔' : item.nombre + ' (sin vaso)';
-    }
-
-    var precio = item.precio;
-    if (item.tiene_vaso) {
-        precio = conVaso ? (item.precio_con_vaso || item.precio) : (item.precio_sin_vaso || item.precio);
-    }
-
-    var cartItem = {
-        id: Number(id),
-        nombre: nombreMostrar,
-        categoria: item.categoria,
-        imagen: item.imagen,
-        precio: precio,
-        es_oferta: item.es_oferta || false,
-        quantity: 1,
-        tiene_vaso: item.tiene_vaso || false,
-        con_vaso: conVaso || false,
-        id_original: item.id_original || id
-    };
-
-    var existing = null;
-    for (var k = 0; k < cart.length; k++) {
-        if (cart[k].id === Number(id)) { existing = cart[k]; break; }
-    }
-
-    if (existing) {
-        existing.quantity += 1;
-    } else {
-        cart.push(cartItem);
-    }
-
-    updateCartUI();
-    saveCartData();
-    showToast('"' + nombreMostrar + '" añadido');
-}
-
 function updateCartQuantity(id, change) {
     for (var i = 0; i < cart.length; i++) {
         if (cart[i].id === Number(id)) {
@@ -658,14 +503,13 @@ function updateCartUI() {
         for (var j = 0; j < cart.length; j++) {
             var item = cart[j];
             var img = getProductImage(item);
-            var esConVaso = item.con_vaso === true;
             var nombreSeguro = escapeHtml(item.nombre);
 
             html += '<div class="cart-item flex items-center space-x-3 sm:space-x-4 bg-white/[0.02] p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-white/[0.04]" style="animation-delay: ' + (j * 40) + 'ms">';
 
             html += '<img src="' + img + '" alt="' + nombreSeguro + '" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
 
-            html += '<div class="flex-1 min-w-0"><h5 class="text-xs sm:text-sm font-bold text-white truncate">' + nombreSeguro + '</h5><p class="text-[10px] sm:text-xs text-gold-400">RD$ ' + formatPrice(item.precio) + ' x ' + item.quantity + (esConVaso ? ' 🥔' : '') + '</p></div>';
+            html += '<div class="flex-1 min-w-0"><h5 class="text-xs sm:text-sm font-bold text-white truncate">' + nombreSeguro + '</h5><p class="text-[10px] sm:text-xs text-gold-400">RD$ ' + formatPrice(item.precio) + ' x ' + item.quantity + '</p></div>';
             html += '<div class="flex items-center space-x-1 sm:space-x-2">';
             html += '<button onclick="updateCartQuantity(' + item.id + ', -1)" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/5 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 text-xs sm:text-sm">−</button>';
             html += '<span class="text-xs sm:text-sm w-4 sm:w-5 text-center">' + item.quantity + '</span>';
@@ -736,8 +580,7 @@ function confirmSendOrder() {
     var message = '*NUEVO PEDIDO - M&M DRINK LIQUOR*\n*Cliente:* ' + name + '\n-------------------------------------------\n';
     for (var i = 0; i < cart.length; i++) {
         var item = cart[i];
-        var conVaso = item.con_vaso ? ' 🥔 con vaso' : '';
-        message += '• ' + item.quantity + 'x ' + item.nombre + conVaso + '\n  Subtotal: RD$ ' + formatPrice(item.precio * item.quantity) + '\n';
+        message += '• ' + item.quantity + 'x ' + item.nombre + '\n  Subtotal: RD$ ' + formatPrice(item.precio * item.quantity) + '\n';
     }
     var total = 0;
     for (var j = 0; j < cart.length; j++) { total += cart[j].precio * cart[j].quantity; }
@@ -786,10 +629,6 @@ function shareCatalog() {
         } catch(e) { window.open('https://wa.me/?text=' + encodeURIComponent(message), '_blank'); }
     }
 }
-
-// =====================================================
-//  FUNCIÓN DE RESCATE PARA FORZAR CARGA DE IMÁGENES
-// =====================================================
 
 window.forceLoadAllImages = function() {
     var allImages = document.querySelectorAll('.product-card img, .cart-item img, #daily-drink-image');
@@ -846,5 +685,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 150);
 });
 
-// Exponer funciones globalmente
 window.menuProducts = menuProducts;
