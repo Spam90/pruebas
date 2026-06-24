@@ -706,6 +706,40 @@ body {
 }
 
 /* ============================================================
+   BOTONES DE MÉTODO DE PAGO
+   ============================================================ */
+
+.payment-btn {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.payment-btn:hover {
+    transform: scale(1.02);
+}
+
+.payment-btn:active {
+    transform: scale(0.95);
+}
+
+.payment-btn.border-gold-400 {
+    border-color: #D4AF37 !important;
+}
+
+.payment-btn.bg-gold-400\/10 {
+    background-color: rgba(212, 175, 55, 0.1) !important;
+}
+
+.payment-btn i {
+    transition: transform 0.3s ease;
+}
+
+.payment-btn:hover i {
+    transform: scale(1.1);
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 
