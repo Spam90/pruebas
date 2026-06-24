@@ -25,6 +25,7 @@ var PAGE_LOAD_TIMESTAMP = Date.now();
 var DEFAULT_WHATSAPP = '18294481651';
 var supabaseClient = null;
 var isMobile = window.matchMedia('(max-width: 767px)').matches;
+var selectedPaymentMethod = '';
 
 // =====================================================
 //  INICIALIZAR SUPABASE
@@ -120,7 +121,7 @@ function escapeHtml(s) {
 }
 
 // =====================================================
-//  OCULTAR OVERLAY CON ANIMACIÓN MEJORADA
+//  OCULTAR OVERLAY
 // =====================================================
 
 function hideCinematicOverlay() {
@@ -274,7 +275,7 @@ function renderDailyDrink() {
 }
 
 // =====================================================
-//  CATEGORÍAS (CON OFERTAS)
+//  CATEGORÍAS CON OFERTAS
 // =====================================================
 
 function renderCategories() {
@@ -334,7 +335,7 @@ function filterCategory(cat) {
 }
 
 // =====================================================
-//  FILTROS (CON OFERTAS)
+//  FILTROS CON OFERTAS
 // =====================================================
 
 function applyFilters() {
@@ -573,11 +574,106 @@ function saveCartData() {
 }
 
 // =====================================================
-//  ENVÍO DE PEDIDO
+//  SELECCIONAR MÉTODO DE PAGO
 // =====================================================
+
+function selectPaymentMethod(method) {
+    selectedPaymentMethod = method;
+    document.getElementById('selectedPayment').value = method;
+    
+    var buttons = document.querySelectorAll('.payment-btn');
+    buttons.forEach(function(btn) {
+        btn.classList.remove('border-gold-400', 'text-white', 'bg-gold-400/10');
+        btn.classList.add('text-gray-400');
+    });
+    
+    var selectedBtn = document.querySelector('.payment-btn[data-method="' + method + '"]');
+    if (selectedBtn) {
+        selectedBtn.classList.add('border-gold-400', 'text-white', 'bg-gold-400/10');
+        selectedBtn.classList.remove('text-gray-400');
+    }
+}
+
+// =====================================================
+//  CONFIRMAR Y ENVIAR PEDIDO CON UBICACIÓN Y PAGO
+// =====================================================
+
+function confirmSendOrder() {
+    var nameInput = document.getElementById('customerName');
+    var locationInput = document.getElementById('customerLocation');
+    var paymentInput = document.getElementById('selectedPayment');
+    
+    var name = nameInput ? nameInput.value.trim() : '';
+    var location = locationInput ? locationInput.value.trim() : '';
+    var payment = paymentInput ? paymentInput.value : '';
+    
+    if (!name) {
+        showToast('⚠️ Ingresa tu nombre');
+        nameInput.focus();
+        return;
+    }
+    
+    if (!location) {
+        showToast('⚠️ Ingresa tu ubicación');
+        locationInput.focus();
+        return;
+    }
+    
+    if (!payment) {
+        showToast('⚠️ Selecciona un método de pago');
+        return;
+    }
+    
+    if (cart.length === 0) {
+        showToast('⚠️ El carrito está vacío');
+        return;
+    }
+
+    var message = '*NUEVO PEDIDO - M&M DRINK LIQUOR*\n';
+    message += '-------------------------------------------\n';
+    message += '*Cliente:* ' + name + '\n';
+    message += '*Ubicación:* ' + location + '\n';
+    message += '*Método de pago:* ' + payment + '\n';
+    message += '-------------------------------------------\n';
+    message += '*PRODUCTOS:*\n';
+    
+    var total = 0;
+    for (var i = 0; i < cart.length; i++) {
+        var item = cart[i];
+        var subtotal = item.precio * item.quantity;
+        total += subtotal;
+        message += '• ' + item.quantity + 'x ' + item.nombre + '\n';
+        message += '  Subtotal: RD$ ' + formatPrice(subtotal) + '\n';
+    }
+    
+    message += '-------------------------------------------\n';
+    message += '*TOTAL:* RD$ ' + formatPrice(total) + '\n';
+    message += '-------------------------------------------\n';
+    message += '_Para confirmar disponibilidad y envío._';
+
+    var url = 'https://wa.me/' + DEFAULT_WHATSAPP + '?text=' + encodeURIComponent(message);
+    
+    cart = [];
+    saveCartData();
+    updateCartUI();
+    closeNameModal();
+    toggleCartModal();
+    
+    window.open(url, '_blank');
+    showToast('✅ Pedido enviado');
+}
 
 function openNameModal() {
     if (cart.length === 0) { showToast("Agrega productos primero"); return; }
+    // Resetear selección anterior
+    selectedPaymentMethod = '';
+    document.getElementById('selectedPayment').value = '';
+    var buttons = document.querySelectorAll('.payment-btn');
+    buttons.forEach(function(btn) {
+        btn.classList.remove('border-gold-400', 'text-white', 'bg-gold-400/10');
+        btn.classList.add('text-gray-400');
+    });
+    
     var modal = document.getElementById('name-modal');
     var content = document.getElementById('name-modal-content');
     if (modal) {
@@ -599,30 +695,6 @@ function closeNameModal() {
         content.classList.add('scale-95', 'opacity-0');
     }
     setTimeout(function() { if (modal) modal.classList.add('hidden'); }, 400);
-}
-
-function confirmSendOrder() {
-    var nameInput = document.getElementById('customerName');
-    var name = nameInput ? nameInput.value.trim() : '';
-    if (!name) { alert('Ingresa tu nombre'); return; }
-
-    var message = '*NUEVO PEDIDO - M&M DRINK LIQUOR*\n*Cliente:* ' + name + '\n-------------------------------------------\n';
-    for (var i = 0; i < cart.length; i++) {
-        var item = cart[i];
-        message += '• ' + item.quantity + 'x ' + item.nombre + '\n  Subtotal: RD$ ' + formatPrice(item.precio * item.quantity) + '\n';
-    }
-    var total = 0;
-    for (var j = 0; j < cart.length; j++) { total += cart[j].precio * cart[j].quantity; }
-    message += '-------------------------------------------\n*TOTAL:* RD$ ' + formatPrice(total) + '\n\n_Para confirmar disponibilidad y envío._';
-
-    var url = 'https://wa.me/' + DEFAULT_WHATSAPP + '?text=' + encodeURIComponent(message);
-    cart = [];
-    saveCartData();
-    updateCartUI();
-    closeNameModal();
-    toggleCartModal();
-    window.open(url, '_blank');
-    showToast('Pedido enviado ✅');
 }
 
 function showToast(message) {
@@ -658,10 +730,6 @@ function shareCatalog() {
         } catch(e) { window.open('https://wa.me/?text=' + encodeURIComponent(message), '_blank'); }
     }
 }
-
-// =====================================================
-//  FUNCIÓN DE RESCATE PARA FORZAR CARGA DE IMÁGENES
-// =====================================================
 
 window.forceLoadAllImages = function() {
     var allImages = document.querySelectorAll('.product-card img, .cart-item img, #daily-drink-image');
