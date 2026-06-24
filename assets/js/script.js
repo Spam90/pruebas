@@ -126,22 +126,19 @@ function escapeHtml(s) {
 function hideCinematicOverlay() {
     var overlay = document.getElementById('cinematic-overlay');
     if (overlay) {
-        // Esperar a que la barra de progreso termine
         setTimeout(function() {
             overlay.classList.add('hidden');
-            // Después de la animación, permitir scroll y refrescar AOS
             setTimeout(function() {
                 overlay.style.display = 'none';
                 document.body.style.overflow = 'auto';
                 if (typeof AOS !== 'undefined') {
                     AOS.refresh();
                 }
-                // Disparar evento de carga de imágenes
                 if (typeof window.forceLoadAllImages === 'function') {
                     setTimeout(window.forceLoadAllImages, 300);
                 }
             }, 1200);
-        }, 2000); // Esperar a que termine la animación de carga
+        }, 2000);
     }
 }
 
@@ -277,7 +274,7 @@ function renderDailyDrink() {
 }
 
 // =====================================================
-//  CATEGORÍAS
+//  CATEGORÍAS (CON OFERTAS)
 // =====================================================
 
 function renderCategories() {
@@ -285,11 +282,20 @@ function renderCategories() {
     if (!container) return;
 
     var catSet = {};
+    var tieneOfertas = false;
+    
     for (var i = 0; i < menuProducts.length; i++) {
         var c = menuProducts[i].categoria;
         if (c) catSet[c] = true;
+        if (menuProducts[i].es_oferta == 1) {
+            tieneOfertas = true;
+        }
     }
+    
     var cats = ['all'];
+    if (tieneOfertas) {
+        cats.push('ofertas');
+    }
     for (var key in catSet) {
         if (catSet.hasOwnProperty(key)) cats.push(key);
     }
@@ -297,9 +303,10 @@ function renderCategories() {
     var html = '';
     for (var j = 0; j < cats.length; j++) {
         var cat = cats[j];
-        var label = cat === 'all' ? '⭐ Todos' : cat;
+        var label = cat === 'all' ? '⭐ Todos' : (cat === 'ofertas' ? '🔥 Ofertas' : cat);
         var isActive = cat === currentCategory;
-        html += '<button onclick="filterCategory(\'' + cat.replace(/'/g, "\\'") + '\')" class="cat-btn-custom' + (isActive ? ' active' : '') + '" data-cat="' + escapeHtml(cat) + '">' + escapeHtml(label) + '</button>';
+        var extraClass = cat === 'ofertas' ? ' oferta-cat' : '';
+        html += '<button onclick="filterCategory(\'' + cat.replace(/'/g, "\\'") + '\')" class="cat-btn-custom' + (isActive ? ' active' : '') + extraClass + '" data-cat="' + escapeHtml(cat) + '">' + escapeHtml(label) + '</button>';
     }
     container.innerHTML = html;
 
@@ -327,14 +334,20 @@ function filterCategory(cat) {
 }
 
 // =====================================================
-//  FILTROS Y RENDERIZADO DE PRODUCTOS
+//  FILTROS (CON OFERTAS)
 // =====================================================
 
 function applyFilters() {
     var filtered = [];
     for (var i = 0; i < menuProducts.length; i++) {
         var p = menuProducts[i];
-        if (currentCategory !== 'all' && p.categoria !== currentCategory) continue;
+        
+        if (currentCategory === 'ofertas') {
+            if (p.es_oferta != 1) continue;
+        } else if (currentCategory !== 'all' && p.categoria !== currentCategory) {
+            continue;
+        }
+        
         if (searchQuery) {
             var q = searchQuery.toLowerCase();
             if (p.nombre.toLowerCase().indexOf(q) === -1 && p.categoria.toLowerCase().indexOf(q) === -1) continue;
@@ -343,6 +356,10 @@ function applyFilters() {
     }
     renderProducts(filtered);
 }
+
+// =====================================================
+//  RENDERIZADO DE PRODUCTOS
+// =====================================================
 
 function renderProducts(allItems) {
     try {
@@ -701,6 +718,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 150);
 });
 
-// Exponer funciones globalmente
 window.menuProducts = menuProducts;
 window.forceLoadAllImages = window.forceLoadAllImages || function() {};
