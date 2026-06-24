@@ -486,6 +486,30 @@ body {
 }
 
 /* ============================================================
+   CATEGORÍA OFERTAS - ESTILO ESPECIAL
+   ============================================================ */
+
+.cat-btn-custom.oferta-cat {
+    background: linear-gradient(135deg, #D4AF37, #B8923F);
+    color: #000;
+    border-color: #D4AF37;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+}
+
+.cat-btn-custom.oferta-cat:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+}
+
+.cat-btn-custom.oferta-cat.active {
+    background: linear-gradient(135deg, #ff6b00, #e65100);
+    color: #fff;
+    border-color: #ff6b00;
+    box-shadow: 0 8px 30px rgba(255, 107, 0, 0.4);
+    transform: translateY(-3px) scale(1.06);
+}
+
+/* ============================================================
    SKELETON LOADING
    ============================================================ */
 
