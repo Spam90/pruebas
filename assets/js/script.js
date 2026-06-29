@@ -1,17 +1,13 @@
 // =====================================================
-//  M&M DRINK LIQUOR - CON SUPABASE Y ANIMACIONES
+//  M&M DRINK LIQUOR
 // =====================================================
 
 // =====================================================
-//  CONFIGURACIÓN SUPABASE
+//  CONFIGURACIÓN
 // =====================================================
 
 const SUPABASE_URL = 'https://mflamrkyqjipbbjevfgv.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1mbGFtcmt5cWppcGJiamV2Zmd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIwMDc2NzgsImV4cCI6MjA5NzU4MzY3OH0.ASKpXVxk5nuaoZqGi5P9TuM55Lurju8BZbdK0fPVUB8';
-
-// =====================================================
-//  VARIABLES GLOBALES
-// =====================================================
 
 var menuProducts = [];
 var currentCategory = 'all';
@@ -22,7 +18,7 @@ var cart = [];
 var imageCache = {};
 var dailyDrink = null;
 var PAGE_LOAD_TIMESTAMP = Date.now();
-var DEFAULT_WHATSAPP = '18098968356';
+var DEFAULT_WHATSAPP = '18294481651';
 var supabaseClient = null;
 var isMobile = window.matchMedia('(max-width: 767px)').matches;
 var selectedPaymentMethod = '';
@@ -34,7 +30,6 @@ var selectedPaymentMethod = '';
 function initSupabase() {
     if (typeof supabase !== 'undefined') {
         supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-        console.log('✅ Supabase inicializado');
         return true;
     }
     return false;
@@ -53,47 +48,35 @@ if (!initSupabase()) {
 }
 
 // =====================================================
-//  FUNCIÓN PARA OBTENER URL ABSOLUTA
+//  FUNCIONES DE IMÁGENES
 // =====================================================
 
 function getAbsoluteUrl(path) {
     if (!path) return null;
     if (path.startsWith('http://') || path.startsWith('https://')) return path;
     if (path.startsWith('//')) return 'https:' + path;
-    
     var baseUrl = window.location.origin;
     if (!path.startsWith('/')) path = '/' + path;
     path = path.replace(/\/\//g, '/');
     return baseUrl + path;
 }
 
-// =====================================================
-//  FUNCIÓN PARA OBTENER IMÁGENES
-// =====================================================
-
 function getProductImage(item) {
     var key = item.id;
     if (imageCache[key] !== undefined) return imageCache[key];
-    
     if (item.imagen && item.imagen.trim() !== '' && item.imagen !== 'null' && item.imagen !== 'undefined') {
         var url = item.imagen.trim();
         var absoluteUrl = getAbsoluteUrl(url);
-        
         if (absoluteUrl) {
             var finalUrl = absoluteUrl + '?_t=' + Date.now() + '&_r=' + Math.random().toString(36).substr(2, 5);
             imageCache[key] = finalUrl;
             return finalUrl;
         }
     }
-    
     var placeholder = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"%3E%3Crect width="200" height="200" fill="%231a1a2e"/%3E%3Ctext x="100" y="90" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="50" fill="%23444"%3E🍷%3C/text%3E%3Ctext x="100" y="125" text-anchor="middle" dominant-baseline="central" font-family="Arial" font-size="14" fill="%23555"%3ESin imagen%3C/text%3E%3C/svg%3E';
     imageCache[key] = placeholder;
     return placeholder;
 }
-
-// =====================================================
-//  HANDLER DE ERROR DE IMÁGENES
-// =====================================================
 
 function handleImageError(img) {
     if (!img) return;
@@ -119,10 +102,6 @@ function escapeHtml(s) {
     d.appendChild(document.createTextNode(s));
     return d.innerHTML;
 }
-
-// =====================================================
-//  OCULTAR OVERLAY
-// =====================================================
 
 function hideCinematicOverlay() {
     var overlay = document.getElementById('cinematic-overlay');
@@ -160,16 +139,13 @@ function formatPrice(val) {
 }
 
 // =====================================================
-//  CARGAR PRODUCTOS DESDE SUPABASE
+//  CARGAR PRODUCTOS
 // =====================================================
 
 async function loadProducts() {
     try {
         renderSkeletons(8);
-        console.log('🔄 Cargando productos desde Supabase...');
-
         if (!supabaseClient) {
-            console.warn('⏳ Esperando conexión a Supabase...');
             await new Promise(resolve => setTimeout(resolve, 1000));
             if (!supabaseClient) {
                 initSupabase();
@@ -178,43 +154,31 @@ async function loadProducts() {
                 }
             }
         }
-
         const { data, error } = await supabaseClient
             .from('productos')
             .select('*')
             .order('id', { ascending: true });
-
         if (error) throw error;
-
-        console.log('📦 Productos cargados desde Supabase:', data ? data.length : 0);
-
         if (!data || data.length === 0) {
             throw new Error('No hay productos en la base de datos');
         }
-
         menuProducts = data;
         window.menuProducts = menuProducts;
-
         renderCategories();
         setTimeout(function() { selectDailyDrink(); }, 100);
         applyFilters();
         hideCinematicOverlay();
-
     } catch (e) {
-        console.error('❌ Error cargando productos:', e);
         hideCinematicOverlay();
         var grid = document.getElementById('products-grid');
         if (grid) {
             grid.innerHTML = '<div class="col-span-full text-center py-12 sm:py-16 text-gray-500">' +
                 '<i class="fa-solid fa-wifi-slash text-2xl sm:text-3xl block mb-3 sm:mb-4 opacity-30"></i>' +
                 '<p class="text-sm sm:text-base">Error al cargar catálogo</p>' +
-                '<p class="text-xs text-gray-600 mt-2">' + (e.message || 'Error al conectar con Supabase') + '</p>' +
+                '<p class="text-xs text-gray-600 mt-2">' + (e.message || 'Error al cargar') + '</p>' +
                 '<div class="mt-4 flex flex-wrap justify-center gap-3">' +
                 '<button onclick="location.reload()" class="bg-gold-400 text-black px-6 py-2 rounded-full font-bold hover:bg-gold-500 transition-all">' +
-                '<i class="fas fa-sync mr-2"></i> Reintentar</button>' +
-                '<button onclick="loadProducts()" class="bg-blue-500/20 text-blue-400 px-6 py-2 rounded-full font-bold hover:bg-blue-500/30 transition-all">' +
-                '<i class="fas fa-database mr-2"></i> Conectar a Supabase</button>' +
-                '</div></div>';
+                '<i class="fas fa-sync mr-2"></i> Reintentar</button></div></div>';
         }
     }
 }
@@ -225,10 +189,8 @@ async function loadProducts() {
 
 function selectDailyDrink() {
     if (menuProducts.length === 0) return;
-
     var today = new Date().toDateString();
     var saved = localStorage.getItem('mymDailyDrink');
-
     if (saved) {
         try {
             var parsed = JSON.parse(saved);
@@ -239,26 +201,20 @@ function selectDailyDrink() {
             }
         } catch (e) {}
     }
-
     var randomIndex = Math.floor(Math.random() * menuProducts.length);
     dailyDrink = menuProducts[randomIndex];
-
     try { localStorage.setItem('mymDailyDrink', JSON.stringify({ date: today, product: dailyDrink })); } catch(e) {}
-
     renderDailyDrink();
 }
 
 function renderDailyDrink() {
     if (!dailyDrink) return;
-
     var img = document.getElementById('daily-drink-image');
     var name = document.getElementById('daily-drink-name');
     var price = document.getElementById('daily-drink-price');
     var addBtn = document.getElementById('daily-drink-add');
-
     if (name) name.textContent = dailyDrink.nombre || '';
     if (price) price.textContent = 'RD$ ' + formatPrice(dailyDrink.precio);
-
     if (img) {
         var imgUrl = getProductImage(dailyDrink);
         img.src = imgUrl;
@@ -266,7 +222,6 @@ function renderDailyDrink() {
         img.style.display = 'block';
         img.onerror = function() { handleImageError(this); };
     }
-
     if (addBtn) {
         addBtn.onclick = function() {
             if (dailyDrink) addToCart(dailyDrink.id);
@@ -275,16 +230,14 @@ function renderDailyDrink() {
 }
 
 // =====================================================
-//  CATEGORÍAS CON OFERTAS
+//  CATEGORÍAS
 // =====================================================
 
 function renderCategories() {
     var container = document.getElementById('categories-scroll');
     if (!container) return;
-
     var catSet = {};
     var tieneOfertas = false;
-    
     for (var i = 0; i < menuProducts.length; i++) {
         var c = menuProducts[i].categoria;
         if (c) catSet[c] = true;
@@ -292,7 +245,6 @@ function renderCategories() {
             tieneOfertas = true;
         }
     }
-    
     var cats = ['all'];
     if (tieneOfertas) {
         cats.push('ofertas');
@@ -300,7 +252,6 @@ function renderCategories() {
     for (var key in catSet) {
         if (catSet.hasOwnProperty(key)) cats.push(key);
     }
-
     var html = '';
     for (var j = 0; j < cats.length; j++) {
         var cat = cats[j];
@@ -310,7 +261,6 @@ function renderCategories() {
         html += '<button onclick="filterCategory(\'' + cat.replace(/'/g, "\\'") + '\')" class="cat-btn-custom' + (isActive ? ' active' : '') + extraClass + '" data-cat="' + escapeHtml(cat) + '">' + escapeHtml(label) + '</button>';
     }
     container.innerHTML = html;
-
     setupCategoryNavigation();
 }
 
@@ -319,7 +269,6 @@ function setupCategoryNavigation() {
     var nextBtn = document.getElementById('cat-next');
     var scroll = document.getElementById('categories-scroll');
     if (!prevBtn || !nextBtn || !scroll) return;
-
     prevBtn.onclick = function() { scroll.scrollBy({ left: -180, behavior: 'smooth' }); };
     nextBtn.onclick = function() { scroll.scrollBy({ left: 180, behavior: 'smooth' }); };
 }
@@ -334,21 +283,15 @@ function filterCategory(cat) {
     applyFilters();
 }
 
-// =====================================================
-//  FILTROS CON OFERTAS
-// =====================================================
-
 function applyFilters() {
     var filtered = [];
     for (var i = 0; i < menuProducts.length; i++) {
         var p = menuProducts[i];
-        
         if (currentCategory === 'ofertas') {
             if (p.es_oferta != 1) continue;
         } else if (currentCategory !== 'all' && p.categoria !== currentCategory) {
             continue;
         }
-        
         if (searchQuery) {
             var q = searchQuery.toLowerCase();
             if (p.nombre.toLowerCase().indexOf(q) === -1 && p.categoria.toLowerCase().indexOf(q) === -1) continue;
@@ -358,26 +301,19 @@ function applyFilters() {
     renderProducts(filtered);
 }
 
-// =====================================================
-//  RENDERIZADO DE PRODUCTOS
-// =====================================================
-
 function renderProducts(allItems) {
     try {
         var grid = document.getElementById('products-grid');
         if (!grid) return;
-
         var total = allItems.length;
         var start = (currentPage - 1) * itemsPerPage;
         var end = start + itemsPerPage;
         var slice = allItems.slice(start, end);
-
         if (total === 0) {
             grid.innerHTML = '<div class="col-span-full text-center py-12 sm:py-16 text-gray-500"><i class="fa-regular fa-face-frown text-2xl sm:text-3xl block mb-3 sm:mb-4 opacity-30"></i><p class="text-sm sm:text-base">No hay productos</p></div>';
             renderPagination(0);
             return;
         }
-
         var html = '';
         for (var i = 0; i < slice.length; i++) {
             var prod = slice[i];
@@ -386,29 +322,21 @@ function renderProducts(allItems) {
             var nombreSeguro = escapeHtml(prod.nombre);
             var catSeguro = escapeHtml(prod.categoria);
             var esOferta = prod.es_oferta == 1;
-
             html += '<div class="product-card" data-aos="fade-up" data-aos-duration="500" data-aos-delay="' + delay + '">';
             html += '<div class="img-wrap">';
-            
             html += '<img src="' + img + '" alt="' + nombreSeguro + '" onerror="handleImageError(this)" style="min-height:120px;width:100%;background:#1a1a2e;display:block;" />';
-
             html += '<div class="no-image-text" style="display:none;"><span>🍷</span><p>No hay imagen<br>disponible</p></div>';
-
             if (esOferta) html += '<span class="badge-vaso oferta">🔥 Oferta</span>';
-
             html += '</div>';
             html += '<span class="category-tag">' + catSeguro + '</span>';
             html += '<h4 class="product-name">' + nombreSeguro + '</h4>';
             html += '<div class="flex items-center justify-between mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-white/5"><span class="price">RD$ ' + formatPrice(prod.precio) + '</span><button onclick="addToCart(' + prod.id + ')" class="add-btn"><i class="fa-solid fa-plus text-xs sm:text-sm"></i></button></div>';
             html += '</div>';
         }
-
         grid.innerHTML = html;
         renderPagination(total);
         if (typeof AOS !== 'undefined') AOS.refresh();
-
     } catch (e) {
-        console.error('Error render:', e);
         var g = document.getElementById('products-grid');
         if (g) {
             g.innerHTML = '<div class="col-span-full text-center py-12 sm:py-16 text-gray-500">' +
@@ -427,13 +355,11 @@ function renderProducts(allItems) {
 function renderPagination(total) {
     var container = document.getElementById('paginationContainer');
     if (!container) return;
-
     var pages = Math.ceil(total / itemsPerPage) || 1;
     if (pages <= 1) {
         container.innerHTML = '';
         return;
     }
-
     container.innerHTML = '<div class="flex items-center justify-center gap-3 sm:gap-4 pt-6 sm:pt-8">' +
         '<button onclick="changePage(' + (currentPage - 1) + ')"' + (currentPage === 1 ? ' disabled' : '') + ' class="px-4 sm:px-5 py-1.5 sm:py-2 rounded-xl bg-white/5 text-white disabled:opacity-30 hover:bg-white/10 transition-all duration-300 hover:scale-105 text-xs sm:text-sm font-medium">← Anterior</button>' +
         '<span class="text-xs sm:text-sm text-gray-400">' + currentPage + ' / ' + pages + '</span>' +
@@ -463,7 +389,7 @@ function handleSearch(e) {
 }
 
 // =====================================================
-//  CARRITO DE COMPRAS
+//  CARRITO
 // =====================================================
 
 function addToCart(id) {
@@ -472,12 +398,10 @@ function addToCart(id) {
         if (menuProducts[i].id === Number(id)) { item = menuProducts[i]; break; }
     }
     if (!item) return;
-
     var existing = null;
     for (var j = 0; j < cart.length; j++) {
         if (cart[j].id === Number(id)) { existing = cart[j]; break; }
     }
-
     if (existing) {
         existing.quantity += 1;
     } else {
@@ -488,7 +412,6 @@ function addToCart(id) {
         newItem.quantity = 1;
         cart.push(newItem);
     }
-
     updateCartUI();
     saveCartData();
     showToast('"' + item.nombre + '" añadido');
@@ -512,33 +435,26 @@ function updateCartUI() {
     var badge = document.getElementById('cart-count');
     var totalText = document.getElementById('cart-total');
     var container = document.getElementById('cart-items-container');
-
     var totalCount = 0;
     var totalPrice = 0;
     for (var i = 0; i < cart.length; i++) {
         totalCount += cart[i].quantity;
         totalPrice += cart[i].precio * cart[i].quantity;
     }
-
     if (badge) badge.textContent = totalCount;
     if (totalText) totalText.textContent = 'RD$ ' + formatPrice(totalPrice);
-
     if (container) {
         if (cart.length === 0) {
             container.innerHTML = '<div class="text-center py-8 sm:py-12 text-gray-500 space-y-2 sm:space-y-3"><i class="fa-solid fa-wine-bottle text-3xl sm:text-4xl block opacity-20"></i><p class="text-sm sm:text-base">El carrito está vacío</p></div>';
             return;
         }
-
         var html = '';
         for (var j = 0; j < cart.length; j++) {
             var item = cart[j];
             var img = getProductImage(item);
             var nombreSeguro = escapeHtml(item.nombre);
-
             html += '<div class="cart-item flex items-center space-x-3 sm:space-x-4 bg-white/[0.02] p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-white/[0.04]" style="animation-delay: ' + (j * 40) + 'ms">';
-
             html += '<img src="' + img + '" alt="' + nombreSeguro + '" class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl object-cover" onerror="handleCartImageError(this)" />';
-
             html += '<div class="flex-1 min-w-0"><h5 class="text-xs sm:text-sm font-bold text-white truncate">' + nombreSeguro + '</h5><p class="text-[10px] sm:text-xs text-gold-400">RD$ ' + formatPrice(item.precio) + ' x ' + item.quantity + '</p></div>';
             html += '<div class="flex items-center space-x-1 sm:space-x-2">';
             html += '<button onclick="updateCartQuantity(' + item.id + ', -1)" class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-white/5 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 text-xs sm:text-sm">−</button>';
@@ -555,7 +471,6 @@ function toggleCartModal() {
     var backdrop = document.getElementById('cart-backdrop');
     var sheet = document.getElementById('cart-sheet');
     if (!modal) return;
-
     if (modal.classList.contains('hidden')) {
         modal.classList.remove('hidden');
         requestAnimationFrame(function() {
@@ -574,19 +489,17 @@ function saveCartData() {
 }
 
 // =====================================================
-//  SELECCIONAR MÉTODO DE PAGO
+//  MÉTODO DE PAGO
 // =====================================================
 
 function selectPaymentMethod(method) {
     selectedPaymentMethod = method;
     document.getElementById('selectedPayment').value = method;
-    
     var buttons = document.querySelectorAll('.payment-btn');
     buttons.forEach(function(btn) {
         btn.classList.remove('border-gold-400', 'text-white', 'bg-gold-400/10');
         btn.classList.add('text-gray-400');
     });
-    
     var selectedBtn = document.querySelector('.payment-btn[data-method="' + method + '"]');
     if (selectedBtn) {
         selectedBtn.classList.add('border-gold-400', 'text-white', 'bg-gold-400/10');
@@ -594,41 +507,31 @@ function selectPaymentMethod(method) {
     }
 }
 
-// =====================================================
-//  CONFIRMAR Y ENVIAR PEDIDO CON UBICACIÓN Y PAGO
-// =====================================================
-
 function confirmSendOrder() {
     var nameInput = document.getElementById('customerName');
     var locationInput = document.getElementById('customerLocation');
     var paymentInput = document.getElementById('selectedPayment');
-    
     var name = nameInput ? nameInput.value.trim() : '';
     var location = locationInput ? locationInput.value.trim() : '';
     var payment = paymentInput ? paymentInput.value : '';
-    
     if (!name) {
         showToast('⚠️ Ingresa tu nombre');
         nameInput.focus();
         return;
     }
-    
     if (!location) {
         showToast('⚠️ Ingresa tu ubicación');
         locationInput.focus();
         return;
     }
-    
     if (!payment) {
         showToast('⚠️ Selecciona un método de pago');
         return;
     }
-    
     if (cart.length === 0) {
         showToast('⚠️ El carrito está vacío');
         return;
     }
-
     var message = '*NUEVO PEDIDO - M&M DRINK LIQUOR*\n';
     message += '-------------------------------------------\n';
     message += '*Cliente:* ' + name + '\n';
@@ -636,7 +539,6 @@ function confirmSendOrder() {
     message += '*Método de pago:* ' + payment + '\n';
     message += '-------------------------------------------\n';
     message += '*PRODUCTOS:*\n';
-    
     var total = 0;
     for (var i = 0; i < cart.length; i++) {
         var item = cart[i];
@@ -645,27 +547,22 @@ function confirmSendOrder() {
         message += '• ' + item.quantity + 'x ' + item.nombre + '\n';
         message += '  Subtotal: RD$ ' + formatPrice(subtotal) + '\n';
     }
-    
     message += '-------------------------------------------\n';
     message += '*TOTAL:* RD$ ' + formatPrice(total) + '\n';
     message += '-------------------------------------------\n';
     message += '_Para confirmar disponibilidad y envío._';
-
     var url = 'https://wa.me/' + DEFAULT_WHATSAPP + '?text=' + encodeURIComponent(message);
-    
     cart = [];
     saveCartData();
     updateCartUI();
     closeNameModal();
     toggleCartModal();
-    
     window.open(url, '_blank');
     showToast('✅ Pedido enviado');
 }
 
 function openNameModal() {
     if (cart.length === 0) { showToast("Agrega productos primero"); return; }
-    // Resetear selección anterior
     selectedPaymentMethod = '';
     document.getElementById('selectedPayment').value = '';
     var buttons = document.querySelectorAll('.payment-btn');
@@ -673,7 +570,6 @@ function openNameModal() {
         btn.classList.remove('border-gold-400', 'text-white', 'bg-gold-400/10');
         btn.classList.add('text-gray-400');
     });
-    
     var modal = document.getElementById('name-modal');
     var content = document.getElementById('name-modal-content');
     if (modal) {
@@ -762,15 +658,11 @@ document.addEventListener('DOMContentLoaded', function() {
             disable: isMobile
         });
     }
-    
     renderSkeletons(8);
     loadProducts();
-    
     var searchInput = document.getElementById('search-input');
     if (searchInput) searchInput.addEventListener('input', handleSearch);
-    
     window.addEventListener('scroll', handleHeaderScroll, { passive: true });
-    
     try {
         var saved = localStorage.getItem('mymCart_v2');
         if (saved) { 
@@ -780,7 +672,6 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch(e) { 
         cart = []; 
     }
-    
     setTimeout(function() { 
         updateCartUI(); 
     }, 150);
