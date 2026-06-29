@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
     <title>Panel Admin · M&M Drink Liquor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -50,7 +51,7 @@
                 </div>
                 <div>
                     <h1 class="text-xl sm:text-2xl font-black">M&M <span class="text-gold-400">Admin</span></h1>
-                    <p class="text-[10px] sm:text-xs text-gray-500">Gestiona tu catálogo · Supabase</p>
+                    <p class="text-[10px] sm:text-xs text-gray-500">Gestiona tu catálogo</p>
                 </div>
             </div>
             <div class="flex gap-2 sm:gap-4">
@@ -83,9 +84,9 @@
         <!-- ADMIN PANEL -->
         <div id="adminPanel" class="hidden">
             
-            <div id="connectionStatus" class="mb-4 p-3 rounded-xl text-sm flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/20 text-yellow-400">
-                <i class="fas fa-circle-notch fa-spin"></i>
-                <span>Conectando a Supabase...</span>
+            <div id="connectionStatus" class="mb-4 p-3 rounded-xl text-sm flex items-center gap-2 bg-green-500/10 border border-green-500/20 text-green-400">
+                <i class="fas fa-check-circle"></i>
+                <span>Conectado</span>
             </div>
 
             <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 sm:mb-6">
@@ -204,7 +205,7 @@
                 </div>
                 <div class="p-3 border-t border-white/5 text-xs text-gray-500 flex justify-between items-center">
                     <span id="adminCount">0</span>
-                    <span>productos en Supabase</span>
+                    <span>productos</span>
                 </div>
             </div>
         </div>
@@ -216,7 +217,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
         // ============================================================
-        //  CONFIGURACIÓN SUPABASE
+        //  CONFIGURACIÓN
         // ============================================================
         
         const ADMIN_PASSWORD = 'xslxeprr12';
@@ -229,27 +230,27 @@
         let isLoading = false;
         
         // ============================================================
-        //  INICIALIZAR SUPABASE
+        //  INICIALIZAR
         // ============================================================
         
         function initSupabase() {
             if (typeof supabase !== 'undefined') {
                 supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-                updateConnectionStatus(true, 'Conectado a Supabase');
+                updateConnectionStatus(true);
                 return true;
             }
             return false;
         }
         
-        function updateConnectionStatus(connected, message) {
+        function updateConnectionStatus(connected) {
             const status = document.getElementById('connectionStatus');
             if (!status) return;
             if (connected) {
                 status.className = 'mb-4 p-3 rounded-xl text-sm flex items-center gap-2 bg-green-500/10 border border-green-500/20 text-green-400';
-                status.innerHTML = '<i class="fas fa-check-circle"></i><span>' + message + '</span>';
+                status.innerHTML = '<i class="fas fa-check-circle"></i><span>Conectado</span>';
             } else {
                 status.className = 'mb-4 p-3 rounded-xl text-sm flex items-center gap-2 bg-red-500/10 border border-red-500/20 text-red-400';
-                status.innerHTML = '<i class="fas fa-exclamation-circle"></i><span>' + message + '</span>';
+                status.innerHTML = '<i class="fas fa-exclamation-circle"></i><span>Error de conexión</span>';
             }
         }
         
@@ -300,7 +301,7 @@
         });
         
         // ============================================================
-        //  CARGAR PRODUCTOS DESDE SUPABASE
+        //  CARGAR PRODUCTOS
         // ============================================================
         
         async function loadProducts() {
@@ -308,11 +309,11 @@
             isLoading = true;
             
             try {
-                showToast('Cargando productos desde Supabase...', 'info');
-                updateConnectionStatus(true, 'Cargando productos...');
+                showToast('Cargando productos...', 'info');
+                updateConnectionStatus(true);
                 
                 if (!supabaseClient) {
-                    throw new Error('Supabase no inicializado');
+                    throw new Error('No disponible');
                 }
                 
                 const { data, error } = await supabaseClient
@@ -325,20 +326,17 @@
                 if (data && data.length > 0) {
                     products = data;
                     showToast('Productos cargados: ' + products.length, 'success');
-                    updateConnectionStatus(true, 'Conectado a Supabase · ' + products.length + ' productos');
                 } else {
                     products = [];
-                    showToast('No hay productos en la base de datos', 'info');
-                    updateConnectionStatus(true, 'Conectado a Supabase · 0 productos');
+                    showToast('No hay productos', 'info');
                 }
                 
                 updateCategories();
                 renderTable();
                 
             } catch (e) {
-                console.error('Error cargando productos:', e);
-                showToast('Error al cargar productos: ' + e.message, 'error');
-                updateConnectionStatus(false, 'Error: ' + e.message);
+                showToast('Error al cargar productos', 'error');
+                updateConnectionStatus(false);
                 products = [];
                 renderTable();
             }
@@ -352,7 +350,7 @@
         
         function syncProducts() {
             if (!supabaseClient) {
-                showToast('Supabase no conectado', 'error');
+                showToast('No conectado', 'error');
                 return;
             }
             showToast('Sincronizando...', 'info');
@@ -375,7 +373,7 @@
                     <tr>
                         <td colspan="5" class="px-3 py-8 text-center text-gray-500 text-sm">
                             <i class="fas fa-box-open text-2xl block mb-2 opacity-30"></i>
-                            ${products.length === 0 ? 'No hay productos en Supabase' : 'No se encontraron productos'}
+                            ${products.length === 0 ? 'No hay productos' : 'No se encontraron productos'}
                         </td>
                     </tr>
                 `;
@@ -487,7 +485,7 @@
         }
         
         // ============================================================
-        //  SUBIR IMAGEN A SUPABASE STORAGE
+        //  SUBIR IMAGEN
         // ============================================================
         
         async function uploadImage(event) {
@@ -503,7 +501,7 @@
             
             if (!supabaseClient) {
                 status.className = 'upload-status error';
-                status.textContent = 'Supabase no inicializado';
+                status.textContent = 'No disponible';
                 return;
             }
             
@@ -553,9 +551,8 @@
                 status.textContent = 'Imagen subida correctamente';
                 
             } catch (error) {
-                console.error(error);
                 status.className = 'upload-status error';
-                status.textContent = 'Error al subir: ' + (error.message || 'Desconocido');
+                status.textContent = 'Error al subir';
             } finally {
                 btn.innerHTML = originalText;
                 btn.disabled = false;
@@ -564,14 +561,14 @@
         }
         
         // ============================================================
-        //  GUARDAR PRODUCTO EN SUPABASE
+        //  GUARDAR PRODUCTO
         // ============================================================
         
         document.getElementById('productForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             if (!supabaseClient) {
-                showToast('Supabase no conectado', 'error');
+                showToast('No conectado', 'error');
                 return;
             }
             
@@ -609,8 +606,6 @@
                 es_oferta: es_oferta
             };
             
-            console.log('📦 Datos a guardar:', productData);
-            
             try {
                 const submitBtn = document.getElementById('submitBtn');
                 submitBtn.disabled = true;
@@ -629,20 +624,14 @@
                         .insert([productData]);
                 }
                 
-                if (result.error) {
-                    console.error('❌ Error de Supabase:', result.error);
-                    throw result.error;
-                }
-                
-                console.log('✅ Producto guardado correctamente');
+                if (result.error) throw result.error;
                 
                 await loadProducts();
                 hideForm();
                 showToast(isEditing ? 'Producto actualizado' : 'Producto creado', 'success');
                 
             } catch (e) {
-                console.error('❌ Error guardando:', e);
-                showToast('Error al guardar: ' + (e.message || 'Error desconocido'), 'error');
+                showToast('Error al guardar', 'error');
             } finally {
                 const submitBtn = document.getElementById('submitBtn');
                 submitBtn.disabled = false;
@@ -667,7 +656,7 @@
             if (!confirm('¿Seguro que quieres eliminar este producto?')) return;
             
             if (!supabaseClient) {
-                showToast('Supabase no conectado', 'error');
+                showToast('No conectado', 'error');
                 return;
             }
             
@@ -683,8 +672,7 @@
                 showToast('Producto eliminado', 'success');
                 
             } catch (e) {
-                console.error('Error eliminando:', e);
-                showToast('Error al eliminar: ' + e.message, 'error');
+                showToast('Error al eliminar', 'error');
             }
         }
         
